@@ -1,0 +1,318 @@
+@charset "UTF-8";
+*{
+    outline: none;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+html{
+    min-height: 100%;
+}
+/* order_bottom */
+#order_bottom{
+    width: 100%;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 -5px 5px #eff3f6;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 101;
+}
+#order_bottom .con{
+    flex: 1;
+    padding-left: 30px;
+}
+#order_bottom .money{
+    font-size: 16px;
+    color: #666;
+}
+#order_bottom .money b{
+    font-weight: normal;
+    color: #ef392e;
+}
+#freight{
+    color: #999;
+    font-size: 12px;
+}
+#order_bottom button{
+    width: 140px;
+    height: 60px;
+    background: #bcc0cc;
+    color: #fff;
+    border: 0;
+    font-size: 15px;
+}
+#order_bottom button.cur{
+    background: #00dbf5;
+}
+/* order_car */
+#order_car{
+    padding: 10px 15px 20px;
+    background: #fff;
+    position: relative;
+    margin-bottom: 70px;
+}
+#order_car h2{
+    font-size: 13px;
+    color: #999;
+    font-weight: normal;
+    padding-bottom: 5px;
+}
+#order_car ul li{
+    height: 85px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#order_car ul li .con{
+    font-size: 15px;
+    color: #333;
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+#order_car ul li .con img{
+    width: 65px;
+    height: 65px;
+}
+#order_car ul li .text{
+    flex: 1;
+    padding-left: 5px;
+    padding-right: 15px;
+    line-height: 20px;
+}
+#order_car ul li .price{
+    color: #ef392e;
+    margin-top: 2px;
+}
+#order_car ul li .price b{
+    font-weight: normal;
+}
+#order_car ul li .num{
+    width: 85px;
+    height: 23px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+#order_car ul li .count{
+    width: 35px;
+    height: 23px;
+    line-height: 21px;
+    text-align: center;
+    border-top: #eee 1px solid;
+    border-bottom: #eee 1px solid;
+}
+#order_car ul li .minusIcon, #order_car ul li .addIcon{
+    width: 25px;
+    height: 23px;
+
+    border: #eee 1px solid;
+    display: block;
+}
+#order_car ul li .minusIcon{
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background: url('/imgs/edaixi/icon_minus.png') no-repeat;
+    background-size: cover;
+}
+#order_car ul li .addIcon{
+    background: url('/imgs/edaixi/item_add.png') no-repeat;
+    background-size: cover;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+#orderOpen{
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    margin-left: -8px;
+}
+#orderOpen b{
+    width: 26px;
+    height: 26px;
+    background: url('/imgs/edaixi/icon_down.png') no-repeat;
+    background-size: 100% 100%;
+    display: block;
+}
+#orderOpen b.up{
+    background: url('/imgs/edaixi/icon_up.png') no-repeat;
+    background-size: 100% 100%;
+}
+/* keepPrice */
+#keepPrice, #agreement, #priceBox, #youranxiBox{
+    width: 90%;
+    background: #fff;
+    text-align: center;
+    border-radius: 8px;
+    position: fixed;
+    left: 5%;
+    top: 50%;
+    z-index: 10001;
+}
+#keepPrice, #agreement{
+    height: 400px;
+    margin-top: -200px;
+}
+#keepPrice h2, #agreement h2, #priceBox h2, #youranxiBox h2{
+    color: #fff;
+    font-size: 18px;
+    font-weight: normal;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    background: #00dbf5;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+#keepPrice .pic{
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#keepPrice .pic img{
+    width: 268px;
+    height: 128px;
+}
+#keepPrice .text{
+    text-align: left;
+    padding: 0 25px;
+    font-size: 15px;
+    color: #333;
+}
+#keepPrice .con{
+    font-size: 12px;
+    color: #00dbf5;
+    padding: 10px 0  20px;
+}
+#keepPrice .con b{
+    width: 13px;
+    height: 13px;
+    background: url('/imgs/edaixi/icon_check.png') no-repeat;
+    background-size: cover;
+    margin-right: 5px;
+    display: inline-block;
+    vertical-align: -2px;
+}
+#keepPrice .con b.cur{
+    background: url('/imgs/edaixi/icon_checked.png') no-repeat;
+    background-size: cover;
+}
+#keepPrice .btn{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#keepPrice button{
+    width: 129px;
+    height: 42px;
+    border-radius: 21px;
+    font-size: 15px;
+    border: 0;
+    color: #333;
+    background: #fff;
+    box-shadow: 0 0 6px 2px #f4f4f4;
+}
+#keepPrice button.cur{
+    color: #fff;
+    background: #00dbf5;
+    box-shadow: 0 0 6px 2px #c9f9ff;
+}
+/* agreement */
+#agreement_con,#mind_con,#priceBox_con, #youranxi_con{
+    display: none;
+}
+#agreement .con{
+    font-size: 13px;
+    color: #333;
+    padding: 10px 20px;
+    height: 280px;
+    overflow-y: auto;
+    text-align: left;
+}
+#agreement .con h3{
+    font-size: 14px;
+    line-height: 22px;
+    font-weight: normal;
+}
+#agreement .con p{
+    color: #666;
+}
+#agreement .btn,#priceBox .btn, #youranxiBox .btn{
+    width: 100%;
+    border-top: #eee 1px solid;
+    height: 50px;
+    display: flex;
+}
+#agreement .btn button, #priceBox .btn button, #youranxiBox .btn button{
+    width: 50%;
+    font-size: 17px;
+    color: #999;
+    line-height: 50px;
+    border: 0;
+    background: #fff;
+    border-bottom-left-radius: 8px;
+}
+#agreement .btn button.cur, #priceBox .btn button.cur, #youranxiBox .btn button.cur{
+    color: #00dbf5;
+    border-left: #eee 1px solid;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 8px;
+}
+/* priceBox */
+#priceBox{
+    height: 250px;
+    margin-top: -125px;
+}
+#youranxiBox{
+    height: 200px;
+    margin-top: -100px;
+}
+#priceBox .con, #youranxiBox .con{
+    line-height: 45px;
+    padding: 20px 20px 0;
+    display: flex;
+    flex-direction: row;
+}
+#priceBox input{
+    width: 130px;
+    height: 45px;
+    border: #00dbf5 1px solid;
+    border-radius: 5px;
+    padding-left: 6px;
+    font-size: 18px;
+    color: #333;
+}
+#priceBox .price{
+    color: #666;
+    font-size: 18px;
+    padding-left: 20px;
+}
+#priceBox .price span{
+    padding-left: 10px;
+    color: #333;
+}
+#priceBox .price b{
+    font-weight: normal;
+}
+#priceBox .text{
+    font-size: 13px;
+    color: #999;
+    text-align: left;
+    padding: 23px 20px 20px;
+    line-height: 20px;
+}
+#youranxiBox .text{
+    font-size: 13px;
+    color: #666;
+    height: 100px;
+    padding: 30px 20px 0;
+}

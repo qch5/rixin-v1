@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <title>日新洗衣</title>
+    <link href="/css/yujia/global.css?t=20170824_1" rel="stylesheet" type="text/css" />
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/weiui/weui.css" rel="stylesheet" />
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css" />
+</head>
+<body class="wheet">
+<div class="mcontainer">
+    <div class="head containered">
+        <a class="one l GoBack" href="javascript:history.back(-1);" style="">
+            <span class="icon_back"></span>
+        </a>
+        <div class="two l fc">
+            <p class="Sub fc text-ellipsis">充值</p>
+        </div>
+        <div class="third l fr naved" >
+            <div class="nav_out"></div>                </div>
+    </div>
+    <div class="headheight"></div>
+    <div style="display: none;" class="weui_toptips weui_warn js_tooltips"></div>
+
+    <div class="cz-ye"> 余额 <span class="cz-je">￥0.00 </span></div>
+    <div class="cz-heit"></div>
+    <form id="form1">
+        <input type="hidden" id="IsWx" name="IsWx" value="" />
+        <input name="No" id="No" type="hidden" value="" />
+        <div class="Recharge_box mbnt">
+            <input Value="" class="inp-text" data-val="true" data-val-number="字段 充值金额 必须是一个数字。" data-val-range="充值金额只能输入0.01到100000的金额" data-val-range-max="100000.00" data-val-range-min="0.01" data-val-regex="充值金额格式不正确，最多两位小数" data-val-regex-pattern="^(([0-9]+)|([0-9]+\.[0-9]{1,2}))$" data-val-required="充值金额必填" id="Amount" name="Amount" placeholder="可手动输入充值金额" type="text" value="0" />
+
+            <div class="bd Recharge">
+
+            </div>
+
+        </div>
+        <div class="cz-tip"><div class="cz-tip1"><i>?</i><span></span></div></div>
+        <button style="display:none;" class="hmwx-btn hmwx-btn-radiu">进入小程序</button>
+
+        <div class="hmwx-btnfixed-height hmwx-agr-height"></div>
+        <div class="hmwx-btn-fixed">
+            <div class="hmwx-agr">
+                <label>
+                    <input class="hmwx-agr-cb" type="checkbox" checked="checked" />
+                    <span class="hmwx-agr-text">我同意日新洗衣<a class="hmwx-agr-link" href="/Help/RechargeProtocol">《充值活动协议》</a></span>
+                </label>
+            </div>
+            <input type="button" id="btnSave" class="hmwx-btn hmwx-btn-radiu" value="立即充值" />
+        </div>
+    </form>
+    <form id="pay" action="" style="display:none;" method="post">
+        <input name="LocalTransationNo" value="" />
+        <input name="Amount" value="" />
+        <input name="ThirdPayType" value="unionpayapp">
+    </form>
+    <div style="display:none;" id="alipay"></div>
+    #parse("/common/menu.vm")
+</div>
+<script src="/bundles/jquery?v=QRLKVG_Xx6dQNG8i26GuXfNZzCriV9JX2xBS8PhczpE1"></script>
+
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/yujia/comm.js?t=v1.0"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+    function isWeiXin() {
+        //window.navigator.userAgent属性包含了浏览器类型、版本、操作系统类型、浏览器引擎类型等信息，这个属性可以用来判断浏览器类型
+        var ua = window.navigator.userAgent.toLowerCase();
+        //通过正则表达式匹配ua中是否含有MicroMessenger字符串
+        if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    window.wx.ready(function () {
+        isWxMini = window.__wxjs_environment === 'miniprogram'
+    })
+    $("button").click(function () {
+        //wx.navigateToMiniProgram({
+        //    appId: 'wx9272efff9f958cc0',
+        //    path: 'pages/index/index',
+        //    envVersion: 'develop',
+        //    success(res) {
+        //        // 打开成功
+        //    }
+        //})
+    })
+    function checkTextLength(obj, length) {
+        if (obj.value.length > length) {
+            obj.value = obj.value.substr(0, length);
+        }
+    }
+    $(".hmwx-agr-cb").on("change", function () {
+        if ($(this).is(":checked")) {
+            $("#btnSave").removeAttr("disabled");
+        }
+        else {
+            $("#btnSave").attr("disabled", "disabled");
+        }
+    });
+    $("#Amount").bind("input propertychange", function () {
+
+        AmountCh();
+    })
+    function AmountCh() {
+        var d = $("#Amount").val().trim();
+        if (800 <= parseInt(d) && parseInt(d) < 3000) {
+            $(".cz-tip").css('display', 'block');
+            $(".cz-tip").find("span").html("充值3000可指定员工服务");
+        } else if (3000 <= parseInt(d) && parseInt(d) < 4999) {
+            $(".cz-tip").css('display', 'block');
+            $(".cz-tip").find("span").html("您的生活已小资，请点下方我们为您提供专属客服");
+        } else if (4999 <= parseInt(d) && parseInt(d) < 7999) {
+            $(".cz-tip").css('display', 'block');
+            $(".cz-tip").find("span").html("甜蜜生活天天有，请点下方我们为您提供专属客服");
+        } else if (7999 <= parseInt(d) && parseInt(d) < 9999) {
+            $(".cz-tip").css('display', 'block');
+            $(".cz-tip").find("span").html("生活温馨感动常在，请点下方我们为您提供专属客服");
+        } else if (9999 <= parseInt(d) && parseInt(d)) {
+            $(".cz-tip").css('display', 'block');
+            $(".cz-tip").find("span").html("幸福生活充满屋，请点下方我们为您提供专属客服");
+        } else {
+            $(".cz-tip").css('display', 'none');
+        }
+    }
+    function formsubmit() {
+        var d = $("#Amount").val().trim();
+
+        if (d == "" || parseFloat(d) <= 0) {
+            $.weui.toast('请输入大于0的数字', function () { }, 'weui_icon_toast');
+            return;
+        }
+
+        $("#btnSave").attr("disabled", "disabled");
+        var $form = $("#form1");
+        if ('0' == "1") {
+            $("input[name='ThirdPayType']").val('alipay');
+            var $form = $("#form1");
+            $.ajax({
+                url: "/Payment/alipayRecharge",
+                data: $form.serialize(),
+                type: "POST",
+                cache: false,
+                async: false,
+                beforeSend: function () {
+                    $(this).attr("disabled", "disabled");
+                },
+                success: function (r) {
+                    if (r.State == 1) //成功
+                    {
+
+                        $("input[name='Amount']").val(r.Data.AmountNotPaid);
+                        $("input[name='LocalTransationNo']").val(r.Data.LocalTransationNo);
+                        var $form1 = $("#pay");
+                        $.ajax({
+                            url: "/Payment/ap",
+                            data: { Amount: r.Data.AmountNotPaid, LocalTransationNo: r.Data.LocalTransationNo},
+                            type: "POST",
+                            cache: false,
+                            async: false,
+                            beforeSend: function () {
+                                $(this).attr("disabled", "disabled");
+                            },
+                            success: function (r) {
+                                $("#alipay").html("");
+                                $("#alipay").html(r);
+                            },
+                            error: function (xhr) {
+                                $.weui.toast('发生异常', function () {
+                                }, 'weui_icon_toast');
+                                $(this).removeAttr("disabled");
+                            }
+                        });
+
+                    } else {
+                        $.weui.toast(r.Msg, function () {
+                            //location.href = "/Payment/OrderDetails?billNo=" + r.Data;
+                            //$(this).removeAttr("disabled");
+                            window.location.reload()
+                        }, 'weui_icon_toast');
+                    }
+                },
+                error: function (xhr) {
+                    $.weui.toast('发生异常', function () {
+                    }, 'weui_icon_toast');
+                    $(this).removeAttr("disabled");
+                }
+            });
+        }
+        if ('0' == "0") {
+            if (2== 1) {
+                if (window.__wxjs_environment === 'miniprogram') {
+                    $.ajax({
+                        url: "/Payment/Rechargemini",
+                        data: $form.serialize(),
+                        type: "POST",
+                        cache: false,
+                        async: false,
+                        success: function (r) {
+                            if (r.State == 1)  //成功
+                            {
+                                callpay(r.Data.WxJsApiParam, r.Data.LocalTransationNo);
+                            } else {
+                                $.weui.toast(r.Msg, function () { }, 'weui_icon_toast');
+                            }s
+                            $("#btnSave").removeAttr("disabled");
+                        },
+                        error: function (xhr) {
+                            $.weui.toast('发生异常');
+                            $("#btnSave").removeAttr("disabled");
+                        }
+                    });
+                } else {
+                    if (!isWeiXin()) {
+                        $("#IsWx").val("1");
+                    }
+                    $.ajax({
+                        url: "/Payment/Recharge",
+                        data: $form.serialize(),
+                        type: "POST",
+                        cache: false,
+                        async: false,
+                        success: function (r) {
+                            if (r.State == 1)  //成功
+                            {
+                                if (!isWeiXin()) {
+                                    window.open(r.Data.WxJsApiParam);
+                                } else {
+                                    callpay(r.Data.WxJsApiParam, r.Data.LocalTransationNo);
+                                }
+                            } else {
+                                $.weui.toast(r.Msg, function () { }, 'weui_icon_toast');
+                            }
+                            $("#btnSave").removeAttr("disabled");
+                        },
+                        error: function (xhr) {
+                            $.weui.toast('发生异常');
+                            $("#btnSave").removeAttr("disabled");
+                        }
+                    });
+                }
+            }
+            if (2== 2) {
+                if (window.__wxjs_environment === 'miniprogram') {
+                    $.ajax({
+                        url: "/Payment/Rechargemini",
+                        data: $form.serialize(),
+                        type: "POST",
+                        cache: false,
+                        async: false,
+                        success: function (r) {
+                            if (r.State == 1)  //成功
+                            {
+                                callpay(r.Data.WxJsApiParam, r.Data.LocalTransationNo);
+                            } else {
+                                $.weui.toast(r.Msg, function () { }, 'weui_icon_toast');
+                            } s
+                            $("#btnSave").removeAttr("disabled");
+                        },
+                        error: function (xhr) {
+                            $.weui.toast('发生异常');
+                            $("#btnSave").removeAttr("disabled");
+                        }
+                    });
+                } else {
+                    $("input[name='ThirdPayType']").val('unionpayapp');
+                    var $form = $("#form1");
+                    $.ajax({
+                        url: "/Payment/RechargeUnion",
+                        data: $form.serialize(),
+                        type: "POST",
+                        cache: false,
+                        async: false,
+                        beforeSend: function () {
+                            $(this).attr("disabled", "disabled");
+                        },
+                        success: function (r) {
+                            if (r.State == 1) //成功
+                            {
+                                $("input[name='Amount']").val(r.Data.AmountNotPaid);
+                                $("input[name='LocalTransationNo']").val(r.Data.LocalTransationNo);
+                                $("#pay").attr("action", 'http://pay3.xiaoyujia.com/payment/getpayinfo')
+                                $("#pay").submit();
+                            } else {
+                                $.weui.toast(r.Msg, function () {
+                                    //location.href = "/Payment/OrderDetails?billNo=" + r.Data;
+                                    //$(this).removeAttr("disabled");
+                                    window.location.reload()
+                                }, 'weui_icon_toast');
+                            }
+                        },
+                        error: function (xhr) {
+                            $.weui.toast('发生异常', function () {
+                            }, 'weui_icon_toast');
+                            $(this).removeAttr("disabled");
+                        }
+                    });
+                }
+            }
+        }
+    }
+    $("#btnSave").click(function (ev) {
+        formsubmit()
+        return false;
+    });
+    $("#form1").on("submit", function (e) {
+        formsubmit()
+        e.preventDefault();
+        document.activeElement.blur();
+        return false;
+    })
+    //调用微信JS api 支付
+    function jsApiCall(wxJsApiParam, localTransationNo) {
+        WeixinJSBridge.invoke(
+                'getBrandWCPayRequest',
+                JSON.parse(wxJsApiParam), //josn串
+                function (res) {
+                    WeixinJSBridge.log(res.err_msg);
+                    //alert(res.err_code + res.err_desc + res.err_msg);
+                    //alert(wxJsApiParam.toString());
+                    //alert(JSON.parse(wxJsApiParam));
+                    //alert(localTransationNo.toString());
+                    if (res.err_msg == "get_brand_wcpay_request:ok") {
+                        $.weui.toast('支付成功', function () {
+                            location.href = '/home';
+                        }, 'weui_icon_toastsucess');
+                    }
+                    if (res.err_msg == "get_brand_wcpay_request:cancel") {
+                        alert("支付取消")
+                    }
+                    if (res.err_msg == "get_brand_wcpay_request:fail") {
+                        alert("支付失败")
+                    }
+                }
+        );
+    }
+
+    function callpay(wxJsApiParam, localTransationNo) {
+        isWxMini = window.__wxjs_environment === 'miniprogram'
+        if (isWxMini) {
+            var params = '?timestamp=' + JSON.parse(wxJsApiParam).timeStamp + '&nonceStr=' + JSON.parse(wxJsApiParam).nonceStr
+                    + '&package=' + JSON.parse(wxJsApiParam).package.replace("prepay_id=", "") + '&signType=' + JSON.parse(wxJsApiParam).signType
+                    + '&paySign=' + JSON.parse(wxJsApiParam).paySign + '&appId=' + JSON.parse(wxJsApiParam).appId + '&method=3';
+            //定义path 与小程序的支付页面的路径相对应  &orderId=' + data.orderid + '&pType=0
+            var path = '/pages/pay/pay' + params;
+            //通过JSSDK的api使小程序跳转到指定的小程序页面
+            wx.miniProgram.navigateTo({ url: path });
+        } else {
+            if (typeof WeixinJSBridge == "undefined") {
+                if (document.addEventListener) {
+                    document.addEventListener('WeixinJSBridgeReady', jsApiCall, false);
+                } else if (document.attachEvent) {
+                    document.attachEvent('WeixinJSBridgeReady', jsApiCall);
+                    document.attachEvent('onWeixinJSBridgeReady', jsApiCall);
+                }
+            } else {
+                jsApiCall(wxJsApiParam, localTransationNo);
+            }
+        }
+
+    }
+</script>
+#parse("/common/share.vm")
+
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&web_id=1260785617" language="JavaScript"></script>
+
+    <script>
+        var _mtac = {};
+        (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500665928");
+            mta.setAttribute("cid", "500665929");
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+
+</div>
+</body>
+</html>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    $.cookie("PayMethod", "", { expires: -1 });
+    if (GetQueryString('PayMethod') != null) {
+        $.cookie('PayMethod', GetQueryString('PayMethod'));
+    }
+</script>

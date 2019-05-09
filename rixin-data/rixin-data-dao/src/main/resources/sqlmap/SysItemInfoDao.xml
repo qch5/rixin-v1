@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysItemInfoDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysItemInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="image" jdbcType="VARCHAR" property="image"/>
+        <result column="introduce" jdbcType="VARCHAR" property="introduce"/>
+        <result column="prices" jdbcType="DOUBLE" property="prices"/>
+        <result column="discount" jdbcType="DOUBLE" property="discount"/>
+        <result column="catId" jdbcType="INTEGER" property="catId"/>
+        <result column="catPath" jdbcType="VARCHAR" property="catPath"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, `name`, image, introduce, prices, discount, catId, catPath, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_item_info
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_item_info
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.name != null and info.name != ''">
+                and `name` = #{info.name, jdbcType=VARCHAR}
+            </if>
+            <if test="info.catId != null">
+                and catId = #{info.catId, jdbcType=INTEGER}
+            </if>
+            <if test="info.path != null">
+                and catPath = like CONCAT(#{info.path}, '%')
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_item_info where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysItemInfo" useGeneratedKeys="true">
+        insert into sys_item_info (`name`, image, introduce, prices, discount, catId, catPath, createTime)
+        values (
+            #{name, jdbcType=VARCHAR},
+            #{image, jdbcType=VARCHAR},
+            #{introduce, jdbcType=VARCHAR},
+            #{prices, jdbcType=DOUBLE},
+            #{discount, jdbcType=DOUBLE},
+            #{catId, jdbcType=INTEGER},
+            #{catPath, jdbcType=VARCHAR},
+            #{createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysItemInfo" useGeneratedKeys="true">
+        insert into sys_item_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="image != null">
+                image,
+            </if>
+            <if test="introduce != null">
+                introduce,
+            </if>
+            <if test="prices != null">
+                prices,
+            </if>
+            <if test="discount != null">
+                discount,
+            </if>
+            <if test="catId != null">
+                catId,
+            </if>
+            <if test="catPath != null">
+                catPath,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="image != null">
+                #{image, jdbcType=VARCHAR},
+            </if>
+            <if test="introduce != null">
+                #{introduce, jdbcType=VARCHAR},
+            </if>
+            <if test="prices != null">
+                #{prices, jdbcType=DOUBLE},
+            </if>
+            <if test="discount != null">
+                #{discount, jdbcType=DOUBLE},
+            </if>
+            <if test="catId != null">
+                #{catId, jdbcType=INTEGER},
+            </if>
+            <if test="catPath != null">
+                #{catPath, jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysItemInfo">
+        update sys_item_info
+        <set>
+            <if test="name != null">
+                `name` = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="image != null">
+                image = #{image, jdbcType=VARCHAR},
+            </if>
+            <if test="introduce != null">
+                introduce = #{introduce, jdbcType=VARCHAR},
+            </if>
+            <if test="prices != null">
+                prices = #{prices, jdbcType=DOUBLE},
+            </if>
+            <if test="discount != null">
+                discount = #{discount, jdbcType=DOUBLE},
+            </if>
+            <if test="catId != null">
+                catId = #{catId, jdbcType=INTEGER},
+            </if>
+            <if test="catPath != null">
+                catPath = #{catPath, jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysItemInfo">
+        update sys_item_info
+        set `name` = #{name, jdbcType=VARCHAR},
+          image = #{image, jdbcType=VARCHAR},
+          introduce = #{introduce, jdbcType=VARCHAR},
+          prices = #{prices, jdbcType=DOUBLE},
+          discount = #{discount, jdbcType=DOUBLE},
+          catId = #{catId, jdbcType=INTEGER},
+          catPath = #{catPath, jdbcType=VARCHAR},
+          createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

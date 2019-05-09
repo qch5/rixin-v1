@@ -1,0 +1,544 @@
+<script src = "https://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript">
+    var schema = window.location.protocol;
+    schema = schema.replace(':','');
+    if(schema == 'http'){
+        wx.config({
+            debug:false,
+            appId: 'wxeff9858c74dc72a2',
+            timestamp: 1556697463,
+            nonceStr: 'BRu7NmaucvZklYwF',
+            signature: '1f8b84e5817115c736e4b53c9b0594edac0e06c5',
+            jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'hideOptionMenu',
+                'getLocation'
+            ]
+        });
+
+    }else if(schema == 'https'){
+        wx.config({
+            debug:false,
+            appId: 'wxeff9858c74dc72a2',
+            timestamp: 1556697463,
+            nonceStr: 'wW0jLNfpaFjgNCr8',
+            signature: 'ac9a117bec83066d89275dd3130b1b2a8b174d44',
+            jsApiList: [
+                // 所有要调用的 API 都要加到这个列表中
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'hideOptionMenu',
+                'getLocation'
+            ]
+        });
+    }
+</script>
+
+<!-- <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> -->
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv">
+    <title>订单列表</title>
+    <link href="/css/edaixi/footer.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/wap.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/myOrder.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/index.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/luckProp.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/lottery.css?v=20161231" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/edaixi/slider.js"></script>
+    <script type="text/javascript" src="/js/edaixi/Swipe.min.js"></script>
+    <script src="/js/jquery/jquery.min.js"></script>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var flag = true;//true 是立即分享  false是分享惊喜
+
+            function share (desc,title,share_img,share_url) {
+                wx.ready(function(){
+                    var coupon_total = "";
+                    wx.onMenuShareTimeline({
+                        title: title,
+                        link:  share_url,
+                        imgUrl: share_img,
+                        trigger: function (res) {
+                        },
+                        success: function (res) {
+                            // 分享成功显示弹窗 关闭蒙板
+                            $('#rule, #close_btn').show();
+                            $('#guide_share').hide();
+                            if (flag) {
+                                var share_order_id = "";
+                                var submitData = {share_order_id: share_order_id};
+
+                                $.post("/mobile.php?m=wap&act=order&do=share_order&city_id=1&mark=1536891334NP5GfZwd",submitData,function(){},"json");
+                            }
+                        },
+                        cancel: function(res){
+                        }
+                    });
+                });
+            }
+
+            $('#close_btn').on('click',function(){
+                $('#rule_float').toggle(100);
+            })
+
+            $('#share_btn').on('click',function(){
+                window.location.href = "";
+            })
+
+            // 分享惊喜
+            $('#surprise_share').on('click',function(){
+
+                flag = false;
+                var desc =  "";
+                var title = "";
+                var share_img = "";
+                var share_url = "";
+                console.log(share_url)
+                $('#rule, #close_btn').hide();
+                $('#guide_share').show();
+
+                //talkingdata埋点
+                TDAPP.onEvent("零彩宝分享惊喜");
+                share (desc,title,share_img,share_url);
+            })
+
+            //立即分享
+            $('#quan_share').on('click',function(){
+                flag = true;
+                var share_url = "";
+                if(share_url){
+                    var desc =  "";
+                    var title = "";
+                    var share_img = "";
+                }else{
+                    var title = '我在洗衣服，你也来吧';
+                    var desc = '我在洗衣服，你也来吧';
+                    share_url = 'http://mp.weixin.qq.com';
+                }
+                console.log(share_url)
+
+                $('#rule, #close_btn').hide();
+                $('#guide_share').show();
+
+                share (desc,title,share_img,share_url);
+            })
+
+            //点击展开
+            $('.open').click(function(){
+                //alert(11);
+                if($(this).hasClass('up')){
+                    $(this).parent().parent().find('ul').hide();
+                    $(this).removeClass('up');
+                    //alert(2);
+                }else{
+                    $(this).parent().parent().find('ul').show();
+                    $(this).addClass('up');
+                    //alert(3);
+                }
+
+            })
+        }
+
+    </script>
+</head>
+<body style="padding-bottom:110px;">
+<div class="channel-nav three-nav">
+    <ul>
+        <li class=""><a href="/mobile.php?m=wap&act=order&do=order_list&status=1&city_id=1&mark=1536891334NP5GfZwd">未完成</a></li>
+        <li class=" finished"><a href="/mobile.php?m=wap&act=order&do=order_list&status=2&city_id=1&mark=1536891334NP5GfZwd">已完成</a></li>
+    </ul>
+    <div class="borderD2"></div>
+</div>
+
+
+<!-- 已登录 -->
+
+<!-- 2019悠然洗订单 start -->
+<!-- 2019悠然洗订单end -->
+
+<!-- 快递单315预支付 start -->
+<!-- 快递单315预支付 end -->
+
+<!-- jd物流新订单 start -->
+<!-- jd物流新订单 end -->
+
+<!-- 洗衣液订单 (现改为五常大米订单)start -->
+<!-- 洗衣液订单 end -->
+
+<!-- 苏宁家电清洗订单 start -->
+<!-- 苏宁家电清洗订单 end -->
+
+<!-- 我的订单 start -->
+<div class="myOrder" style="padding-bottom:60px;">
+    <!-- 有订单 -->
+    <ul id="order-list">
+        #foreach($info in $list)
+        <li>
+            <a href="#" >
+                <div class="category_block">
+                    <!--洗衣-->
+                    <div class="category_shoes">
+                        <img class="icon-washing" src="/imgs/edaixi/xi_cloth.png"  style="position:relative;">洗衣</div>
+
+                    <div class="order_status_div">
+                        <img name="12" src="/imgs/edaixi/queren.png" >
+                        <span class="text-info ">已确认</span>
+                    </div>
+                </div>
+            </a>
+        </li>
+        <div class="borderD" style="border-color:#eee"></div>
+
+        <li class="order_item mobile-font">
+            <a href="/sysOrderInfo/info?orderId=$!info.id" >
+                <div class="order_box">
+
+                    <div class="item_list_box">订单编号：$!info.id</div>
+                    <div class="item_list_box">
+                        <span>取件时间：<font id="qj-time-11555492">$!info.orderTime</font></span>
+##                        <p id="modify-11555492" class="modify_time" onClick="return modifyTime('11555492','1','1','朝阳区');">
+##                            <img class="modify_img" src="https://cdnwx.edaixi.com/1556685379/framework/style/images/edit.png" alt="" /><span>修改</span>
+##                        </p>
+                    </div>
+                </div>
+            </a>
+            <div class="clearBoth"></div>
+            <div class="item_list_money navlist">
+                <div class="borderD"></div>
+                <div class="item_list_box min-height">
+                    <div class="orderList">等待分配管家取件</div>
+                </div>
+            </div>
+            <div class="clearBoth"></div>
+        </li>
+        #end
+
+        <!-- Order item end -->
+        <div id="prompt" style="text-align:center;line-height:40px;color:#999;"> 无更多订单</div>
+    </ul>
+
+</div>
+<!-- 我的订单 end -->
+
+<!-- 分享领券 start -->
+<!-- 分享领券 end -->
+
+<!-- 返回顶部图标 start -->
+<div class="scroll" id="scroll" style="display:none;">
+    <img src="/imgs/edaixi/back_top.png" >
+</div>
+<!-- 返回顶部图标 end -->
+<!-- 推荐好友弹窗显示 -->
+<div id='recommend_order_html'></div>
+
+<!-- 合单支付提示  start-->
+<div id="cod" style="display:none">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner padding-top" id="wx_confirm_pay">
+            <div class="wx_confirm_hd">
+                <div class="cot_content" id="confirm-content"></div>
+                <div class="floatBorder floatbox ">
+                    <a id="confirm-pay-false" class="single_input2" href="javascript:void(0);">取消</a>
+                    <a id="confirm-pay-true" class="cancel single_input2 ">确认</a>
+                </div>
+                <div class="clearBoth"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 合单支付提示 弹窗 end-->
+
+
+<!-- 确认收货  start-->
+<div id="cod-sure-pay" style="display:none">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner padding-top width100" id="wx_confirm_coupon">
+            <div class="wx_confirm_hd">
+                <div class="wx_confirm_tit blue-color">确认收货</div>
+                <div class="cot_content">请确定要收货吗?</div>
+                <div class="floatBorder floatbox ">
+                    <a id="exchange" class="single_input2" href="javascript:void(0);">还没收到</a>
+                    <a id="sure-order-true" class="cancel single_input2"  >确认收货</a>
+                </div>
+                <div class="clearBoth"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 确认收货 弹窗 end-->
+
+<!-- 操作提示 start -->
+<div id="tip-box" style="display:none" class="cod" style="height:60px">
+
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner" id="wx_confirm_float">
+            <div class="wx_confirm_hd">
+                <div class="wx_confirm_tit" id = "show_mes"><!-- 提示信息 --></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 操作提示 end -->
+
+<!-- 差价说明 start -->
+<div id="explain_con" style="display:none">
+    <div class="wx_mask"></div>
+    <div id="explain">
+        <h2>差价说明</h2>
+        <div class="con"></div>
+        <button type="button" id="explain_btn">我知道了</button>
+    </div>
+</div>
+<!-- 差价说明 end -->
+
+<script type="text/javascript">
+    var order_id = + "11555492";
+    var pindex = 2;
+    var show_more = "0";
+    var clicked_pay = null;
+    // 勿删 推荐好友url
+    var url_icard_invite = '/mobile.php?m=wap&act=icard&do=recommend&city_id=1&mark=1536891334NP5GfZwd';
+    // 页面加载时,弹出下单成功邀请有奖弹窗
+    /*
+    $(function(){
+        if(order_id && sessionStorage.getItem('order_' + order_id)){
+            sessionStorage.removeItem('order_' + order_id);
+            $.get(
+                '/mobile.php?m=wap&act=order&do=getOrderInviteHtml&city_id=1&mark=1536891334NP5GfZwd',
+                function(data){
+                    if(data.message.state == 1){
+                         $(data.message.msg).insertAfter($('#recommend_order_html'));
+                    }else{
+
+                    }
+                },
+                'json'
+            );
+            if(sessionStorage.getItem('replace_order')){
+                $("#order_success_first").html('为TA预约成功');
+                $("#order_success_second").html('小e将上门取件，请等待计后为Ta支付');
+                sessionStorage.removeItem('replace_order')
+            }
+            $("#order-success").show();
+        }
+    });
+
+    // 离开页面时,关闭下单成功邀请有奖弹窗
+    window.onbeforeunload = function(){
+        sessionStorage.removeItem('order_' + order_id);
+    }*/
+
+    // 修改订单取件时间
+    function modifyTime(orderid, category_id, city_id, area){
+        window.location.href = "/new_weixin/time_control.html?order="+orderid+"&category_id="+category_id+"&city_id="+city_id+"&area="+area+"&back="+"%2Fmobile.php%3Fm%3Dwap%26act%3Dorder%26do%3Dorder_list%26status%3D1%26city_id%3D1%26mark%3D1536891334NP5GfZwd";
+        return false;
+    }
+
+    //我知道了
+    $('#explain_btn').on('click',function(){
+        $('#explain_con').hide();
+    })
+    //差价
+    $('.ask_explain').click(function(){
+        var text=$(this).attr('data-text');
+        $('#explain_con').show();
+        $('#explain .con').text(text);
+    })
+    // 点击确认收货按钮
+    $('a[name="confirm_detergent_order"]').click(function(){
+        $('#cod-sure-pay').show();
+        confirm_detergent_order_id = $(this).attr('order_id');
+    });
+
+    //确认收货
+    $("#sure-order-true").click(function(){
+        //隐藏弹框
+        $('#cod-sure-pay').hide();
+        var url = "/mobile.php?m=wap&act=order&do=sure_detergent_order&city_id=1&mark=1536891334NP5GfZwd?>";
+        var data = {order_id: confirm_detergent_order_id};
+        $.post(url, data, function(data){
+            var jump_url = data.redirect;
+            showTip(data.message.msg, jump_url);
+        },"json");
+    });
+
+    //取消收货
+    $("#exchange").click(function(){
+        $("#cod-sure-pay").hide();
+        confirm_detergent_order_id = '';
+    });
+
+    // 显示提示信息
+    function showTip(msg, url, persistent){
+        $('#show_mes').html(msg);
+        if(url){
+            $('#tip-box').show().delay(2000).hide(function(){
+                window.location.href = url;
+            });
+        }else{
+            if (persistent) {
+                $('#tip-box').show()
+            } else {
+                $('#tip-box').show().delay(2000).hide(0);
+            }
+        }
+    }
+    function add_title(msg){
+        $("#prompt").html(msg);
+    }
+
+    function add_order_1(add_o,str){
+        str = str + add_o;
+        $("#order-list").html(str);
+        show_more = 1;
+        $("#prompt").hide();
+    }
+
+    //点击订单支付
+    $("a[warn$='1']").click(function(){
+        clicked_pay = $(this);
+        var warn_text = $(this).attr("warn-text");
+        $("#confirm-content").html(warn_text);
+        $("#cod").show();
+        return false;
+    });
+
+    //确认跳转订单支付
+    $("#confirm-pay-true").click(function(){
+        var url = clicked_pay.attr("href");
+        window.location.href = url;
+    });
+
+    //取消跳转订单支付
+    $("#confirm-pay-false").click(function(){
+        $("#cod").hide();
+    });
+
+    function showmore(pindex){
+        $("#prompt").show();
+        var str = $("#order-list").html();
+        submitData = {
+            pindex : pindex
+        };
+        $.post("/mobile.php?m=wap&act=order&do=add_order&city_id=1&mark=1536891334NP5GfZwd",submitData,
+                function (data){
+                    if (data.message.state == 1) {
+                        add_order_1(data.message.add_order,str);
+                    }else if(data.message.state == 0){
+                        add_title(data.message.msg);
+                    }
+                },"json")
+    }
+
+    window.onscroll = function(){
+        var a = document.body.clientHeight;
+        var b = document.documentElement.scrollTop==0? document.body.scrollTop : document.documentElement.scrollTop;
+        var c = document.documentElement.scrollTop==0? document.body.scrollHeight : document.documentElement.scrollHeight;
+        if(a+b+10>=c && show_more == 1){
+            show_more = 0;
+            showmore(pindex);
+            pindex ++;
+        }
+    }
+
+    function closeorder(){
+        $("#order-success").hide();
+    }
+
+    $(".suning_cancle").click(function(){
+        var orderid = $(this).attr("data-id");
+        $.ajax({
+            url:"/mobile.php?m=third&act=suning&do=cancel_order&city_id=1&mark=1536891334NP5GfZwd",
+            type:"post",
+            data:{"oid":orderid},
+            success:function(data){
+                data = JSON.parse(data);
+                // console.log(data)
+                if(data.message.state==1){
+                    showTip("订单取消成功", data.message.msg);
+                }else{
+                    showTip("订单取消失败");
+                }
+            }
+        });
+    });
+
+    //倒计时
+    function setTime(obj,time){
+        var now = new Date();
+        var end = new Date(time.replace(/\-/g, "/"));
+        var result=Math.floor(end-now)/1000+15*60;
+        var interval=setInterval(sub,1000);
+        console.log(now);
+        console.log(end);
+
+        function sub(){
+            if (result>1) {
+                result = result - 1;
+                var second = Math.floor(result % 60);     // 计算秒 ，取余
+                var minite = Math.floor((result / 60) % 60); //计算分 ，换算有多少分，取余，余出多少秒
+                var hour = Math.floor((result / 3600) % 24);      //计算小时
+                var day = Math.floor((result / 3600) / 24);
+                minite = (day*24+hour)*60+minite;
+                second = second <10 ? '0'+second : second;
+                minite = minite<10 ? '0'+minite : minite;
+                $(obj).find('.time_pay b').html(minite+':'+second);
+            } else{
+                window.clearInterval(interval);
+                showTip("超时未支付，订单自动取消");
+                //window.location.reload();
+                $(obj).prev('.borderD').remove();
+                $(obj).prev('li').remove();
+                $(obj).remove();
+
+            }
+        };
+    }
+
+    //var dataTime = sessionStorage.getItemset(ordersn, date);
+    $('#order-list li.order_item').each(function(){
+        var time = $(this).attr('data-time');
+        if(time){
+            setTime($(this),time);
+        }
+
+    })
+
+</script>
+
+
+
+<!-- 页脚导航-->
+##<footer id="footer">
+##    <div class="borderD3"></div>
+##    <div class="fix-bottom"></div>
+##    <div class="bottomBox">
+##        <div class="indexMsg">
+##            <div class="indexMenu">
+##                <a href="/mobile.php?m=wap&act=homepage&do=index&city_id=1&mark=1536891334NP5GfZwd"><span class=" home-index">首页</span></a>
+##                <a href="/mobile.php?m=wap&act=order&do=order_list&city_id=1&mark=1536891334NP5GfZwd"><span class=" Order-index-active">订单<!-- <em class="hongdian"></em> --></span></a>
+##                <a href="/mobile.php?m=wap&act=icard&do=my_icard&city_id=1&mark=1536891334NP5GfZwd"><span class="card-index">我的<!-- <em class="hongdian"></em> --></span></a>
+##            </div>
+##        </div>
+##    </div>
+##</footer>
+
+
+</body>
+
+</html>

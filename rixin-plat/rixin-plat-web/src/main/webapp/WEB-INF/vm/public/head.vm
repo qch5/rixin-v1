@@ -1,0 +1,30 @@
+<div class="logo"></div>
+<div class="topRight">
+    <ul>
+        <li class="last hasSub" style="width:150px;">
+            <span id="userInfoId" title="${realname}">${username}</span>
+            <i class="menuIcon"></i>
+            <div class="topSub" style="width:150px;">
+                #*<a href="">个人中心</a>*#
+                <a href="${logoutUrl}" id="logout_text">退出</a>
+            </div>
+        </li>
+        <li><a href="javascript:;">帮助中心</a></li>
+        <li><a href="javascript:;" class="contact-us" id="contact-us">联系我们</a></li>
+    </ul>
+</div>
+
+<script>
+    $(function() {
+        $(".hasSub").click(function(e){
+            $(this).parent().toggleClass("hover");
+            e.stopPropagation();
+        });
+
+        $(".topRight li").has(".topSub").hover(function(){
+            $(this).addClass("hover").find(".topSub").show();
+        },function(){
+            $(this).removeClass("hover").find(".topSub").hide();
+        })
+    })
+</script>

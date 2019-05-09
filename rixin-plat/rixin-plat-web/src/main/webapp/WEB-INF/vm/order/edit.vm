@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title></title>
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/form.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link href="/css/button.css" rel="stylesheet">
+    <link href="/js/layer/skin/default/layer.css" rel="stylesheet">
+    <link href="/js/select/select2.css" rel="stylesheet">
+    <script type="text/javascript">document.domain = "rixin.com";</script>
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-placeholder.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/select/select2.js"></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
+    <script type="text/javascript" src="/js/area.js"></script>
+</head>
+<body>
+
+<div class="c-right" style="height: 100%;">
+    <div class="mainCon">
+        <div class="section">
+            <datalist id="rxNamelist">
+                <option value="床单"></option>
+                <option value="被罩"></option>
+                <option value="毛巾"></option>
+            </datalist>
+            <datalist id="categorylist">
+                <option value="布草"></option>
+                <option value="皮草"></option>
+            </datalist>
+
+            <form class="formBox" action="$path">
+                <input type="hidden" id="id" name="id" value="$!{info.id}" />
+                <dl class="cl">
+                    <dt>客户名称：</dt>
+                    <dd style="overflow:visible;">
+                        <select id="customerId" name="customerId" class="select2" style="width: 300px;" data-placeholder="请选择" data-must="true">
+                            <option value="">请选择</option>
+                        </select>
+                    </dd>
+                    <dt>车牌号：</dt>
+                    <dd>
+                        <input class="mod_input" id="carNo" name="carNo" value="$!{info.carNo}" maxlength="30" type="text" data-must="true" data-name="车牌号">
+                    </dd>
+                    #*<dt class="dt_default">价格：</dt>
+                    <dd>
+                        <input class="mod_input" name="price" value="$!{info.price}" maxlength="30" type="text" data-must="true" data-name="价格">
+                    </dd>*#
+
+                    <dt>订单详情：</dt>
+                    <dd>
+                        <div id="api-edit-content" class="form">
+                            <div>
+                                <div class="div-table">
+                                    <ul class="div-table-header div-table-line cb">
+                                        <li class="col-sm-2" style="width: 80px;">操作</li>
+                                        <li class="col-sm-2">楼层</li>
+                                        <li class="col-sm-2">名称</li>
+                                        <li class="col-sm-2" style="width: 85px;">类别</li>
+                                        <li class="col-sm-2" style="width: 85px;">尺寸</li>
+                                        <li class="col-sm-2" style="width: 85px;">颜色</li>
+                                        <li class="col-sm-2">数量</li>
+                                    </ul>
+                                </div>
+                                <div id="detailContent" class="div-table editing div-editing-table">
+                                    #if($path.indexOf('update') > -1)
+                                        #foreach($detail in $list)
+                                            <div class="div-table-line placeholder-response-args div-editing-line" data-item-sortable-id="9" role="option" aria-grabbed="false">
+                                                <ul class="cb">
+                                                    <li class="col-sm-2" style="width: 80px;">
+                                                        <i onclick="iconClose(this)" class="iconfont icon-close"></i>
+                                                        <i onclick="addDetail(this)" class="iconfont icon-tianjia"></i>
+                                                        <i class="iconfont icon-drag-copy" draggable="true"></i>
+                                                    </li>
+                                                    <li class="col-sm-2 input">
+                                                        <input name="floor" value="$!{detail.floor}" list="rxFloorlist" type="text" class="text name">
+                                                    </li>
+                                                    <li class="col-sm-2 input">
+                                                        <input name="name" value="$!{detail.name}" list="rxNamelist" type="text" class="text name">
+                                                    </li>
+                                                    <li class="col-sm-2 input" style="width: 85px;">
+                                                        <input name="category" value="$!{detail.category}" list="categorylist" value="布草" type="text" class="text name">
+                                                    </li>
+                                                    <li class="col-sm-2" style="width: 85px;">
+                                                        <select name="size">
+                                                            <option value="1.0m" #if($detail.size eq "1.0m") selected="selected" #end>1.0m</option>
+                                                            <option value="1.2m" #if($detail.size eq "1.2m") selected="selected" #end>1.2m</option>
+                                                            <option value="1.5m" #if($detail.size eq "1.5m") selected="selected" #end>1.5m</option>
+                                                            <option value="2.0m" #if($detail.size eq "2.0m") selected="selected" #end>2.0m</option>
+                                                            <option value="2.3m" #if($detail.size eq "2.3m") selected="selected" #end>2.3m</option>
+                                                        </select>
+                                                    </li>
+                                                    <li class="col-sm-2" style="width: 85px;">
+                                                        <select name="color">
+                                                            <option value="白色" #if($detail.color eq "白色") selected="selected" #end>白色</option>
+                                                            <option value="其它" #if($detail.color eq "其它") selected="selected" #end>其它</option>
+                                                        </select>
+                                                    </li>
+                                                    <li class="col-sm-2 input">
+                                                        <input name="number" value="$!{detail.number}" type="text" class="text name">
+                                                    </li>
+                                                </ul>
+                                                <div class="sub div-editing-table" data-sortable-id="10" aria-dropeffect="move"></div>
+                                            </div>
+                                        #end
+                                    #end
+                                </div>
+                                <div class="item">
+                                    <div id="addDetail" class="btn btn-default btn-sm"> <i class="iconfont icon-tianjia"></i>添加详情 </div>
+                                </div>
+
+                                <!-- 模板 - 开始 -->
+                                <div id="detailTemp" class="hide">
+                                    <div class="div-table-line placeholder-response-args div-editing-line" data-item-sortable-id="9" role="option" aria-grabbed="false">
+                                        <ul class="cb">
+                                            <li class="col-sm-2" style="width: 80px;">
+                                                <i onclick="iconClose(this)" class="iconfont icon-close"></i>
+                                                <i onclick="addDetail(this)" class="iconfont icon-tianjia"></i>
+                                                <i class="iconfont icon-drag-copy" draggable="true"></i>
+                                            </li>
+                                            <li class="col-sm-2 input">
+                                                <input name="floor" list="rxFloorlist" type="text" class="text name">
+                                            </li>
+                                            <li class="col-sm-2 input">
+                                                <input name="name" list="rxNamelist" type="text" class="text name">
+                                            </li>
+                                            <li class="col-sm-2 input" style="width: 85px;">
+                                                <input name="category" list="categorylist" value="布草" type="text" class="text name">
+                                            </li>
+                                            <li class="col-sm-2" style="width: 85px;">
+                                                <select name="size">
+                                                    <option value="1.0m">1.0m</option>
+                                                    <option value="1.2m">1.2m</option>
+                                                    <option value="1.5m">1.5m</option>
+                                                    <option value="2.0m" selected="selected">2.0m</option>
+                                                    <option value="2.3m">2.3m</option>
+                                                </select>
+                                            </li>
+                                            <li class="col-sm-2" style="width: 85px;">
+                                                <select name="color">
+                                                    <option value="白色">白色</option>
+                                                    <option value="其它">其它</option>
+                                                </select>
+                                            </li>
+                                            <li class="col-sm-2 input">
+                                                <input name="number" value="0" type="text" class="text name">
+                                            </li>
+                                        </ul>
+                                        <div class="sub div-editing-table" data-sortable-id="10" aria-dropeffect="move"></div>
+                                    </div>
+                                </div>
+                                <!-- 模板 - 结束 -->
+                            </div>
+                            <!-- 响应数据 - 结束 -->
+                        </div>
+                    </dd>
+
+                    #if($path.indexOf('create') == -1)
+                        <dt class="dt_default">状态：</dt>
+                        <dd>
+                            <input type="hidden" name="status" value="$!{status}" data-must="true">
+                            <p class="list_radio">
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  1) radio-check #end"></i>收货</label>
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  2) radio-check #end"></i>分拣</label>
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  3) radio-check #end"></i>洗涤</label>
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  4) radio-check #end"></i>汤平</label>
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  5) radio-check #end"></i>配货</label>
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  6) radio-check #end"></i>送货</label>
+                                <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.status ==  0) radio-check #end"></i>完成</label>
+                            </p>
+                        </dd>
+                    </dl>
+                #end
+                <div class="btn_wrap">
+                    <a href="#" class="schBtn">提交</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $(document).ready(function() {
+        var _CustomerId = $("#customerId").select2();
+        ajax_post_json("/customer/list", null, function(data) {
+            $.each(data, function (i, node) {
+                $("#customerId").append("<option value='" + node["id"] + "'>" + node["name"] + "</option>");
+            });
+            _CustomerId.val("$!{info.customerId}").trigger("change");
+        })
+
+        // 添加 - 响应参数
+        $("#addDetail").click(function() {
+            $("#detailContent").append($("#detailTemp").html());
+        });
+
+        $(".schBtn").click(function() {
+            var customerId = $("#customerId").val();
+            var carNo = $("#carNo").val();
+            var details = [];
+            $("#detailContent").find("ul").each(function(i, ul) {
+                var floor = $(ul).find("input[name='floor']").val();
+                var name = $(ul).find("input[name='name']").val();
+                var category = $(ul).find("input[name='category']").val();
+                var size = $(ul).find("select[name='size']").val();
+                var color = $(ul).find("select[name='color']").val();
+                var number = $(ul).find("input[name='number']").val();
+                details.push({floor: floor, name: name, category: category, size: size, color: color, number: number});
+            });
+
+            var params = {customerId: customerId, carNo: carNo, details: details}
+            #if($path.indexOf('update') > -1)
+                params["id"] = $("#id").val();
+            #end
+            ajax_post_json("$path", JSON.stringify(params), function (data) {
+                layer.confirm("提交成功", {
+                    btn: ['确定']
+                }, function(){
+                    parent.location.reload();
+                });
+            });
+        });
+	});
+
+    function iconClose(obj) {
+        $(obj).parent().parent().parent().remove();
+    };
+
+    // 添加 - 相应子数据
+    function addDetail(obj) {
+        $("#addDetail").click();
+    }
+
+</script>

@@ -1,0 +1,1274 @@
+/*跨webview需要手动指定位置*/
+.mui-bar {
+    background: #ffffff;
+    position: fixed !important;
+}
+
+.mui-content {
+    min-height: 100%;
+}
+
+.mui-plus header.mui-bar {
+    display: none !important;
+}
+
+.mui-plus .mui-bar-nav ~ .mui-content {
+    padding: 0 !important;
+}
+
+.mui-plus .plus {
+    display: inline;
+}
+
+.plus {
+    display: none;
+}
+
+#topPopover {
+    top: 16px;
+    right: 6px;
+}
+
+#topPopover .mui-popover-arrow {
+    left: auto;
+    right: 6px;
+}
+
+#topPopover p {
+    text-indent: 22px;
+}
+
+span.mui-icon {
+    font-size: 14px;
+    color: #007aff;
+    margin-left: -15px;
+    padding-right: 10px;
+}
+
+.mui-popover {
+    min-height: 300px;
+}
+
+#menu {
+    color: #d7181f;
+}
+
+.mui-icon-logo {
+    display: inline-block;
+    float: left;
+    height: 44px;
+    width: 60px;
+    background: url(/imgs/jztxlogo.png) no-repeat center center;
+    background-size: 100%;
+}
+
+.mui-icon-bgnlogo {
+    display: inline-block;
+    float: left;
+    height: 44px;
+    width: 110px;
+    background: url(/imgs/bgn-logo.png) no-repeat center center;
+    background-size: 100%;
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.letterspacing05 {
+    letter-spacing: 0.5em;
+}
+
+.letterspacing2 {
+    letter-spacing: 2em;
+}
+
+.no-padding {
+    padding: 0 !important;
+}
+
+.no-padding-left {
+    padding-left: 0 !important;
+}
+
+.no-padding-right {
+    padding-bottom: 0 !important;
+}
+
+.no-padding-top {
+    padding-top: 0 !important;
+}
+
+.no-padding-bottom {
+    padding-bottom: 0 !important;
+}
+
+.no-margin {
+    margin: 0 !important;
+}
+
+.no-margin-left {
+    margin-left: 0 !important;
+}
+
+.no-margin-right {
+    margin-right: 0 !important;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0 !important;
+}
+
+.no-margin-top {
+    margin-top: 0 !important;
+}
+
+.whiteBackground {
+    background-color: #ffffff;
+}
+
+/**文字统一样式**/
+.text-redColor {
+    color: #d7181f !important;
+}
+
+.text-blueColor {
+    color: #006db2 !important;
+}
+
+.text-defaultColor {
+    color: #999999 !important;
+}
+
+.text-OrangeColor {
+    color: #FF5E07 !important;
+}
+
+.mui-hide {
+    display: none;
+}
+
+.detail-card {
+    margin: 10px 0px;
+    box-shadow: none;
+}
+
+.detail-card > .mui-card-header {
+    font-size: 16px;
+    font-size: 1rem;
+    color: #8F8F94;
+}
+
+/**按钮**/
+/**备注：包含border字眼的按钮，不包含底色**/
+/**红色按钮**/
+.mui-btn-danger, .mui-btn-negative, .mui-btn-red {
+    border: 1px solid #d7181f;
+    background-color: #d7181f;
+}
+
+.mui-btn-outlined {
+    background-color: transparent;
+}
+
+.PagBox_RedBtn {
+    background: #d7181f;
+    color: #ffffff;
+    font-size: 0.9em;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 65px;
+    text-align: center;
+    margin-left: 5px;
+    font-size: 0.7em;
+}
+
+.PagBox_Border_RedBtn {
+    color: #d7181f;
+    font-size: 0.7em;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 65px;
+    text-align: center;
+    margin-left: 5px;
+    font-size: 0.75em;
+    border: 1px solid #d7181f;
+}
+
+/**灰色按钮**/
+.PagBox_Border_DefaultBtn {
+    color: #666666;
+    font-size: 0.7em;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 65px;
+    text-align: center;
+    margin-left: 5px;
+    border: 1px solid #999999;
+}
+
+/**蓝色按钮**/
+.PagBox_BlueBtn {
+    background: #0F5EE1;
+    color: #ffffff;
+    font-size: 0.9em;
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    min-width: 65px;
+    text-align: center;
+    margin-left: 5px;
+    font-size: 0.7em;
+}
+
+/**图标摆放位置**/
+.icon_historyOrder {
+    background: url(/imgs/icon-history.png) no-repeat center center;
+    width: 29px;
+    height: 32px;
+    display: inline-block;
+    background-size: 100%;
+    vertical-align: middle;
+}
+
+.icon_right_jian {
+    display: inline-block;
+    background: url(/imgs/icon-right-jian.png) no-repeat center center;
+    width: 18px;
+    height: 30px;
+}
+
+.icon_disptach {
+    background: url(/imgs/icon-dispatch.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_eval {
+    background: url(/imgs/icon-eval.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_exp {
+    background: url(/imgs/icon-exp.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_map {
+    background: url(/imgs/icon-map.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_tuijian {
+    background: url(/imgs/icon-tuijian.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+}
+
+.icon_idcard {
+    background: url(/imgs/icon-yellow-idcard.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.icon_user {
+    background: url(/imgs/icon-yellow-user.png) no-repeat center center;
+    width: 16px;
+    height: 25px;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.icon_building {
+    background: url(/imgs/icon-yellow-buliding.png) no-repeat center center;
+    width: 20px;
+    height: 25px;
+    display: inline-block;
+    background-size: 100%;
+}
+
+.icon_seek_del {
+    background: url(/imgs/icon-seek-del.png) no-repeat center center;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+}
+
+.HistoryOrder {
+    padding: 10px 10px;
+    font-family: '微软雅黑';
+    font-size: 0.9em;
+    color: #333333;
+    height: 44px;
+}
+
+.HistoryOrder .icon_historyOrder {
+    width: 18px;
+    height: 23px;
+    margin-top: -2px;
+    margin-right: 3px;
+}
+
+.HistoryOrder .icon_right_jian {
+    height: 24px;
+    background-size: 8px;
+}
+
+.HistoryOrder a {
+    color: #333333;
+    display: block;
+}
+
+.HistoryOrder {
+    background-color: #ffffff;
+}
+
+.SelectBox_NoBtn {
+    background: #ffffff;
+    padding: 10px 10px;
+    border-bottom: 1px solid #dddddd;
+    position: relative;
+}
+
+.SelectBox_NoBtn input {
+    margin: 0;
+    padding-right: 35px;
+    font-family: '微软雅黑';
+    font-size: 0.7em;
+    border-radius: 8px;
+}
+
+.SelectBox_NoBtn input:focus {
+    border: 1px solid #d7181f;
+}
+
+.SelectBox_NoBtn .SelectBox_ImgBtn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: url(/imgs/icon-selectImgBtn.png) no-repeat center center;
+    width: 20px;
+    height: 20px;
+    background-size: 100%;
+}
+
+.SelectType_Table {
+    float: left;
+    width: 100%;
+    padding: 0 10px;
+    background: #ffffff;
+    border-bottom: 1px solid #dddddd;
+}
+
+.SelectType_Table li {
+    float: left;
+    width: 50%;
+    text-align: center;
+}
+
+.SelectType_Table li a {
+    display: inline-block;
+    padding: 5px 5px;
+    font-family: '微软雅黑';
+    font-size: 0.9em;
+    color: #666666;
+    border-bottom: 1px solid #ffffff;
+}
+
+.SelectType_Table li.active a {
+    color: #d7181f;
+    border-bottom: 1px solid #d7181f;
+}
+
+.PagBox {
+    background: #ffffff;
+    padding: 0 10px;
+    font-family: '微软雅黑';
+    margin-top: 5px;
+}
+
+.PagBox p {
+    margin: 0;
+    color: #999999;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.85em;
+}
+
+.PagBox .PagBox_Top {
+    border-bottom: 1px solid #dddddd;
+    padding: 5px 0;
+}
+
+.PagBox .PagBox_TopTips {
+    margin-left: 10px;
+    font-size: 0.9em;
+}
+
+.PagBox .PagBox_TopBody {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #333333;
+    font-size: 0.9em;
+}
+
+.PagBox .PagBox_Body {
+    padding: 3px 0 5px 0;
+}
+
+.PagBox .PagBox_Name {
+    color: #333333;
+    font-size: 0.9em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.PagBox .PagBox_Float {
+    border: 1px solid #dddddd;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.PagBox .PagBox_OtherBody {
+    overflow: hidden;
+}
+
+.PagBox_Bottom {
+    padding: 5px 0;
+    border-top: 1px solid #dddddd;
+}
+
+.PagBox_Bottom_Body {
+    color: #666666;
+    height: 30px;
+    line-height: 30px;
+    font-size: 0.85em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.PagBox_Bottom .PagBox_Bottom_Body .mui-icon-arrowright {
+    line-height: 30px;
+    padding-right: 0;
+    padding-left: 15px;
+    font-size: 18px;
+    color: #666;
+}
+
+.red-bradge {
+    width: 6px;
+    height: 6px;
+    display: block;
+    background-color: #D7181F;
+    border-radius: 50%;
+}
+
+.bradge-pos {
+    position: absolute;
+    top: 1px;
+    right: -3px;
+}
+
+/**关注我们**/
+.FollowBox {
+    background: url(/imgs/bg-follow.png) no-repeat center center;
+    padding: 20px;
+    background-size: 100%;
+    min-height: 100%;
+}
+
+.FollowBox_Tips {
+    background: url(/imgs/bg-follow-Tips.png) no-repeat center center;
+    background-size: 100%;
+    padding: 50px 15px 75px 15px;
+    font-family: '微软雅黑';
+}
+
+.FollowBox_Tips p {
+    margin-bottom: 5px;
+    color: #333333;
+    font-size: 0.85em;
+}
+
+.FollowBox_Ewm {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.FollowBox_Ewm .FollowBox_Ewm_Title {
+    font-size: 0.85em;
+    font-family: '微软雅黑';
+    text-align: center;
+    color: #333333;
+}
+
+.FollowBox_Ewm .FollowBox_Ewm_Title img {
+    vertical-align: middle;
+    margin-right: 5px;
+    width: 18px;
+}
+
+.FollowBox_Ewm .FollowBox_Ewm_Img {
+    margin-top: 10px;
+    width: 45%;
+    border: 1px solid #dddddd;
+    padding: 5px;
+}
+
+.FollowBox_Mode {
+    background: url(/imgs/bg-follow-Mode.png) no-repeat center center;
+    background-size: 100%;
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+    color: #ffffff;
+    padding: 45px 0 9px 0;
+}
+
+.FollowBox_Mode ul {
+    margin-top: -15px;
+}
+
+.FollowBox_Mode li {
+    padding-left: 70px;
+    line-height: 1.5;
+    padding-bottom: 10px;
+}
+
+.FollowBox_Mode li:first-child {
+    padding-bottom: 15px;
+}
+
+/**订单详情**/
+.ShareDetail_Nurse {
+    background: #ffffff;
+    margin-top: 5px;
+    color: #333333;
+}
+
+.ShareDetail_Nurse .ShareDetail_Nurse_Title {
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+.ShareDetail_Nurse .ShareDetail_Nurse_Title b {
+    background-size: 100%;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-top: -2px;
+}
+
+.ShareDetail_Nurse .ShareDetail_Nurse_Table {
+    font-size: 0.85em;
+    background: #F5F5F5;
+}
+
+.ShareDetail_Nurse_Table li {
+    padding: 10px 10px;
+    border-bottom: 1px solid #dddddd;
+    overflow: hidden;
+    position: relative;
+}
+
+.ShareDetail_Nurse_Table img {
+    width: 70px;
+    height: 85.88px;
+    margin-right: 10px;
+    background: #ffffff;
+}
+
+.ShareDetail_Nurse_Table .ShareDetail_Nurse_Body {
+    overflow: hidden;
+}
+
+.ShareDetail_Nurse_Table .ShareDetail_Nurse_Name {
+    margin-bottom: 10px;
+}
+
+.ShareDetail_Nurse_Table .ShareDetail_Nurse_Name span {
+    color: #999999;
+    margin-left: 8px;
+    font-size: 0.75em;
+}
+
+.ShareDetail_Nurse_Table .ShareDetail_Nurse_P {
+    margin-bottom: 3px;
+    font-size: 0.85em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.ShareDetail_Nurse_Table .ShareDetail_Nurse_Other {
+    float: left;
+    width: 50%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.8em;
+    margin-top: 5px;
+    color: #333333;
+}
+
+.ShareDetail_Nurse_Other b {
+    width: 14px;
+    height: 14px;
+    background-size: 100%;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 5px;
+}
+
+.ShareDetail_LiuYan {
+    background: #ffffff;
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+.ShareDetail_LiuYan .ShareDetail_LiuYanBody {
+    overflow: hidden;
+}
+
+.ShareDetail_Nurse_Table .PositionBlock {
+    position: absolute;
+    background: #ff0000;
+    top: 3px;
+    right: -25px;
+    color: #ffffff;
+    padding: 5px 30px;
+    font-size: 0.85em;
+    -webkit-transform: rotate(45deg);
+}
+
+.ShareDetail_Nurse_Table .PositionFailBlock {
+    position: absolute;
+    background: #999999;
+    top: 3px;
+    right: -25px;
+    color: #ffffff;
+    padding: 5px 30px;
+    font-size: 0.85em;
+    -webkit-transform: rotate(45deg);
+}
+
+.ShareDetailBox {
+    font-family: '微软雅黑';
+}
+
+.ShareDetail_No {
+    color: #333333;
+    font-size: 0.85em;
+    background: #ffffff;
+    padding: 10px 10px;
+}
+
+.ShareDetail_No span {
+    margin-left: 10px;
+}
+
+.ShareDetail_No .ShareDetail_NoBody {
+    overflow: hidden;
+}
+
+.PagBox_Body .PagBox_DetailLi {
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+    color: #333333;
+}
+
+.PagBox_Body .PagBox_DetailLi li {
+    line-height: 1.8;
+}
+
+.PagBox_Body .PagBox_DetailLi label {
+    float: left;
+    color: #666666;
+}
+
+.PagBox_Body .PagBox_DetailLi .PagBox_Detail_Body {
+    overflow: hidden;
+}
+
+.ShareDetailBox_TuiJian {
+    font-family: '微软雅黑';
+    padding: 0 10px;
+    font-size: 0.85em;
+    background: #ffffff;
+    margin-top: 5px;
+    border-top: 1px solid #0D5EE3;
+}
+
+.ShareDetailBox_TuiJian .ShareDetailBox_TuiJian_Title {
+    padding: 5px 0;
+    color: #333333;
+}
+
+.ShareDetailBox_TuiJian .ShareDetailBox_TuiJian_Title b {
+    background-size: 100%;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-top: -2px;
+}
+
+.ShareDetailBox_TuiJian textarea {
+    margin-bottom: 5px;
+    font-size: 0.85em;
+    font-family: '微软雅黑';
+    padding: 5px 10px;
+}
+
+.ShareDetailBox_TuiJian_Nurse {
+    margin: 0;
+    border: none;
+    margin-top: 5px;
+    font-family: '微软雅黑';
+    color: #333333;
+}
+
+.ShareDetailBox_TuiJian_Nurse label {
+    font-family: '微软雅黑';
+    font-size: 0.9em;
+}
+
+.ShareDetailBox_TuiJian_Nurse .mui-input-row {
+    position: relative;
+}
+
+.ShareDetailBox_TuiJian_Nurse .mui-input-group .mui-input-row:after {
+    left: 10px !important;
+}
+
+.ShareDetailBox_TuiJian_Nurse .mui-radio.mui-left input[type=radio] {
+    left: 10px !important;
+}
+
+.ShareDetailBox_TuiJian_Nurse .mui-radio.mui-left label {
+    padding-left: 48px;
+}
+
+.ShareSelect_NurseBtn {
+    position: absolute !important;
+    top: 8px;
+    right: 10px;
+    float: initial !important;
+    color: #d7181f !important;
+    font-size: 0.85em !important;
+    padding: 0 !important;
+    height: 25px !important;
+    line-height: 25px !important;
+    width: 75px !important;
+    border: 1px solid #d7181f !important;
+}
+
+.next-page {
+    margin-top: 10px;
+}
+
+.NoData {
+    display: none;
+}
+
+.mui-table h4, .mui-table h5, .mui-table .mui-h5, .mui-table .mui-h6, .mui-table p {
+    margin-top: 0;
+}
+
+.mui-table h4 {
+    line-height: 21px;
+    font-weight: 500;
+}
+
+/**底部栏按钮**/
+.SeekFootBotoom {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #ffffff;
+    z-index: 99;
+    border: 1px solid #dddddd;
+    padding: 5px 10px;
+    width: 100%;
+}
+
+.SeekFootBtn {
+    margin-left: 2%;
+    width: 48%;
+    border-radius: 3px;
+    font-size: 0.9em !important;
+}
+
+/**每个按钮50%左右**/
+.SeekFootBtn:first-child {
+    margin-left: 0;
+}
+
+.SeekFootBtn.SeekFootOneBtn {
+    width: 100%;
+}
+
+/**一个按钮100%**/
+.NurseSeekBox {
+    margin-top: 5px;
+    border-top: 1px solid #0F5EE1;
+    background: #ffffff;
+    padding: 0 10px;
+    font-family: '微软雅黑';
+}
+
+.NurseSeekBox .NurseSeekBox_Title {
+    font-size: 0.9em;
+    color: #333333;
+    padding: 5px 0;
+    border-bottom: 1px solid #dddddd;
+}
+
+.NurseSeekBox .NurseSeekBox_Title b {
+    background-size: 100%;
+    margin-right: 3px;
+    vertical-align: middle;
+    width: 18px;
+    height: 18px;
+    margin-top: -2px;
+}
+
+.NurseSeekBox_Table {
+    font-size: 0.85em;
+    padding-bottom: 10px;
+}
+
+.NurseSeekBox_Table li {
+    border: 1px solid #dddddd;
+    margin-top: 10px;
+    padding: 0 10px;
+}
+
+.NurseSeekBox_Table li:hover {
+    border: 1px solid #d7181f;
+}
+
+.NurseSeekBox_Table li label {
+    font-weight: initial;
+    color: #666666;
+    float: left;
+    margin-right: 10px;
+    margin-top: 8px;
+}
+
+.NurseSeekBox_Table li .NurseSeekBox_Body {
+    overflow: hidden;
+}
+
+.NurseSeekBox_Table .NurseSeekBox_Body input {
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+    border: none;
+    margin: 0;
+    padding: 10px 0;
+}
+
+.NurseSeekBox_Table .NurseSeekBox_Body textarea {
+    margin: 0;
+    border: 0;
+    padding: 10px 0;
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+}
+
+.SeekVcodeBox {
+    background: #ffffff;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.SeekVcodeBox .SeekVcodeBox_Body {
+    overflow: hidden;
+}
+
+.SeekVcodeBox .SeekVcodeBox_Body input {
+    font-family: '微软雅黑';
+    font-size: 0.8em;
+    border-radius: 0;
+    margin: 0;
+    padding: 0 10px;
+}
+
+.SeekVcodeBox .SeekVcodeBtn {
+    height: 40px;
+    line-height: 40px;
+}
+
+/*.CompanySeekSelect_Table{padding:0 10px;}
+.CompanySeekSelect_Table li{padding:10px 0;border-top:1px solid #dddddd;color:#333333;font-family:'微软雅黑';font-size:0.9em;}
+.CompanySeekSelect_Table li:first-child{border:none;}
+.CompanySeekSelect_Table .icon_seek_del{background-size:100%;width:20px;height:20px;}*/
+.CompanySeekSelect_Table .mui-table-cell {
+    color: #333333;
+    padding-top: 0;
+    vertical-align: middle;
+}
+
+.CompanySeekSelect_Table .mui-table-cell img {
+    vertical-align: middle;
+}
+
+.CompanySeekSelect_Table h4 {
+    font-size: 0.9em;
+    color: #333333;
+    margin-bottom: 0;
+}
+
+.CompanySeekSelect_Table h5 {
+    display: none;
+}
+
+.CompanySeekSelect_Table .icon-close {
+    width: 20px;
+    height: 20px;
+}
+
+.CompanySeekSelect_Table .mui-table-view-cell:after {
+    left: 10px;
+}
+
+.SeekAgreementBox {
+    margin-top: 5px;
+    background: #ffffff;
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+}
+
+.SeekAgreementBox .mui-checkbox.mui-left input[type=checkbox] {
+    left: 10px;
+}
+
+.SeekAgreementBox .mui-checkbox.mui-left label {
+    font-family: '微软雅黑';
+    padding-left: 48px;
+    color: #333333;
+}
+
+#SelectAreaBtn {
+    height: 40px;
+    line-height: 40px;
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+    color: #333333;
+    background: url(/imgs/icon-right-jian.png) no-repeat right center;
+    background-size: 8px;
+}
+
+.SeekCooperation {
+    padding: 5px 10px 0 10px;
+    font-size: 0.85em;
+    font-family: '微软雅黑';
+    color: #333333;
+}
+
+.SeekCooperation label {
+    margin: 0;
+    color: #007aff;
+}
+
+.SeekCooperation label span {
+    color: #efeff4;
+}
+
+.SeekCooperation .SeekCooperation_Body {
+    color: #333333;
+    overflow: hidden;
+    background: url(/imgs/icon-right-jian.png) no-repeat right center;
+    background-size: 8px;
+    padding-right: 15px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.CompanySeekList_Nurse {
+    background: #ffffff;
+    margin-top: 5px;
+    padding: 5px 10px 0 10px;
+    font-family: '微软雅黑';
+}
+
+.CompanySeekList_Nurse_Company {
+    color: #333333;
+    font-size: 0.85em;
+}
+
+.CompanySeekList_Nurse_Director {
+    color: #999999;
+    font-size: 0.75em;
+}
+
+.CompanySeekList_Nurse_Table {
+    margin-top: 5px;
+}
+
+.CompanySeekList_Nurse_Table li {
+    padding: 10px 0;
+}
+
+.CompanySeekList_Nurse_Table .mui-table-view-cell:after {
+    left: 0px;
+}
+
+.CompanySeekList_Nurse_Table .mui-checkbox.mui-left input[type=checkbox] {
+    left: 0;
+}
+
+.CompanySeekList_Nurse_Box {
+    overflow: hidden;
+    padding-left: 35px;
+    font-family: '微软雅黑';
+}
+
+.CompanySeekList_Nurse_Box img {
+    width: 54px;
+    height: 72px;
+    margin-right: 10px;
+}
+
+.CompanySeekList_Nurse_Body {
+    overflow: hidden;
+    position: relative;
+}
+
+.CompanySeekList_Nurse_Body .positionShareA {
+    font-size: 0.7em;
+}
+
+.CompanySeekList_Nurse_Body .SeekWorkArea {
+    font-size: 0.85em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #999999;
+}
+
+.CompanySeekList_Nurse_Box .CompanySeekList_Nurse_Name {
+    font-size: 0.85em;
+    color: #333333;
+}
+
+.CompanySeekList_Nurse_Name .positionShareA {
+    background: #f4f4f4;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.CompanySeekList_Nurse_Note {
+    font-size: 0.8em;
+    color: #999999;
+    padding: 5px 0;
+}
+
+.Nurse_Seek_Box_List {
+    background: #ffffff;
+    margin-top: 5px;
+    padding: 0 10px;
+}
+
+.Nurse_Seek_Box_Title {
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+    color: #333333;
+    padding: 5px 0;
+    background: url(/imgs/icon-seek-mine.png) no-repeat left center;
+    background-size: 16px;
+    padding-left: 25px;
+}
+
+.Nurse_Seek_Box_List .Nurse_SeekNote {
+    font-size: 0.75em;
+    color: #999999;
+    padding-top: 3px;
+}
+
+.CompanySeek_CheckBox {
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    bottom: 0;
+    left: 0;
+    border-top: 1px solid #dddddd;
+}
+
+.CompanySeek_CheckBox .CheckSeekBtn {
+    display: inline-block;
+    height: 44px;
+    line-height: 44px;
+    padding: 0 20px;
+    background: #d7181f;
+    color: #ffffff;
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+}
+
+.CompanySeek_CheckBox .CheckSeek_Body {
+    height: 44px;
+    line-height: 44px;
+    padding-left: 10px;
+    font-family: '微软雅黑';
+    font-size: 0.85em;
+    color: #333333;
+}
+
+.NoData {
+    font-size: 0.85em;
+    font-family: '微软雅黑';
+    color: #999999;
+    padding: 10px 0;
+}
+
+input[type=search] {
+    font-size: 0.8em;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 40px;
+    text-align: left;
+    border: 1px solid rgba(0,0,0,.2);
+    border-radius: 6px;
+    background-color: #fff;
+}
+
+.SeekProtocol {
+    background: #ffffff;
+    font-family: '微软雅黑';
+    color: #333333;
+    padding: 0 10px;
+}
+
+.SeekProtocol p {
+    font-size: 0.85em;
+    color: #333333;
+    margin-bottom: 5px;
+}
+
+.SeekProtocol ol {
+    font-size: 0.85em;
+    margin-left: 15px;
+    margin-bottom: 5px;
+}
+
+.SeekProtocol ol li {
+    line-height: 2;
+    font-size: 0.85em;
+    margin-bottom: 5px;
+}
+
+.SeekProtocolDiv {
+    display: none;
+}
+
+.SeekProtocol_BgBox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background: #000000;
+    filter: alpha(opacity=50);
+    -moz-opacity: 0.5;
+    -khtml-opacity: 0.5;
+    opacity: 0.5;
+}
+
+.SeekProtocol_Bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    padding: 20px 20px 120px 20px;
+}
+
+.SeekProtocol_Bg .SeekProtocol {
+    height: 100%;
+    overflow: auto;
+    border-radius: 5px;
+    position: relative;
+    padding-top: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0
+}
+
+.SeekProtocol_Btn {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -20px;
+    border-radius: 100%;
+    border: 1px solid #f4f4f4;
+    font-family: '微软雅黑';
+    color: #ffffff;
+    z-index: 101;
+    text-align: center;
+}
+
+.SeekProtocol_Title {
+    font-size: 0.8em;
+    padding: 10px;
+    border-bottom: 1px solid #dddddd;
+    color: #000000;
+    font-weight: bold;
+    background: #ffffff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.icon-sign-empty {
+    background: url(/imgs/icon-emptySign-checked.png) no-repeat center center;
+    background-size: 80%;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.icon-sign-checked {
+    background: url(/imgs/icon-sign-checked.png) no-repeat center center;
+    background-size: 80%;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    vertical-align: sub;
+}
+
+.three-sign {
+    color: #999;
+    font-size: 14px;
+}
+
+.checked {
+    color: #333;
+}
+
+.p-d-r-10 {
+    padding-right: 10px;
+}

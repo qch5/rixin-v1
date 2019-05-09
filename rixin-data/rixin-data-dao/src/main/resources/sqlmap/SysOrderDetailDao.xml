@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysOrderDetailDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysOrderDetail">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="orderNo" jdbcType="VARCHAR" property="orderNo"/>
+        <result column="itemId" jdbcType="VARCHAR" property="itemId"/>
+        <result column="itemName" jdbcType="VARCHAR" property="itemName"/>
+        <result column="itemImage" jdbcType="VARCHAR" property="itemImage"/>
+        <result column="number" jdbcType="INTEGER" property="number"/>
+        <result column="price" jdbcType="DOUBLE" property="price"/>
+        <result column="discount" jdbcType="DOUBLE" property="discount"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, orderNo, itemId, itemName, itemImage, `number`, price, discount, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_order_detail
+        where id = #{id, jdbcType=BIGINT}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_order_detail
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.orderNo != null">
+                and orderNo = #{info.orderNo, jdbcType=INTEGER}
+            </if>
+            <if test="info.itemId != null">
+                and itemId = #{info.itemId, jdbcType=INTEGER}
+            </if>
+            <if test="info.itemName != null">
+                and itemName = like CONCAT('%', #{info.itemName}, '%')
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+        delete from sys_order_detail where id = #{id, jdbcType=BIGINT}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysOrderDetail" useGeneratedKeys="true">
+        insert into sys_order_detail (orderNo, itemId, itemName, itemImage, `number`, price, discount, createTime)
+        values (
+            #{orderNo, jdbcType=VARCHAR},
+            #{itemId, jdbcType=VARCHAR},
+            #{itemName, jdbcType=VARCHAR},
+            #{itemImage, jdbcType=VARCHAR},
+            #{number, jdbcType=INTEGER},
+            #{price, jdbcType=DOUBLE},
+            #{discount, jdbcType=DOUBLE},
+            #{createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysOrderDetail" useGeneratedKeys="true">
+        insert into sys_order_detail
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderNo != null">
+                orderNo,
+            </if>
+            <if test="itemId != null">
+                itemId,
+            </if>
+            <if test="itemName != null">
+                itemName,
+            </if>
+            <if test="itemImage != null">
+                itemImage,
+            </if>
+            <if test="number != null">
+                `number`,
+            </if>
+            <if test="price != null">
+                price,
+            </if>
+            <if test="discount != null">
+                discount,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderNo != null">
+                #{orderNo, jdbcType=VARCHAR},
+            </if>
+            <if test="itemId != null">
+                #{itemId, jdbcType=VARCHAR},
+            </if>
+            <if test="itemName != null">
+                #{itemName, jdbcType=VARCHAR},
+            </if>
+            <if test="itemImage != null">
+                #{itemImage, jdbcType=VARCHAR},
+            </if>
+            <if test="number != null">
+                #{number, jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                #{price, jdbcType=DOUBLE},
+            </if>
+            <if test="discount != null">
+                #{discount, jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysOrderDetail">
+        update sys_order_detail
+        <set>
+            <if test="orderNo != null">
+                orderNo = #{orderNo, jdbcType=VARCHAR},
+            </if>
+            <if test="itemId != null">
+                itemId = #{itemId, jdbcType=VARCHAR},
+            </if>
+            <if test="itemName != null">
+                itemName = #{itemName, jdbcType=VARCHAR},
+            </if>
+            <if test="itemImage != null">
+                itemImage = #{itemImage, jdbcType=VARCHAR},
+            </if>
+            <if test="number != null">
+                `number` = #{number, jdbcType=INTEGER},
+            </if>
+            <if test="price != null">
+                price = #{price, jdbcType=DOUBLE},
+            </if>
+            <if test="discount != null">
+                discount = #{discount, jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=BIGINT}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysOrderDetail">
+        update sys_order_detail
+        set orderNo = #{orderNo, jdbcType=VARCHAR},
+            itemId = #{itemId, jdbcType=VARCHAR},
+            itemName = #{itemName, jdbcType=VARCHAR},
+            itemImage = #{itemImage, jdbcType=VARCHAR},
+            `number` = #{number, jdbcType=INTEGER},
+            price = #{price, jdbcType=DOUBLE},
+            discount = #{discount, jdbcType=DOUBLE},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=BIGINT}
+    </update>
+</mapper>

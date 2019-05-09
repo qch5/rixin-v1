@@ -1,0 +1,361 @@
+
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv">
+    <title>选择地址</title>
+    <link href="/css/edaixi/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/order.css" rel="stylesheet" type="text/css" />
+    <script src="/js/jquery/jquery-1.8.3.min.js"></script>
+##    <script>window.jQuery || document.write('<script src="/framework/style/js/jquery-1.11.1.min.js">\x3C/script>')</script>
+##    <script src="https://jic.talkingdata.com/app/h5/v1?appid=642B7ECDFB9C4E3B7A3F3EF9B9014BF2&vn=1.0&vc=4.0.1"></script>
+</head>
+<body style="padding-bottom:60px;background:#f0f0f0">
+<div id = "all_address">
+    <div data-role="content">
+        <!-- 可服务地址 start -->
+        <table class="order-place-table swipe-delete"  cellpadding="0" cellspacing="0">
+            #foreach($info in $list)
+                <tr id="address_list_$!info.id" data-addr-id="$!info.id" data-can-wash="1">
+                    <td width="16%" class="white-bg sel-addr-btn">
+                        <span class="check-label"><em class="arrow-gou"></em></span>
+                    </td>
+                    <td style="padding:0 0px;" class="white-bg">
+                        <input type="hidden" id="fullName" name="fullName" value="$!info.fullName">
+                        <input type="hidden" id="mobile" name="mobile" value="$!info.mobile">
+                        <input type="hidden" id="city" name="city" value="$!info.city">
+                        <input type="hidden" id="district" name="district" value="$!info.district">
+                        <input type="hidden" id="community" name="community" value="$!info.community">
+                        <input type="hidden" id="detail" name="detail" value="$!info.detail">
+
+                        <div class="change-address sel-addr-btn">
+                            <span ontouchstart="" class="bigf address_text">$!info.fullName</span>
+                            <span>$!info.mobile</span>
+                            <p>$!info.city  $!info.district  $!info.community $!info.detail</p>
+                        </div>
+                        <div class="borderRight"></div>
+                        <a href="/sysUserAddress/update?id=$!info.id" class="edit_arrow edit-btn">
+                            <img src="/imgs/edaixi/edit_add.png" />
+                        </a>
+                        <div class="borderD"></div>
+                    </td>
+                </tr>
+            #end
+        </table>
+
+        <!-- 全局is_express 普通单 快递单 标记 -->
+        <input type="hidden" id="is_express" value="0">
+
+        <div class="borderD"></div>
+        <div style="height:10px;background:#f0f0f0"></div>
+        <!-- 可服务地址 end -->
+    </div>
+</div>
+
+<!-- 添加按钮 start-->
+<div class="fixed-bottom white-bg">
+    <a href="/sysUserAddress/create">
+        <div class="borderD2"></div>
+        <div class="choose-time ">
+            <img src="/imgs/edaixi/icon_add.png" >
+            <span class="am-button"> 添加地址</span>
+        </div>
+    </a>
+</div>
+<!-- 添加地址按钮 end-->
+
+<!-- 是否切换城市 start -->
+<div id="confirm_win" style="display:none" class="cod">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm">
+        <div class="wx_confirm_inner" style="padding:6% 0 0 0;width:100%">
+            <div class="wx_confirm_hd bigfont p10">
+                不同的城市价目可能不同，您是否需要切换到所选城市再下单？
+            </div>
+            <div class="wx_confirm_bd">
+                <div class="borderD"></div>
+                <div class="wx_confirm_btns" style="position:relative">
+                    <input type="hidden" id="city_id" value="" />
+                    <input type="hidden" id="city_name" value="" />
+                    <input type="hidden" id="area_id" value="" />
+                    <input type="hidden" id="area_name" value="" />
+                    <button type="cancel" onclick="closeWin();" id="cancel_btn">取消</button>
+                    <button type="submit" onclick="changeCity();" id="confirm_btn">确定</button>
+                    <div class="borderL"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 是否切换城市 end -->
+
+<!-- 是否快递取件 start -->
+<div id="confirm_express" style="display:none" class="cod">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm">
+        <div class="wx_confirm_inner" style="padding:6% 0 0 0;width:100%">
+            <div class="wx_confirm_hd bigfont p10">
+                根据您选择的地址，订单将分配顺丰速运为您进行取件服务，请点击【继续】跳转到下单页重新预约哦~
+            </div>
+            <div class="wx_confirm_bd">
+                <div class="borderD"></div>
+                <div class="wx_confirm_btns" style="position:relative">
+                    <input type="hidden" id="city_id" value="" />
+                    <input type="hidden" id="city_name" value="" />
+                    <button type="cancel" id="cancel_express">取消</button>
+                    <button type="submit" id="ok_express">继续</button>
+                    <div class="borderL"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 是否快递取件 end -->
+
+<!-- 操作提示 start -->
+<div id="msg_win" style="display:none" class="cod" style="height:60px">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner" id="wx_confirm_float">
+            <div class="wx_confirm_hd">
+                <div class="wx_confirm_tit" id = "msg_tip" style="font-size:1em"><!-- 提示信息 --></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 操作提示 end -->
+
+<script type="text/javascript">
+    var sel_address_id = "5763447",
+            switch_city_tip = "0",
+            un_service = "0";
+    linkFrom = "comm_order_place";
+
+    // 选中常用地址样式
+    if(!!sel_address_id && !un_service){
+        $("#address_list_" + sel_address_id).addClass('select_tr');
+    }
+    // 弹出切换城市提示
+    if('1' == switch_city_tip){
+        $('.unserv_item:first').click();
+    }
+    // 弹出不支持品类提示
+    if('1' == un_service){
+        // showTip('该区域尚未开通您选择的业务，请更换地址');
+        showTip('地址超出所选品类的取送服务范围，无法添加地址，请更换“正确行政区域”后再次尝试');
+    }
+
+    // 选中地址,返回下单页
+    $('.sel-addr-btn').on('click', function selectAddress() {
+        var $this = $(this).parents('tr');
+        var address_id = $this.data('addr-id');
+        var can_wash = $this.data('can-wash');
+        if(!address_id){
+            showTip('出错了,请稍后重试');
+            return;
+        }
+        if(1 != can_wash){
+            $(".select_tr").removeClass('select_tr');
+            showTip('地址超出所选品类的取送服务范围，无法添加地址，请更换“正确行政区域”后再次尝试');
+            return;
+        }
+
+        $(".select_tr").removeClass('select_tr');
+        $("#address_list_" + address_id).addClass('select_tr');
+
+        var storage = window.sessionStorage;
+        var productInfo = JSON.parse(storage.getItem("productInfo"));
+        var addressInfo = {
+            fullName: $("#fullName").val(),
+            mobile: $("#mobile").val(),
+            city: $("#city").val(),
+            district: $("#district").val(),
+            community: $("#community").val(),
+            detail: $("#detail").val()
+        };
+        storage.setItem('addressInfo', JSON.stringify(addressInfo));
+
+        window.location.href = "/sysOrderInfo/create";
+
+        /*if(homeCityId == now_cityId){
+            $.ajax({
+                type: "POST",
+                url: check_address_url,
+                data: {
+                    city_id: now_cityId,
+                    area_id: now_areaId,
+                    address_id: now_addressId
+                },
+                dataType: "json",
+                success: function(data) {
+                    console.log(data);
+                    if(data.ret){
+                        if (linkFrom == 'comm_order_place') {
+                            if(data.message.data.is_express == isExpress){
+                                sessionStorage.removeItem('addressInfo');
+                                window.location.href = place_order_url +"&is_express="+ isExpress;
+
+                            }else{
+                                // 快递单地址 切换成 小e单地址 返回下单页
+                                if(isExpress == 1 && data.message.data.is_express == 0){
+                                    sessionStorage.removeItem('addressInfo');
+                                    window.location.href = place_order_url +"&is_express="+ data.message.data.is_express;
+                                }
+
+                                // 小e单地址 切换成 快递单地址 弹框提示 点击继续后 返回价目页
+                                if(isExpress == 0 && data.message.data.is_express == 1){
+                                    if(productInfo){
+                                        sessionStorage.removeItem('addressInfo');
+                                        window.location.href = place_order_url+"&is_express="+ data.message.data.is_express;
+                                    }else{
+                                        $('#confirm_express').find('.wx_confirm_hd').html(data.message.data.express_description);
+                                        $('#confirm_express').show();
+                                    }
+                                }
+
+
+                                $('#cancel_express').click(function(){
+                                    $('#confirm_express').hide();
+                                    $("#save_address").prop("disabled", false).css({
+                                        "opacity": "1"
+                                    });
+                                })
+                                $('#ok_express').click(function(){
+                                    $('#confirm_express').hide();
+                                    // session存地址信息中追加is_express值
+                                    addressInfo.is_express = data.message.data.is_express;
+                                    storage.setItem("addressInfo", JSON.stringify(addressInfo));
+
+                                    //console.log(JSON.parse(storage.getItem("addressInfo")));
+
+                                    window.location.href = washing_prices_url +"&is_express="+ data.message.data.is_express;
+
+
+                                })
+                            }
+                        }else if(linkFrom == 'order_place'){
+                            window.location.href = place_order_url;
+                        }else{
+                            showTip('网络错误')
+                        }
+                    }else{
+                        if(data.error == null){
+                            showTip('网络错误')
+                        }else{
+                            showTip(data.error);
+                        }
+                    }
+
+                },
+                error: function(xhr, type) {
+                    console.log(data);
+                }
+            })
+        }else{
+            openWin(now_cityId, now_cityName, now_areaId, now_areaName);
+        }*/
+
+
+        // if(isExpress!=1){
+        // if(address_id){
+        //     place_order_url += '&address_id=' + address_id;
+        // }
+        // if(address_info){
+        //     place_order_url += '&select_address=' + encodeURIComponent(address_info);
+        // }
+        // if(place_order_url){
+        //     window.location.href = place_order_url;
+        // }
+        // }else{
+
+        // if(now_isExpress == isExpress){
+        //     if(address_id){
+        //         place_order_url += '&address_id=' + address_id;
+        //     }
+        //     if(address_info){
+        //         place_order_url += '&select_address=' + encodeURIComponent(address_info);
+        //     }
+        //     if(place_order_url){
+        //        window.location.href = place_order_url;
+        //     }
+        // }else{
+        //     // 该参数表示要提示用户要选择的地址【区域】和 当前首页的区域 服务方式不一样
+        //     var isTixing = 1;
+        //     openWin(now_cityId, now_cityName, now_areaId, now_areaName, isTixing);
+        // }
+        // }
+
+        // if(address_id){
+        // 	place_order_url += '&address_id=' + address_id;
+        // }
+        // if(address_info){
+        //     place_order_url += '&select_address=' + encodeURIComponent(address_info);
+        // }
+        // if(place_order_url){
+        //     window.location.href = place_order_url;
+        // }
+    });
+
+    // 打开“切换地址”确认框
+    function openWin(cityId, cityName, areaId, areaName){
+        if(cityId && cityName){
+            $("#city_id").val(cityId);
+            $("#city_name").val(cityName);
+            $("#area_id").val(areaId);
+            $("#area_name").val(areaName);
+            $('#chg_city').html(cityName);
+            $("#confirm_win").show();
+            $('.wx_confirm_hd').text('不同的城市价目可能不同，您是否需要切换到所选城市再下单？');
+            // if(isTixing == 1){
+            //     $('.wx_confirm_hd').text('您选择的地址与定位区域不一致，是否切换到所选区域下单？');
+            // }else{
+            //     $('.wx_confirm_hd').text('不同的城市价目可能不同，您是否需要切换到所选城市再下单？');
+            // }
+        }
+        return false;
+    }
+
+    // 切换首页城市
+    function changeCity(){
+        $("#confirm_win").hide();
+        var cityId = $("#city_id").val();
+        var cityName = $("#city_name").val();
+        var areaId = $("#area_id").val();
+        var areaName = $("#area_name").val();
+        window.sessionStorage.clear();
+        // window.location = "/mobile.php?m=wap&act=homepage&do=index&city_id=1&mark=66d5e0da-65b8-11e5-a990-5cb901892a54&city_id=" + cityId + "&area_id=" + areaId;
+        return false;
+    }
+
+    // 关闭“切换地址”确认框
+    function closeWin(){
+        $("#city_id").val("");
+        $("#city_name").val("");
+        $('#chg_city').html("");
+        $("#confirm_win").hide();
+        return false;
+    }
+
+    // 显示提示信息
+    function showTip(msg, url){
+        $('#msg_win #msg_tip').html(msg);
+        if(url){
+            $('#msg_win').show().delay(2000).hide(function(){
+                window.location.href = url;
+            });
+        }else{
+            $('#msg_win').show().delay(2000).hide(0);
+        }
+        return;
+    }
+
+</script>
+
+</body>
+</html>

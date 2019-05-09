@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>预约服务</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+##    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.min.css" rel="stylesheet" />
+##    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.picker.min.css" rel="stylesheet" />
+
+##    <link href="http://jztx.com/Assets//Template/jztx/ShareOrder.css" rel="stylesheet" />
+##    <link href="http://jztx.com/Assets//Template/jztx/FastOrder.css" rel="stylesheet" />
+
+##    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.min.js"></script>
+##    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.picker.min.js"></script>
+
+    <link href="/assets/mui/css/mui.min.css" rel="stylesheet" />
+    <link href="/assets/mui/css/mui.picker.min.css" rel="stylesheet" />
+    <link href="/css/ShareOrder.css" rel="stylesheet" />
+    <link href="/css/FastOrder.css" rel="stylesheet" />
+    <link href="/css/weui.min.css" rel="stylesheet" />
+
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="/assets/mui/js/mui.min.js"></script>
+    <script src="/assets/mui/js/mui.picker.min.js"></script>
+    <script src="/js/city.data-3_1.js"></script>
+</head>
+<body>
+
+<div class="mui-content NewFastBox">
+    <div class="NewFast_Step1">
+        <div class="NewFast_Content">
+            <div class="NewFast_Yuan"></div>
+            <div class="NewFast_Step">
+                <p>step1</p>
+                请选择您需要的服务项目
+            </div>
+
+            <div class="NewFast_Service">
+                #*<span class="active" data-val="1">住家保姆</span>
+                <span class="" data-val="7">不住家保姆</span>
+                <span class="" data-val="13">月嫂</span>
+                <span class="" data-val="24">育婴师/早教</span>
+                <span class="" data-val="200">陪护工</span>
+                <span class="" data-val="68">高端/涉外家佣</span>
+                <span class="" data-val="120">管家</span>
+                <span class="" data-val="131">小时工</span>
+                <span class="" data-val="142">兼职家教</span>
+                <span class="" data-val="42">保洁清洗</span>
+                <span class="" data-val="56">保养/除害</span>
+                <span class="" data-val="63">居家维修</span>
+                <span class="" data-val="187">搬家/搬运</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2283">贴心服务</span>*#
+
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+                <span class="" data-val="2273">衣服干洗</span>
+            </div>
+            <input type="hidden" id="jobid" name="jobid" value="1" />
+        </div>
+        <a class="NewFast_Btn" href="javascript:;">下一步</a>
+    </div>
+</div>
+
+
+
+
+
+<!--lodding-->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+
+<div id="topPopover" class="mui-popover" style="display: none; top: 57px; left: 35px;">
+    <div class="mui-popover-arrow" style="left:248px"></div>
+    <div class="mui-scroll-wrapper" data-scroll="1">
+        <div class="mui-scroll" style="transform: translate3d(0px, 0px, 0px) translateZ(0px);">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#">Item1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#">Item2</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: none; height: 8px; transform: translate3d(0px, -8px, 0px) translateZ(0px);"></div></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var baseurl = 'http://jztx.com/';
+    var sourseurl = 'http://jztx.com/Assets/';
+</script>
+
+
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+<script src="/Assets/Scripts/verify.js"></script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/Mobile/main.js?v=1.0.0.1"></script>
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/jquery.cityselect/jquery.cityselect.js"></script>
+
+<script>
+
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    mui('.mui-scroll-wrapper').scroll();
+    mui('body').on('shown', '.mui-popover', function (e) {
+        //console.log('shown', e.detail.id);//detail为当前popover元素
+    });
+    mui('body').on('hidden', '.mui-popover', function (e) {
+        //console.log('hidden', e.detail.id);//detail为当前popover元素
+    });
+
+</script>
+
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+    $(".NewFast_Service span").click(function () {
+        $(".NewFast_Service span").removeClass("active");
+        $(this).addClass("active");
+        var jid = $(this).attr("data-val");
+        $("#jobid").val(jid);
+    });
+
+    $(".NewFast_Btn").click(function () {
+        var jobid = $("#jobid").val();
+
+        window.location.href = "/FastOrder/FlowPath?jobid=" + jobid + "&cid=0&sid=0&source=2";
+    });
+
+    wx.config({
+        debug: false,
+        appId: 'wxca9073e0d7972496',
+        timestamp: '1551734572',
+        nonceStr: 'cdfcc6fe56be448c9403be29f4691e7e',
+        signature: 'd7436cd0a2ca9fd743ab5630f9cce2a49cb80620',
+        jsApiList:
+                ['checkJsApi',
+                    'onMenuShareAppMessage',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'getLocation',
+                    'onMenuShareTimeline']
+    });
+
+    wx.ready(function () {
+        wx.checkJsApi({
+            jsApiList: [
+                'onMenuShareAppMessage',
+                'hideMenuItems',
+                'showMenuItems',
+                'getLocation',
+                'onMenuShareTimeline'
+            ],
+            success: function (res) {
+                //alert(JSON.stringify(res));
+            }
+        });
+
+        wx.hideMenuItems({
+            menuList: [
+                //'menuItem:share:timeline',
+                'menuItem:share:qq',
+                'menuItem:share:weiboApp',
+                'menuItem:favorite',
+                'menuItem:share:email',
+                //'menuItem:copyUrl',
+                'menuItem:share:QZone'
+            ]
+        });
+
+
+        wx.onMenuShareAppMessage({
+            title: '预约家政服务',
+            desc: '家政员实名认证，历史服务记录及评价公开，从业人员诚信记录可查。',
+            link: 'http://jztx.com/Mobile/FastOrder/Index?cid=0&sid=0&source=2',
+            imgUrl: 'http://jztx.com/Assets//Template/jztx/Img/wx-share-Logo.jpg',
+            success: function () {
+
+            },
+            cancel: function () {
+
+            }
+        });
+
+        wx.onMenuShareTimeline({
+            title: '预约家政服务 家政员实名认证，历史服务记录及评价公开，从业人员诚信记录可查。',
+            link: 'http://jztx.com/Mobile/FastOrder/Index?cid=0&sid=0&source=2',
+            imgUrl: 'http://jztx.com/Assets//Template/jztx/Img/wx-share-Logo.jpg',
+            success: function () {
+
+            },
+            cancel: function () {
+
+            }
+        });
+    });
+
+</script>
+
+
+</body>
+</html>

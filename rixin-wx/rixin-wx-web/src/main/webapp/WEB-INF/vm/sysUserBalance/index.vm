@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv">
+    <link href="/css/edaixi/jifen.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <title>我的余额</title>
+</head>
+<body id="card" ondragstart="return false;" onselectstart="return false;">
+<section class="my_jifen">
+    <div class="white-bg radius_block">
+        <div class="balance_mall">
+##            <a href="/mobile.php?m=wap&act=icard&do=redirect_balance_mall&city_id=1&mark=66d5e0da-65b8-11e5-a990-5cb901892a54"><img src="https://cdnwx.edaixi.com/1556685379/framework/style/images/balance_mall.png">余额商城</a>
+        </div>
+        <div class="jifen_box">
+            余额
+            <div class="font16">0.00<small style="font-size:12px;margin-top:-3px;">元</small></div>
+        </div>
+        <div class="chongzhi_shc"><a href = "/sysUserBalance/charge">去充值</a></div>
+        <div class="jifen_mingxi">
+            <div class="borderD2"></div>
+            <span>余额明细</span>
+        </div>
+    </div>
+
+</section>
+<section id="icard_details_list" class="jifen_list white-bg">
+</section>
+<p class="detail_prompt">无</p>
+
+<script type="text/javascript">
+    var pageSize = 10;	// 每页显示记录数（由接口决定）
+    var totalHeight = 0;	// 滚动距离 + 窗口高度
+    $(window).scroll(function() {
+        var lastRow = $('#icard_details_list .icard_row:last');
+        var rowsCount = lastRow.attr('rows_count');
+        if(rowsCount >= pageSize){
+            var page = parseInt(lastRow.attr('page')) + 1;
+            nextPage(page);
+        }
+    });
+
+    // 加载下一页
+    function nextPage(page){
+        totalHeight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+        if (totalHeight >= $(document).height()) {
+            var url = "/mobile.php?m=wap&act=icard&do=next_balance&city_id=1&mark=66d5e0da-65b8-11e5-a990-5cb901892a54&page=" + page;
+            $.getJSON(url, function(resp){
+                if(resp.message.rows_count > 0){
+                    $("#icard_details_list").append(resp.message.html);
+                }
+            });
+        }
+    }
+</script>
+<!--手机百度分享图标自定义、搜狗js动态引入-->
+<script type="text/javascript">
+    var userAgent = navigator.userAgent;
+    if(userAgent.indexOf("baiduboxapp") != -1){
+        customshare();
+    }
+    //手机百度分享图标自定义
+    function customshare(){
+        window.BoxShareData = {
+            successcallback: "onSuccess",
+            errorcallback: "onFail",
+            options: {
+                type: "url",
+                content: "洗衣就用日新洗衣，幸福生活每一天",
+                iconUrl: "http://apps3.bdimg.com/store/static/kvt/afdedad50e7414a224f7e530698f4d02.png",
+                imageUrl: "http://apps3.bdimg.com/store/static/kvt/afdedad50e7414a224f7e530698f4d02.png",
+                linkUrl: location.href,
+                mediaType: "all",
+                title: "日新洗衣"
+            }
+        }
+    }
+    //获取URL参数方法
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    //搜狗js动态引入
+    if(getQueryString("mark")=="ae891810-4aef-11e5-ade6-f80f41fd4734") {
+        document.write("<script sogouid=\"054\" src=\"http://fuwu.wap.sogou.com/static/partner.js\"><\/script>");
+    }
+</script>
+
+<!--百度统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c69820aa19563b0688a6d8ea8d21f158";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

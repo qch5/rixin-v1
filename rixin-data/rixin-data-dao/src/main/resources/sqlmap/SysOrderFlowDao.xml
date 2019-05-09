@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysOrderFlowDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysOrderFlow">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="orderNo" jdbcType="VARCHAR" property="orderNo"/>
+        <result column="operator" jdbcType="VARCHAR" property="operator"/>
+        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, orderNo, `operator`, mobile, `status`, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_order_flow
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_order_flow
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.orderNo != null">
+                and orderNo = #{info.orderNo, jdbcType=INTEGER}
+            </if>
+            <if test="info.operator != null">
+                and operator = #{info.operator, jdbcType=VARCHAR}
+            </if>
+            <if test="info.mobile != null">
+                and mobile = #{info.mobile, jdbcType=VARCHAR}
+            </if>
+            <if test="info.status != null">
+                and `status` = #{info.status, jdbcType=TINYINT}
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_order_flow where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysOrderFlow" useGeneratedKeys="true">
+        insert into sys_order_flow (orderNo, `operator`, mobile, `status`, createTime)
+        values (
+            #{orderNo, jdbcType=VARCHAR},
+            #{operator, jdbcType=VARCHAR},
+            #{mobile, jdbcType=VARCHAR},
+            #{status, jdbcType=TINYINT},
+            #{createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysOrderFlow" useGeneratedKeys="true">
+        insert into sys_order_flow
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="orderNo != null">
+                orderNo,
+            </if>
+            <if test="operator != null">
+                `operator`,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="orderNo != null">
+                #{orderNo, jdbcType=VARCHAR},
+            </if>
+            <if test="operator != null">
+                #{operator, jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                #{mobile, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysOrderFlow">
+        update sys_order_flow
+        <set>
+            <if test="orderNo != null">
+                orderNo = #{orderNo, jdbcType=VARCHAR},
+            </if>
+            <if test="operator != null">
+                `operator` = #{operator, jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysOrderFlow">
+        update sys_order_flow
+        set orderNo = #{orderNo, jdbcType=VARCHAR},
+            `operator` = #{operator, jdbcType=VARCHAR},
+            mobile = #{mobile, jdbcType=VARCHAR},
+            `status` = #{status, jdbcType=TINYINT},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

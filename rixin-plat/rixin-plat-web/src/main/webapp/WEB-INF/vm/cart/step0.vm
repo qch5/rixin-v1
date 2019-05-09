@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <meta name="keywords" content="广州清洁公司,广州家政公司,广州保姆,广州家政服务,广州清洁,广州清洁服务,广州家庭服务,广州家政公司,找家政员,找阿姨,月嫂,带小孩,育婴师,育儿嫂,陪护工,小时工,保洁,保养,搞卫生,开荒,维修,家教,管家,家政,家政O2O,家政服务,家庭服务,家政系统,免费家政系统,家政经营,家政管理软件,云管理,家政SAAS系统,家政会员管理,家政客户管理,家政平台,家政移动管理,家政大数据,家政互联,家政信息化,家政无纸化,家政同业合作,家政诚信,高端家政,涉外家政,家政可视化,广州家政网,家政天下,家政公司管理系统" />
+    <meta name="description" content="找家政服务，就上家政天下！全平台家政员实名认证，信用等级管理，客户评价公开，找优质门店、安心保姆，尽在家政天下！" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.picker.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Template/jztx/ShareOrder.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Template/jztx/FastOrder.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/weui.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.picker.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/city.data-3_1.js"></script>
+</head>
+<body>
+
+
+
+
+
+<style type="text/css">
+    .NewFocus_Order{position:relative;background:#ffffff;width:90%;margin:0 auto;padding:65px 15px 30px 15px;margin-top:70px;border:1px solid #dddddd;box-shadow:1px 1px 1px 1px #dddddd;border-radius:30px;}
+    .NewFocus_Yuan{text-align:center;position:absolute;width:120px;height:120px;left:50%;margin-left:-60px;top:-60px;border-radius:100%;background-color:#FFE7E2;border:1px solid #dddddd;box-shadow:0px 1px 2px #dddddd;}
+    .NewFocus_Yuan img{width:55%;vertical-align:middle;margin-top:25px;}
+    .NewFocus_Tips{color:#18D7BA;font-size:1em;font-family:'微软雅黑';width:75%;margin:0 auto;text-align:center;margin-top:15px;line-height:1.4}
+    .NewFocus_Tips .NewFocus_Hreaf{display:block;width:50%;background:#18D7BA;color:#ffffff;border-radius:3px;margin:0 auto;font-size:0.85em;padding:5px 0;margin-top:15px;}
+    .NewFocus{width:75%;margin:0 auto;margin-top:35px;text-align:center;}
+    .NewFocus img{width:100%;vertical-align:top;margin:5px 0;}
+</style>
+
+<div class="NewFocus_Order">
+    <div class="NewFocus_Yuan">
+        <img src="http://jztx.com/Assets//Images/focus_check.png" />
+    </div>
+
+    <div class="NewFocus_Tips">
+        成功预约，您可以通过以下方式查看订单！<br />
+        <a href="/Mobile/V3Wills/Detail?oid=496736" class="NewFocus_Hreaf">前往订单</a>
+    </div>
+
+    <div class="NewFocus">
+        <img src="http://jztx.com/Assets/Template/jztx/img/focus_ewm.png" />
+    </div>
+</div>
+
+<!--lodding-->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+
+<div id="topPopover" class="mui-popover" style="display: none; top: 57px; left: 35px;">
+    <div class="mui-popover-arrow" style="left:248px"></div>
+    <div class="mui-scroll-wrapper" data-scroll="1">
+        <div class="mui-scroll" style="transform: translate3d(0px, 0px, 0px) translateZ(0px);">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#">Item1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#">Item2</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: none; height: 8px; transform: translate3d(0px, -8px, 0px) translateZ(0px);"></div></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var baseurl = 'http://jztx.com/';
+    var sourseurl = 'http://jztx.com/Assets/';
+</script>
+
+
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+<script src="/Assets/Scripts/verify.js"></script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/Mobile/main.js?v=1.0.0.1"></script>
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/jquery.cityselect/jquery.cityselect.js"></script>
+
+<script>
+
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    mui('.mui-scroll-wrapper').scroll();
+    mui('body').on('shown', '.mui-popover', function (e) {
+        //console.log('shown', e.detail.id);//detail为当前popover元素
+    });
+    mui('body').on('hidden', '.mui-popover', function (e) {
+        //console.log('hidden', e.detail.id);//detail为当前popover元素
+    });
+
+</script>
+
+
+
+</body>
+</html>

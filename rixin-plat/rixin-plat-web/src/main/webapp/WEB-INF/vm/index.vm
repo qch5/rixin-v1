@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>RIXIN</title>
+    <link href="/css/base.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script>document.domain = "rixin.com";</script>
+</head>
+
+<body>
+## 公共头部
+<header id="headeId">#parse( "/public/head.vm")</header>
+<section class="content">
+    <div class="leftMenu">#parse( "/public/menu.vm")</div>
+    <iframe style="border: 0px; min-height:743px; margin-left:200px; width: 87.4%" src="/order" id="myFrame" scrolling="yes"></iframe>
+</section>
+</body>
+</html>

@@ -1,0 +1,117 @@
+<ul class="f-ul">
+    #if(!$list || $list.size() < 1)
+        <li class="f-li">
+            <a class="f-a on" item="1" _url="/order"><i class="icon1"></i>概览</a>
+        </li>
+    #end
+
+    <li class="f-li">
+        <a class="f-a" item="2" ><i class="icon2"></i>订单管理 <i class="arr"></i></a>
+        <ul class="s-ul hide">
+            <li class="s-li">
+                <a class="s-a" item="2-3" _url='/order'><span></span>订单中心</a>
+            </li>
+            <li class="s-li">
+                <a class="s-a" item="2-1" _url='/customer'><span></span>客户管理</a>
+            </li>
+        </ul>
+    </li>
+
+    <li class="f-li">
+        <a class="f-a" item="4" ><i class="icon2"></i>系统管理 <i class="arr"></i></a>
+        <ul class="s-ul hide">
+            <li class="s-li">
+                <a class="s-a" item="2-3" _url='/menu'><span></span>菜单管理</a>
+                <a class="s-a" item="2-3" _url='/role'><span></span>角色管理</a>
+                <a class="s-a" item="2-3" _url='/user'><span></span>用户管理</a>
+            </li>
+        </ul>
+    </li>
+
+    #foreach($info in $list)
+        #if($info.level eq 1)
+            <li class="f-li">
+                <a class="f-a" item="1" #if($info.url ne "/") _url="$!{info.url}" #end><i class="$!{info.icon}"></i>$!{info.name}</a>
+                <ul class="s-ul hide">
+                    #foreach($children in $list)
+                        #if($children.level eq 2 && $children.pId eq $info.id)
+                            <li class="s-li">
+                                <a class="s-a" item="2-3" _url='$!{children.url}'><span></span>$!{children.name}</a>
+                            </li>
+                        #end
+                    #end
+                </ul>
+            </li>
+        #end
+    #end
+
+    #*<li class="f-li">
+        <a class="f-a on" item="1" _url="/report"><i class="icon1"></i>概览</a>
+    </li>
+    <li class="f-li">
+        <a class="f-a" item="2" ><i class="icon2"></i>流程管理 <i class="arr"></i></a>
+        <ul class="s-ul hide">
+            <li class="s-li">
+                <a class="s-a" item="2-3" _url='/deploy'><span></span>流程定义</a>
+            </li>
+            <li class="s-li">
+                <a class="s-a" item="2-1" _url='/model'><span></span>Model管理</a>
+            </li>
+            <li class="s-li">
+                <a class="s-a" item="2-1" _url='/track'><span></span>流程跟踪</a>
+            </li>
+            <li class="s-li">
+                <a class="s-a" item="2-1" _url='/job'><span></span>作业管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="f-li">
+        <a class="f-a" item="2" ><i class="icon2"></i>身份管理 <i class="arr"></i></a>
+        <ul class="s-ul hide">
+            <li class="s-li">
+                <a class="s-a" item="2-3" _url='/identity/user/list'><span></span>用户管理</a>
+            </li>
+            <li class="s-li">
+                <a class="s-a" item="2-1" _url='/identity/group/list'><span></span>组管理</a>
+            </li>
+            <li class="s-li">
+                <a class="s-a" item="2-1" _url='/organization/index'><span></span>组织机构管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="f-li">
+        <a class="f-a" item="4" ><i class="icon2"></i>系统管理 <i class="arr"></i></a>
+        <ul class="s-ul hide">
+            <li class="s-li">
+                <a class="s-a" item="2-3" _url='/menu'><span></span>菜单管理</a>
+            </li>
+        </ul>
+    </li>
+    <li class="f-li">
+        <a class="f-a" item="3" _url="/user/selectListUserJson"><i class="icon3"></i>个人设置<i class="arr"></i></a>
+    </li>*#
+</ul>
+
+<script>
+    $(".f-li:first .f-a:first").addClass("on");
+    $(function() {
+        $(".leftMenu li").click(function() {
+            $(".leftMenu .f-li").removeClass("current");
+            $(".leftMenu .s-ul").addClass("hide");
+            $(".leftMenu .f-a").removeClass("on")
+            $(this).addClass("current");
+            $(this).find(".s-ul").removeClass("hide");
+            $(this).find(".f-a").addClass("on");
+        });
+
+        $(".f-ul li a").click(function(){
+            $(".f-ul li a").removeClass("on");
+            $(this).addClass("on");
+            $(this).parents(".f-li").find(".f-a").addClass("on");
+            $(".f-ul .s-ul").addClass("hide");
+            $(this).parents(".f-li").find(".s-ul").removeClass("hide");
+            $("#myFrame").attr("src", $(this).attr("_url"));
+            return false;
+        });
+    })
+</script>

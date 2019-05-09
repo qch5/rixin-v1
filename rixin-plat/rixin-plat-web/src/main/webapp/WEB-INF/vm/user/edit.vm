@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/form.css" rel="stylesheet">
+    <link href="/js/layer/skin/default/layer.css" rel="stylesheet">
+    <script type="text/javascript">document.domain = "rixin.com";</script>
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-placeholder.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
+    <script type="text/javascript" src="/js/area.js"></script>
+</head>
+<body>
+
+<div class="c-right" style="height: 100%;">
+    <div class="mainCon">
+        <div class="section">
+            <form class="formBox" action="$path">
+                <dl class="cl">
+                    <dt>用户名：</dt>
+                    <dd>
+                        <input class="mod_input" name="username" value="$!{info.username}" maxlength="30" type="text" data-must="true" data-name="用户名">
+                    </dd>
+                    <dt>真实姓名：</dt>
+                    <dd>
+                        <input class="mod_input" name="realname" value="$!{info.realname}" maxlength="30" type="text" data-must="true" data-name="真实姓名">
+                    </dd>
+                    <dt class="dt_default">性别：</dt>
+                    <dd>
+                        <input type="hidden" name="sex" value="$!{sex}" data-must="true">
+                        <p class="list_radio">
+                            <label class="label_radio" style="min-width: 60px;" data="0"><i class="radio #if($!info.sex ==  0) radio-check #end"></i>男</label>
+                            <label class="label_radio" style="min-width: 60px;" data="1"><i class="radio #if($!info.sex ==  1) radio-check #end"></i>女</label>
+                        </p>
+                    </dd>
+                    <dt>手机号码：</dt>
+                    <dd>
+                        <input class="mod_input" name="mobile" value="$!{info.mobile}" maxlength="30" type="text" data-must="true" data-name="手机号码">
+                    </dd>
+
+                    #if($path.indexOf('create') > -1)
+                    <dt>初始密码：</dt>
+                    <dd>
+                        <input class="mod_input" name="password" value="$!{info.password}" maxlength="30" type="password" data-must="true" data-name="密码">
+                    </dd>
+                    <dt>确认密码：</dt>
+                    <dd>
+                        <input class="mod_input" name="rePassword" value="$!{info.password}" maxlength="30" type="password" data-must="true" data-name="密码">
+                    </dd>
+                    #end
+                </dl>
+                <div class="btn_wrap">
+                    <a href="#" class="mod_btn btn_submit">提交</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+
+<script>
+    $(document).ready(function() {
+
+	});
+
+</script>

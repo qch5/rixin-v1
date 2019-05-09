@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.WxUserInfoDao">
+    
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.WxUserInfo">
+        <id column="id" jdbcType="INTEGER" property="id" />
+        <result column="openid" jdbcType="VARCHAR" property="openid" />
+        <result column="unionid" jdbcType="VARCHAR" property="unionid" />
+        <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+        <result column="sex" jdbcType="INTEGER" property="sex" />
+        <result column="headimgurl" jdbcType="VARCHAR" property="headimgurl" />
+        <result column="country" jdbcType="VARCHAR" property="country" />
+        <result column="province" jdbcType="VARCHAR" property="province" />
+        <result column="city" jdbcType="VARCHAR" property="city" />
+        <result column="language" jdbcType="VARCHAR" property="language" />
+        <result column="groupid" jdbcType="INTEGER" property="groupid" />
+        <result column="tagid_list" jdbcType="VARCHAR" property="tagid_list" />
+        <result column="remark" jdbcType="VARCHAR" property="remark" />
+        <result column="subscribe" jdbcType="INTEGER" property="subscribe" />
+        <result column="subscribe_time" jdbcType="TIMESTAMP" property="subscribe_time" />
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime" />
+    </resultMap>
+    
+    <sql id="Base_Column_List">
+        id, openid, unionid, nickname, sex, headimgurl, country, province, city, `language`,
+        groupid, tagid_list, remark, subscribe, subscribe_time, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" />
+        from wx_user_info
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from wx_user_info
+        where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.WxUserInfo" useGeneratedKeys="true">
+        insert into wx_user_info (openid, unionid, nickname,
+                                  sex, headimgurl, country,
+                                  province, city, `language`,
+                                  groupid, tagid_list, remark,
+                                  subscribe, subscribe_time
+        )
+        values (#{openid,jdbcType=VARCHAR}, #{unionid,jdbcType=VARCHAR}, #{nickname,jdbcType=VARCHAR},
+                                            #{sex,jdbcType=INTEGER}, #{headimgurl,jdbcType=VARCHAR}, #{country,jdbcType=VARCHAR},
+                                            #{province,jdbcType=VARCHAR}, #{city,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR},
+                                            #{groupid,jdbcType=INTEGER}, #{tagid_list,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR},
+                #{subscribe,jdbcType=INTEGER}, #{subscribe_time,jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.WxUserInfo" useGeneratedKeys="true">
+        insert into wx_user_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="unionid != null">
+                unionid,
+            </if>
+            <if test="nickname != null">
+                nickname,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="headimgurl != null">
+                headimgurl,
+            </if>
+            <if test="country != null">
+                country,
+            </if>
+            <if test="province != null">
+                province,
+            </if>
+            <if test="city != null">
+                city,
+            </if>
+            <if test="language != null">
+                `language`,
+            </if>
+            <if test="groupid != null">
+                groupid,
+            </if>
+            <if test="tagid_list != null">
+                tagid_list,
+            </if>
+            <if test="remark != null">
+                remark,
+            </if>
+            <if test="subscribe != null">
+                subscribe,
+            </if>
+            <if test="subscribe_time != null">
+                subscribe_time,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="openid != null">
+                #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="unionid != null">
+                #{unionid,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="headimgurl != null">
+                #{headimgurl,jdbcType=VARCHAR},
+            </if>
+            <if test="country != null">
+                #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null">
+                #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null">
+                #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="groupid != null">
+                #{groupid,jdbcType=INTEGER},
+            </if>
+            <if test="tagid_list != null">
+                #{tagid_list,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="subscribe != null">
+                #{subscribe,jdbcType=INTEGER},
+            </if>
+            <if test="subscribe_time != null">
+                #{subscribe_time,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.WxUserInfo">
+        update wx_user_info
+        <set>
+            <if test="openid != null">
+                openid = #{openid,jdbcType=VARCHAR},
+            </if>
+            <if test="unionid != null">
+                unionid = #{unionid,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                nickname = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=INTEGER},
+            </if>
+            <if test="headimgurl != null">
+                headimgurl = #{headimgurl,jdbcType=VARCHAR},
+            </if>
+            <if test="country != null">
+                country = #{country,jdbcType=VARCHAR},
+            </if>
+            <if test="province != null">
+                province = #{province,jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                city = #{city,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null">
+                `language` = #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="groupid != null">
+                groupid = #{groupid,jdbcType=INTEGER},
+            </if>
+            <if test="tagid_list != null">
+                tagid_list = #{tagid_list,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                remark = #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="subscribe != null">
+                subscribe = #{subscribe,jdbcType=INTEGER},
+            </if>
+            <if test="subscribe_time != null">
+                subscribe_time = #{subscribe_time,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.WxUserInfo">
+        update wx_user_info
+        set openid = #{openid,jdbcType=VARCHAR},
+            unionid = #{unionid,jdbcType=VARCHAR},
+            nickname = #{nickname,jdbcType=VARCHAR},
+            sex = #{sex,jdbcType=INTEGER},
+            headimgurl = #{headimgurl,jdbcType=VARCHAR},
+            country = #{country,jdbcType=VARCHAR},
+            province = #{province,jdbcType=VARCHAR},
+            city = #{city,jdbcType=VARCHAR},
+            `language` = #{language,jdbcType=VARCHAR},
+            groupid = #{groupid,jdbcType=INTEGER},
+            tagid_list = #{tagid_list,jdbcType=VARCHAR},
+            remark = #{remark,jdbcType=VARCHAR},
+            subscribe = #{subscribe,jdbcType=INTEGER},
+            subscribe_time = #{subscribe_time,jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <select id="selectByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List" />
+        from wx_user_info
+        where openid = #{openId,jdbcType=VARCHAR}
+    </select>
+
+    <update id="updateByOpenId" parameterType="com.rixin.data.domain.WxUserInfo">
+        update wx_user_info
+        set openid = #{openid,jdbcType=VARCHAR},
+            unionid = #{unionid,jdbcType=VARCHAR},
+            nickname = #{nickname,jdbcType=VARCHAR},
+            sex = #{sex,jdbcType=INTEGER},
+            headimgurl = #{headimgurl,jdbcType=VARCHAR},
+            country = #{country,jdbcType=VARCHAR},
+            province = #{province,jdbcType=VARCHAR},
+            city = #{city,jdbcType=VARCHAR},
+            `language` = #{language,jdbcType=VARCHAR},
+            groupid = #{groupid,jdbcType=INTEGER},
+            tagid_list = #{tagid_list,jdbcType=VARCHAR},
+            remark = #{remark,jdbcType=VARCHAR},
+            subscribe = #{subscribe,jdbcType=INTEGER},
+            subscribe_time = #{subscribe_time,jdbcType=TIMESTAMP}
+        where openid = #{openId, jdbcType=VARCHAR}
+    </update>
+</mapper>

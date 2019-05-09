@@ -1,0 +1,897 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="keywords" content="广州清洁公司,广州家政公司,广州保姆,广州家政服务,广州清洁,广州清洁服务,广州家庭服务,广州家政公司,找家政员,找阿姨,月嫂,带小孩,育婴师,育儿嫂,陪护工,小时工,保洁,保养,搞卫生,开荒,维修,家教,管家,家政,家政O2O,家政服务,家庭服务,家政系统,免费家政系统,家政经营,家政管理软件,云管理,家政SAAS系统,家政会员管理,家政客户管理,家政平台,家政移动管理,家政大数据,家政互联,家政信息化,家政无纸化,家政同业合作,家政诚信,高端家政,涉外家政,家政可视化,广州家政网,家政天下,家政公司管理系统" />
+    <meta name="description" content="找家政服务，就上家政天下！全平台家政员实名认证，信用等级管理，客户评价公开，找优质门店、安心保姆，尽在家政天下！" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>完善订单</title>
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/weui.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.picker.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.poppicker.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/v3/style.css?v=20190304215833" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://jztx.com/Assets//Scripts/jquery.cookie.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.picker.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.poppicker.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/city.data-3_1.js"></script>
+    <script src="http://jztx.com/Assets//Scripts/Mobile/v3/time-cycles.v3.js"></script>
+    <script>mui.init();</script>
+
+
+
+</head>
+<body>
+
+
+<style>
+    .mui-btn-block { font-size: 14px; border-radius: 0; padding: 6px 0; margin-bottom: 0; }
+</style>
+<div class="mui-content edit-box fix-content">
+    <form id="fillForm">
+        <input name="__RequestVerificationToken" type="hidden" value="8-m54-Z4xLWXnqX21gqOsbair7fumZXKXt7-ANpIm2gwK2uN_Q6IMGYqFxEujd_WoqnKRprKS8X6WLuxTmx12FgFI2g5mjffcs1Pr-XPhLY1" />
+        <input data-val="true" data-val-number="字段 oid 必须是一个数字。" data-val-required="oid 字段是必需的。" id="oid" name="oid" type="hidden" value="496736" />
+        <input type="hidden" id="fromWill" value="yes" />
+        <div class="mui-card detail-card" style="margin-top:0;">
+            <div class="mui-card-header">
+                个人情况完善
+            </div>
+            <div class="mui-card-content">
+                <div class="mui-card-content-inner">
+                    <ul class="edit-box-form">
+
+                        <li class="no-border-1 no-padding">
+                            <div class="row">
+                                <div class="mui-col-xs-6">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left">房子面积</label>
+                                        <div class="overflow_Body edit-input-group">
+                                            <input id="HouseArea" name="HouseArea" type="text" value="" />
+                                            <span class="edit-input-addon">m²</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left">家庭人数</label>
+                                        <div class="overflow_Body edit-input-group">
+                                            <input data-val="true" data-val-number="字段 人口数 必须是一个数字。" id="FamilyCount" name="FamilyCount" type="text" value="" />
+                                            <span class="edit-input-addon">人</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mui-clearfix"></div>
+                        </li>
+
+                        <li class="no-border-1 no-padding">
+
+                            <div class="row">
+                                <div class="mui-col-xs-6">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left"><label class="letterspacing2">住</label>宿</label>
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_ZhuSu" class="pick-div"><span style="">面议</span></div>
+                                                <input type="hidden" name="ZhuSu" id="ZhuSu" value="面议" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_ZhuSu').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"面议","value":"面议"},{"text":"提供","value":"提供"},{"text":"不提供","value":"不提供"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-6">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left"><label class="letterspacing2">餐</label>饮</label>
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_CanYin" class="pick-div"><span style="">面议</span></div>
+                                                <input type="hidden" name="CanYin" id="CanYin" value="面议" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_CanYin').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"面议","value":"面议"},{"text":"提供","value":"提供"},{"text":"不提供","value":"不提供"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mui-clearfix"></div>
+                        </li>
+
+                        <li class="no-border-1 no-padding">
+                            <p class="p-d-l-10">被照顾者</p>
+                            <div class="OverFlow_Body">
+                                <div class="edit-box-checkbox ZiliSex-event">
+                                    <span class="cap-item active nolimit" data-val="">
+                                        <input type="radio" name1="ZiliSex" value="" data-val="" checked />
+                                        不限
+                                    </span>
+                                    <span class="cap-item " data-val="男">
+                                            <input type="checkbox" name1="ZiliSex" value="男" />
+                                            男
+                                        </span>
+                                    <span class="cap-item " data-val="女">
+                                            <input type="checkbox" name1="ZiliSex" value="女" />
+                                            女
+                                        </span>
+                                    <span class="cap-item " data-val="小孩">
+                                            <input type="checkbox" name1="ZiliSex" value="小孩" />
+                                            小孩
+                                        </span>
+                                </div>
+                                <div class="mui-hide" style="border:1px solid #eee;" id="ZiliSex_Other">
+                                    <input type="text" name1="ZiliSex_Other" value="" placeholder="输入其他情况" />
+                                </div>
+                                <input type="hidden" name="ZiliSex" />
+                            </div>
+                        </li>
+
+                        <li class="no-border-1 no-padding">
+                            <p class="p-d-l-10">自理能力</p>
+                            <div class="OverFlow_Body">
+                                <div class="edit-box-checkbox Zili-event">
+                                    <span class="cap-item active" data-val="">
+                                        <input type="radio" id="Zili" name="Zili" value="" data-val="" checked />
+                                        不限
+                                    </span>
+                                    <span class="cap-item " data-val="完全自理">
+                                                <input type="radio" id="Zili" name="Zili" value="完全自理" data-val="完全自理"  />
+                                                完全自理
+                                            </span>
+                                    <span class="cap-item " data-val="半自理">
+                                                <input type="radio" id="Zili" name="Zili" value="半自理" data-val="半自理"  />
+                                                半自理
+                                            </span>
+                                    <span class="cap-item " data-val="不能自理">
+                                                <input type="radio" id="Zili" name="Zili" value="不能自理" data-val="不能自理"  />
+                                                不能自理
+                                            </span>
+                                    <span class="cap-item " data-val="其他">
+                                                <input type="radio" id="Zili" name="Zili" value="其他" data-val="其他"  />
+                                                其他
+                                            </span>
+                                </div>
+                                <div class="mui-hide" id="Zili_Other" style="border:1px solid #eee;">
+                                    <input type="text" value="" placeholder="输入其他情况" />
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="no-border-1 no-padding">
+                            <p class="p-d-l-10">宠物情况</p>
+                            <div class="OverFlow_Body">
+                                <div class="edit-box-checkbox Animal-event">
+                                            <span class="cap-item active" data-val="无">
+                                                <input type="radio" name1="Animal_ALL" value="无" data-val="无" checked />
+                                                无
+                                            </span>
+                                    <span class="cap-item " data-val="猫">
+                                                <input type="checkbox" name1="Animal" value="猫" data-val="猫"  />
+                                                猫
+                                            </span>
+                                    <span class="cap-item " data-val="小型犬">
+                                                <input type="checkbox" name1="Animal" value="小型犬" data-val="小型犬"  />
+                                                小型犬
+                                            </span>
+                                    <span class="cap-item " data-val="大型犬">
+                                                <input type="checkbox" name1="Animal" value="大型犬" data-val="大型犬"  />
+                                                大型犬
+                                            </span>
+                                    <span class="cap-item " data-val="其他">
+                                                <input type="checkbox" name1="Animal" value="其他" data-val="其他"  />
+                                                其他
+                                            </span>
+                                    <input type="hidden" name="Animal" id="Animal" value="无" />
+                                </div>
+                                <div class="mui-hide" id="Animal_Other" style="border:1px solid #eee;">
+                                    <input type="text" value="" placeholder="输入其他情况" />
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-card detail-card">
+            <div class="mui-card-header">
+                服务人员的要求
+            </div>
+            <div class="mui-card-content">
+                <div class="mui-card-content-inner">
+
+
+
+
+
+                    <div class="edit-box-checkbox Security-event">
+        <span class="cap-item " data-val="健康证">
+            <input type="checkbox" name="Security" value="健康证" data-val="健康证"  />
+            健康证
+        </span>
+                        <span class="cap-item " data-val="购买保险">
+            <input type="checkbox" name="Security" value="购买保险" data-val="购买保险"  />
+            购买保险
+        </span>
+                        <span class="cap-item " data-val="实名认证">
+            <input type="checkbox" name="Security" value="实名认证" data-val="实名认证"  />
+            实名认证
+        </span>
+
+
+                    </div>
+
+                    <script>
+                        $('.Security-event').on('click', '.cap-item', function () {
+                            var _this = $(this);
+                            if (_this.hasClass('active')) {
+                                _this.removeClass('active').find('input[type="checkbox"]').prop('checked',false);
+                            }
+                            else {
+                                _this.addClass('active').find('input[type="checkbox"]').prop('checked', true);
+                            }
+
+                            //执行自定义回调方法
+                            if (typeof (eval('')) == 'function') {
+                                eval('' + '()');
+                            }
+
+                            //var jobs = [];
+
+                            //_this.parent().find('.active').each(function (i, item) {
+                            //    jobs.push($(item).attr('data-val'));
+                            //});
+
+                            //_this.siblings('input').val(jobs.join(','));
+
+                        });
+                    </script>
+
+                    <ul class="edit-box-form">
+
+                        <li style="border:none; padding:0;">
+                            <div class="row">
+                                <div class="mui-col-xs-7">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left"><label class="letterspacing2">学</label>历</label>
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_XueLi" class="pick-div"><span style="color:#ddd;">请选择</span></div>
+                                                <input type="hidden" name="XueLi" id="XueLi" value="" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_XueLi').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"请选择","value":""},{"text":"无","value":"无"},{"text":"小学","value":"小学"},{"text":"初中","value":"初中"},{"text":"高中","value":"高中"},{"text":"中专","value":"中专"},{"text":"大专","value":"大专"},{"text":"本科","value":"本科"},{"text":"研究生","value":"研究生"},{"text":"博士","value":"博士"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-5">
+                                    <div class="input-box">
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_Sex" class="pick-div"><span style="color:#ddd;">性别选择</span></div>
+                                                <input type="hidden" name="Sex" id="Sex" value="" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_Sex').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"性别选择","value":""},{"text":"男","value":"男"},{"text":"女","value":"女"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mui-clearfix"></div>
+                        </li>
+
+                        <li class="no-border-1 no-padding">
+                            <div class="row">
+                                <div class="mui-col-xs-7">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left">工作经验</label>
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_NurseExp" class="pick-div"><span style="color:#ddd;">请选择</span></div>
+                                                <input type="hidden" name="NurseExp" id="NurseExp" value="" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_NurseExp').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"0","value":"0"},{"text":"1","value":"1"},{"text":"2","value":"2"},{"text":"3","value":"3"},{"text":"4","value":"4"},{"text":"5","value":"5"},{"text":"6","value":"6"},{"text":"7","value":"7"},{"text":"8","value":"8"},{"text":"9","value":"9"},{"text":"10","value":"10"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-5">
+                                    <div class="input-box">
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_NurseShuXiang" class="pick-div"><span style="color:#ddd;">属相选择</span></div>
+                                                <input type="hidden" name="NurseShuXiang" id="NurseShuXiang" value="" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_NurseShuXiang').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"属相选择","value":""},{"text":"鼠","value":"鼠"},{"text":"牛","value":"牛"},{"text":"虎","value":"虎"},{"text":"兔","value":"兔"},{"text":"龙","value":"龙"},{"text":"蛇","value":"蛇"},{"text":"马","value":"马"},{"text":"羊","value":"羊"},{"text":"猴","value":"猴"},{"text":"鸡","value":"鸡"},{"text":"狗","value":"狗"},{"text":"猪","value":"猪"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mui-clearfix"></div>
+                        </li>
+
+                        <li class="no-border-1 no-padding">
+
+                            <div class="row">
+                                <div class="mui-col-xs-7">
+                                    <div class="input-box">
+                                        <label class="mui-pull-left">婚姻状况</label>
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_Marry" class="pick-div"><span style="color:#ddd;">请选择</span></div>
+                                                <input type="hidden" name="Marry" id="Marry" value="" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_Marry').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"请选择","value":""},{"text":"已婚","value":"已婚"},{"text":"未婚","value":"未婚"},{"text":"离异","value":"离异"},{"text":"丧偶","value":"丧偶"},{"text":"保密","value":"保密"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mui-col-xs-5">
+                                    <div class="input-box">
+                                        <div class="overflow_Body">
+
+
+
+                                            <div class="dropdown-right-icon mui-pull-right"></div>
+                                            <div class="overflow_Body">
+                                                <div id="Pick_Fertility" class="pick-div"><span style="color:#ddd;">生育选择</span></div>
+                                                <input type="hidden" name="Fertility" id="Fertility" value="" />
+                                            </div>
+                                            <script>
+                                                $('#Pick_Fertility').click(function () {
+                                                    var picker = new mui.PopPicker();
+                                                    picker = new mui.PopPicker();
+                                                    picker.setData(JSON.parse('[{"text":"生育选择","value":""},{"text":"未生育","value":"未生育"},{"text":"已生育","value":"已生育"}]'));
+
+                                                    var _this = $(this);
+                                                    picker.show(function (item) {
+                                                        _this.find('span').css({ 'color': '#000' }).html(item[0].text);
+                                                        var _v = item[0].value;
+                                                        _this.siblings('input').val(_v);
+
+                                                        //执行自定义回调方法
+                                                        if (typeof (eval('')) == 'function') {
+                                                            eval('' + '()');
+                                                        }
+
+                                                        picker.dispose();
+                                                    });
+
+                                                });
+                                            </script>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mui-clearfix"></div>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-card detail-card">
+            <div class="mui-card-header">
+                服务人员范围筛选
+            </div>
+            <div class="mui-card-content">
+                <div class="mui-card-content-inner">
+
+                    <ul class="edit-box-form no-border">
+                        <li>
+                            <label class="title-box mui-pull-left"><label class="letterspacing05">年龄</label>段</label>
+                            <div class="overflow_Body">
+                                <div class="input-range">
+                                    <div class="range-left">
+                                        <input type="tel" name="AgeStart" id="AgeStart" />
+                                    </div>
+                                    <div class="range-addon">—</div>
+                                    <div class="range-right">
+                                        <input type="tel" name="AgeEnd" id="AgeEnd" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <label class="title-box mui-pull-left"><label class="letterspacing2">工</label>资</label>
+                            <div class="overflow_Body">
+                                <div class="input-range">
+                                    <div class="range-left">
+                                        <input Value="0.00" data-val="true" data-val-number="字段 待遇金额 必须是一个数字。" data-val-range="待遇金额请输入大于等于0的数" data-val-range-max="2147483647" data-val-range-min="0" id="PriceDaiYuStart" name="PriceDaiYuStart" type="text" value="" />
+                                    </div>
+                                    <div class="range-addon">—</div>
+                                    <div class="range-right">
+                                        <input Value="0.00" data-val="true" data-val-number="字段 待遇金额 必须是一个数字。" data-val-range="待遇金额请输入大于等于0的数" data-val-range-max="2147483647" data-val-range-min="0" id="PriceDaiYuEnd" name="PriceDaiYuEnd" type="text" value="" />
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <label class="title-box mui-pull-left"><label class="letterspacing2">籍</label>贯</label>
+                            <div class="overflow_Body">
+                                <input id="NurseFromArea" name="NurseFromArea" placeholder="请填写您对服务人员的地区要求" type="text" value="" />
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="mui-card detail-card">
+            <div class="mui-card-header">
+                服务人员技能要求
+            </div>
+            <div class="mui-card-content">
+                <div class="mui-card-content-inner">
+
+                    <div class="add-box" style="padding-left:10px;">
+                        <div class="add-box-header">
+                            <label style="margin-right:10px;">做饭口味</label><button type="button" class="mui-btn mui-btn-warning btn-warn-add" id="Cook_ShowDialog">+ 添加</button>
+                        </div>
+                        <div class="add-box-content">
+
+
+
+                            <div class="edit-box-checkbox" id="Cook_DialogChoise">
+                            </div>
+                            <input type="hidden" name="Cook" id="Cook" value="" />
+                            <script>
+                                $('#Cook_ShowDialog').click(function () {
+                                    loadDialogCheckBox('做饭口味', '[{"text":"普通家常菜","value":"普通家常菜","selected":false},{"text":"川菜","value":"川菜","selected":false},{"text":"湘菜","value":"湘菜","selected":false},{"text":"粤菜","value":"粤菜","selected":false},{"text":"淮扬菜","value":"淮扬菜","selected":false},{"text":"浙江菜","value":"浙江菜","selected":false},{"text":"闽菜","value":"闽菜","selected":false},{"text":"徽菜","value":"徽菜","selected":false},{"text":"鲁菜","value":"鲁菜","selected":false},{"text":"东北菜","value":"东北菜","selected":false},{"text":"面食","value":"面食","selected":false},{"text":"料理","value":"料理","selected":false},{"text":"西餐","value":"西餐","selected":false},{"text":"食堂烹饪","value":"食堂烹饪","selected":false},{"text":"煲汤","value":"煲汤","selected":false},{"text":"海鲜","value":"海鲜","selected":false},{"text":"其他","value":"其他","selected":false}]', 'Cook', 'Cook_DialogChoise');
+                                });
+                            </script>
+
+                        </div>
+
+                    </div>
+
+                    <div class="add-box" style="margin-top:10px; padding-left:10px;">
+                        <div class="add-box-header">
+                            <label style="margin-right:10px;">语言能力</label><button type="button" class="mui-btn mui-btn-warning btn-warn-add" id="Languth_ShowDialog">+ 添加</button>
+                        </div>
+                        <div class="add-box-content">
+
+
+
+                            <div class="edit-box-checkbox" id="Languth_DialogChoise">
+                            </div>
+                            <input type="hidden" name="Languth" id="Languth" value="" />
+                            <script>
+                                $('#Languth_ShowDialog').click(function () {
+                                    loadDialogCheckBox('语言能力', '[{"text":"普通话","value":"普通话","selected":false},{"text":"四川话","value":"四川话","selected":false},{"text":"东北话","value":"东北话","selected":false},{"text":"广东话","value":"广东话","selected":false},{"text":"江浙话","value":"江浙话","selected":false},{"text":"客家话","value":"客家话","selected":false},{"text":"闽南语","value":"闽南语","selected":false},{"text":"英语","value":"英语","selected":false},{"text":"韩语","value":"韩语","selected":false},{"text":"日语","value":"日语","selected":false},{"text":"阿拉伯语","value":"阿拉伯语","selected":false},{"text":"其他","value":"其他","selected":false}]', 'Languth', 'Languth_DialogChoise');
+                                });
+                            </script>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="fiexd-bottom-box">
+    <div class="fiexd-btn-box">
+        <button class="mui-btn mui-btn-danger mui-btn-block" id="submit" onclick="submitFill();">确认提交</button>
+    </div>
+</div>
+
+
+
+<!--lodding-->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+
+<!--dialog-->
+<div class=" normal-dialog" style="display:none;">
+    <div class="dialog_BgBox"></div>
+    <div class="dialog_Bg">
+        <div class="dialog_Title">标题</div>
+        <div class="dialog-content">
+
+        </div>
+        <div class="dialog-foot">
+            <a href="javascript:;" class="default-btn cancel-btn">取消</a>
+            <a href="javascript:;" class="primary-sure sure-btn">确定</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var baseurl = 'http://jztx.com/';
+    var sourseurl = 'http://jztx.com/Assets/';
+
+    var mobileAgent = navigator.userAgent.toLowerCase();
+    if (!(mobileAgent.match(/(ipod|iphone os|midp|ucweb|android|windows ce|windows mobile)/i))) {
+        // 移动端跳转PC
+        var reg = new RegExp("(^|&)c=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            window.location.href = "/Store/Index?c=" + encodeURI(r[2]);
+        }
+
+    }
+
+</script>
+
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+<script src="/Assets/Scripts/verify.js"></script>
+<script src="http://jztx.com/Assets//Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="http://jztx.com/Assets//Scripts/jquery.validate.min.js"></script>
+<script src="http://jztx.com/Assets//Scripts/jquery.validate.unobtrusive.min.js"></script>
+<!--common js start-->
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/Mobile/v3/common.v3.js?v=20190304215833"></script>
+<!--common js end-->
+<script>
+
+
+
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?17c50647718215714adff4c37faa09b9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<script>
+    $('.ZiliSex-event').on('click', '.cap-item', function () {
+        var _this = $(this);
+        if (_this.hasClass('active')) {
+            _this.removeClass('active').find('input[type="checkbox"]').prop('checked', false);
+        }
+        else {
+            _this.addClass('active').find('input[type="checkbox"]').prop('checked', true);
+        }
+
+        if (_this.attr('data-val') != '') {
+            $('.nolimit').removeClass('active').find('input[type="radio"]').prop('checked', false);
+            $('#ZiliSex_Other').removeClass('mui-hide');
+        }
+        else {
+            $('#ZiliSex_Other').addClass('mui-hide');
+            $('.nolimit').siblings('.cap-item').removeClass('active').find('input[type="checkbox"]').prop('checked', false);
+        }
+        var arr = [];
+        $('input[name1=ZiliSex]:checked').each(function () {
+
+            arr.push($(this).val());
+        });
+
+        var other = $('[name1=ZiliSex_Other]').val();
+        if (other != null && other != "" && other != undefined) {
+            arr.push(other);
+        }
+        $('[name=ZiliSex]').val(arr.join(','))
+    });
+    $('[name1=ZiliSex_Other]').blur(function () {
+        var arr = [];
+        $('input[name1=ZiliSex]:checked').each(function () {
+            arr.push($(this).val());
+        });
+
+        var other = $(this).val();
+        if (other != null && other != "" && other != undefined) {
+            arr.push(other);
+        }
+        $('[name=ZiliSex]').val(arr.join(','));
+    });
+
+    $('.Zili-event').on('click', '.cap-item', function () {
+        var _this = $(this);
+
+        _this.parent().find('input[type="radio"]').prop('checked', false).parent().removeClass('active');
+
+        _this.addClass('active').find('input[type="radio"]').prop('checked', true);
+
+        if ($(this).attr('data-val') == '其他') {
+            $('#Zili_Other').removeClass('mui-hide');
+        } else {
+            $(this).val('');
+            $('#Zili_Other').addClass('mui-hide').find('input').val('');
+        }
+
+    });
+    $('#Zili_Other').find('input').blur(function () {
+        var v = $(this).val();
+        if (v == null || v == "" || v == undefined) {
+            return;
+        }
+        $('[name=Zili]').each(function () {
+            if ($(this).attr('data-val') == '其他') {
+                $(this).val(v);
+            }
+        })
+    });
+
+    $('.Animal-event').on('click', '.cap-item', function () {
+        var _this = $(this);
+        var _dv = _this.attr('data-val');
+        if (_dv == '无') {
+            _this.addClass('active').find('input').prop('checked', true);
+            _this.parent().find('input[type="checkbox"]').prop('checked', false).parent().removeClass('active');
+            $('#Animal_Other').addClass('mui-hide').find('input').val('');
+            $('#Animal').val(_dv);
+
+        }
+        else {
+            $('[name1=Animal_ALL]').prop('checked', false).parent().removeClass('active');
+
+            if (_this.hasClass('active')) {
+                _this.removeClass('active').find('input').prop('checked', false);
+                if (_dv == '其他') {
+                    _this.find('input').val('其他');
+                    $('#Animal_Other').addClass('mui-hide').find('input').val('');
+                }
+            }
+            else {
+                _this.addClass('active').find('input').prop('checked', true);
+                if (_dv == '其他') {
+                    $('#Animal_Other').removeClass('mui-hide');
+                }
+            }
+            var arr_v = [];
+            $("input[name1=Animal]:checked").each(function () {
+                var _vv = $(this).attr("value");
+                arr_v.push(_vv);
+            });
+            $("#Animal").val(arr_v.join(','));
+        }
+
+    });
+    $('#Animal_Other').find('input').blur(function () {
+        var v = $(this).val();
+        if (v == null || v == "" || v == undefined) {
+            return;
+        }
+        var arr_v = [];
+
+        $("input[name1=Animal]:checked").each(function () {
+            if ($(this).parent().attr('data-val') == '其他') {
+                $(this).val(v);
+                arr_v.push(v);
+            }
+            else {
+                arr_v.push($(this).attr("value"));
+            }
+        });
+        $("#Animal").val(arr_v.join(','));
+    });
+
+
+
+    function submitFill() {
+
+        var obj = $('#fillForm').serialize();
+        var jdata = {
+            url: baseurl + '/Mobile/V3Orders/Fill',
+            paramData: obj,
+            func: function (result) {
+                $.alertmsg(result.msg);
+                if (result.r) {
+                    var id = $('[name=oid]').val();
+                    var fromWill = $('#fromWill').val();
+                    if (fromWill == 'yes') {
+                        $.ReplaceUrl(baseurl + '/Mobile/V3Wills/Detail?oid=' + id);
+                    }
+                    else {
+                        $.ReplaceUrl(baseurl + '/Mobile/V3Orders/Detail?oid=' + id);
+                    }
+
+                }
+            }
+        };
+
+        $.submit(jdata);
+
+    }
+</script>
+
+
+</body>
+</html>

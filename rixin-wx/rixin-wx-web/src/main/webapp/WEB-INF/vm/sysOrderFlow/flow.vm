@@ -1,0 +1,109 @@
+
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv">
+    <title>日新洗衣</title>
+    <link href="/css/edaixi/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/myOrder.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="myOrder_list order-detail-con">
+    <p class="m15"></p>
+    <ul>
+        <li class="order_item">
+            <div class="item_list_box p15">
+                <div class="item_list_box">订单编号：19050415701960</div>
+                <div class="item_list_box">订单状态：<b style="color:#00dbf5;font-weight:normal">已取消</b></div>
+                <!-- 洗衣 -->
+                <!--
+                <img src="https://cdnwx.edaixi.com/1556775790/framework/style/images/yifu_back.png" class="back_info">
+                <p class="jiafang_back">部分家纺7天送回</p>
+                -->
+            </div>
+        </li>
+
+        <div class="item_list_box p15" style="padding-top:0">物流信息</div>
+        <li class="order_item">
+            <div class="myOrder_list order-detail-con">
+                <div class="order-logictics">
+                    <span class="high-dottle"></span>
+                    <div  style="padding-top:16px;">
+                        <span></span>
+                        <div class="split-position"></div>		         <div class="con-text" style="margin-top:0px;">
+                        <div class="split-position2"></div>
+                        <em style="font-size:14px;color:#00dbf5;">订单取消</em>
+                        <p class="date_d" style="color:#00dbf5;">2019-05-04 09:52</p>
+                        <div class="borderD"></div>
+                    </div>
+
+                    </div>
+                    <div  >
+                        <span></span>
+                        <div class="con-text" >
+                            <div class="split-position2"></div>
+                            <em >等待分配小e管家</em>
+                            <p class="date_d" >2019-05-04 09:34</p>
+                            <div class="borderD"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="borderD"></div>
+        </li>
+    </ul>
+</div>
+<!--手机百度分享图标自定义、搜狗js动态引入-->
+<script type="text/javascript">
+    var userAgent = navigator.userAgent;
+    if(userAgent.indexOf("baiduboxapp") != -1){
+        customshare();
+    }
+    //手机百度分享图标自定义
+    // function customshare(){
+    //     window.BoxShareData = {
+    //         successcallback: "onSuccess",
+    //         errorcallback: "onFail",
+    //         options: {
+    //             type: "url",
+    //             content: "洗衣就用日新洗衣，幸福生活每一天",
+    //             iconUrl: "http://apps3.bdimg.com/store/static/kvt/afdedad50e7414a224f7e530698f4d02.png",
+    //             imageUrl: "http://apps3.bdimg.com/store/static/kvt/afdedad50e7414a224f7e530698f4d02.png",
+    //             linkUrl: location.href,
+    //             mediaType: "all",
+    //             title: "日新洗衣"
+    //         }
+    //     }
+    // }
+    //获取URL参数方法
+    function getQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    //搜狗js动态引入
+    if(getQueryString("mark")=="ae891810-4aef-11e5-ade6-f80f41fd4734") {
+        document.write("<script sogouid=\"054\" src=\"http://fuwu.wap.sogou.com/static/partner.js\"><\/script>");
+    }
+</script>
+
+<!--百度统计-->
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?c69820aa19563b0688a6d8ea8d21f158";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+</body>
+</html>

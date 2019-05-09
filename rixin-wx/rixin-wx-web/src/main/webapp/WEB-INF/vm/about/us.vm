@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <title>日新洗衣</title>
+
+    <link href="/css/yujia/global.css?t=20170824_1" rel="stylesheet" type="text/css" />
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/weiui/weui.css" rel="stylesheet" />
+
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="wheet">
+<div class="mcontainer">
+
+    <div class="head containered">
+        <a class="one l GoBack" href="javascript:self.location=document.referrer" style="">
+            <span class="icon_back"></span>
+        </a>
+        <div class="two l fc">
+            <p class="Sub fc text-ellipsis">关于我们</p>
+        </div>
+        <div class="third l fr naved" >
+            <div class="nav_out"></div>                </div>
+    </div>
+    <div class="headheight"></div>
+    <div style="display: none;" class="weui_toptips weui_warn js_tooltips"></div>
+
+
+
+    #parse("/common/share.vm")
+
+    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width,height=device-height, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>关于我们</title>
+        <style>
+            *{margin:0;padding:0;}
+            .c-333{color:#333;}
+            .c-777{color:#777;}
+            .fs-10{font-size:10px;}
+            .fs-12{font-size:12px;}
+            .fs-14{font-size:14px;}
+            .fs-16{font-size:16px;}
+            .mainContent{padding:10px 10px;}
+            .mainContent .logo{display:block;width:150px;height:59px; margin:10px auto; background:url(image/logo.png);}
+            .mainContent p{font-size:12px;color:#777; line-height:20px;text-indent:2em;}
+            .mainContent h1{color:#333;font-size:14px;line-height:30px;}
+            .tit{color:#333;font-size:16px;text-align:center;line-height:30px;  font-weight:bold;}
+            .buttonmessage {
+                text-align:center;}
+        </style>
+    </head>
+
+    <body>
+    <div class="mainContent">
+
+        <!--<p>日新，好管家！</p>-->
+        <div class="tit">关于我们</div>
+        <p>厦门日新洗衣股份有限公司是由翟焰女士1999年创立于美丽的鹭岛——厦门。公司经过多年的发展，现已成为一家以主营服务于政企和家庭客户为主线，以保洁、搬家、工程维修为重点，集企业保洁、市政环卫工程、居家保洁、家庭搬迁、家电维修、管道疏通、石材养护、空气净化、外墙清洗、保姆月嫂等业务为一体的综合型家政服务企业。公司已于2015年2月4日正式在全国中小企业股份转让系统挂牌，成为新三板上市企业（证券简称：日新；证券代码：831877）。</p>
+        <p>日新是第一家民营家政互联网上市企业。在日新洗衣平台，您的每一次预约都能享受到以下服务保障：</p>
+        <h1>【服务人员信息认证】</h1>
+        <p>每一位为您服务的工作人员均入日新洗衣平台数据库，合同工上门服务，安全！</p>
+        <h1>【免费购买雇主保险】</h1>
+        <p>安全是我们最关心的问题，在日新洗衣平台下单即为您免费投保！</p>
+        <h1>【10分钟快速响应】</h1>
+        <p>工作时间内下单，我们的客服会在10分钟内响应您的需求。365天全年无休，只为让您的生活更美好！</p>
+        <h1>【明码标价优惠实惠】</h1>
+        <p>所有价格均在详情页明码标注，工作人员绝不乱行收费。五星品质，三星价格，让每一位用户都能享受到最舒心的家政服务！</p>
+        <h1>【金额问题先行赔付】</h1>
+        <p>多种付款方式方便快捷。您在日新洗衣平台涉及金额款项问题，我们将先行赔付！</p>
+
+        <p>感谢您使用日新洗衣平台预约家政服务，日新现已开通微信服务号“日新洗衣”和微信订阅号“日新”，搜索关注日新微信号，了解最新优惠活动/生活技能知识/在线服务咨询。</p>
+
+        <p>日新洗衣全国免费客服电话：400-6655-888</p>
+        <p class="buttonmessage">有家，就有日新！</p>
+    </div>
+    </body>
+    </html>
+
+    #parse("/common/menu.vm")
+
+</div>
+<script src="/bundles/jquery?v=QRLKVG_Xx6dQNG8i26GuXfNZzCriV9JX2xBS8PhczpE1"></script>
+
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/yujia/comm.js?t=v1.0"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&web_id=1260785617" language="JavaScript"></script>
+
+    <script>
+        var _mtac = {};
+        (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500665928");
+            mta.setAttribute("cid", "500665929");
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+
+</div>
+</body>
+</html>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    $.cookie("PayMethod", "", { expires: -1 });
+    if (GetQueryString('PayMethod') != null) {
+        $.cookie('PayMethod', GetQueryString('PayMethod'));
+    }
+</script>

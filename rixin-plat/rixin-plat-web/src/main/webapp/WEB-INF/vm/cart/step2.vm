@@ -1,0 +1,543 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>预约服务</title>
+    <meta name="keywords" content="广州清洁公司,广州家政公司,广州保姆,广州家政服务,广州清洁,广州清洁服务,广州家庭服务,广州家政公司,找家政员,找阿姨,月嫂,带小孩,育婴师,育儿嫂,陪护工,小时工,保洁,保养,搞卫生,开荒,维修,家教,管家,家政,家政O2O,家政服务,家庭服务,家政系统,免费家政系统,家政经营,家政管理软件,云管理,家政SAAS系统,家政会员管理,家政客户管理,家政平台,家政移动管理,家政大数据,家政互联,家政信息化,家政无纸化,家政同业合作,家政诚信,高端家政,涉外家政,家政可视化,广州家政网,家政天下,家政公司管理系统" />
+    <meta name="description" content="找家政服务，就上家政天下！全平台家政员实名认证，信用等级管理，客户评价公开，找优质门店、安心保姆，尽在家政天下！" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.picker.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Template/jztx/ShareOrder.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Template/jztx/FastOrder.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/weui.min.css" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.picker.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/city.data-3_1.js"></script>
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+    .NewFast_StepBox {
+        display: none;
+    }
+</style>
+
+<div class="mui-content NewFastBox">
+    <form id="formbox">
+        <input type="hidden" id="JobTypeID" name="JobTypeID" value="2273" />
+        <input type="hidden" id="CompanyId" name="CompanyId" value="0" />
+        <input type="hidden" id="societyId" name="societyId" value="0" />
+        <input type="hidden" id="OrderSource" name="OrderSource" value="2" />
+        <input type="hidden" id="UserId" name="UserId" value="0" />
+
+        <div>
+            <div class="NewFast_StepBox">
+                <div class="NewFast_Content">
+                    <div class="NewFast_Yuan NewFast_JobType">衣服干洗</div>
+                    <div class="NewFast_Step">
+                        <p>The last step</p>
+                        留下您的联系方式，方便我们联系您哦!
+                    </div>
+
+                    <ul class="NewFast_Form">
+                        <li>
+                            <label class="mui-pull-left">您的称呼<span>*</span></label>
+                            <div class="overflow_Body">
+                                <input data-val="true" data-val-length="您的称呼长度最多有50个字符" data-val-length-max="50" data-val-required="请输入 您的称呼" id="FullName" name="FullName" placeholder="请填写您的姓名" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="FullName" data-valmsg-replace="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="mui-pull-left">手机号码<span>*</span></label>
+                            <div class="overflow_Body">
+                                <input data-val="true" data-val-length="移动电话长度最多有50个字符" data-val-length-max="50" data-val-regex="移动电话格式不正确" data-val-regex-pattern="^1[3|4|5|6|7|8|9][0-9]\d{8}$" data-val-required="请输入 移动电话" id="Tel" name="Tel" placeholder="请填写您的手机号码" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="Tel" data-valmsg-replace="true"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <label class="mui-pull-left"><span class="letterSpacing05" style="color:#333333;">微信</span>号<span style="color:#ffffff;">*</span></label>
+                            <div class="overflow_Body">
+                                <input id="WeiXin" name="WeiXin" placeholder="请填写您的微信号" type="text" value="" />
+                            </div>
+                        </li>
+                        <li class="LiSelect">
+                            <label class="mui-pull-left">服务地区<span>*</span></label>
+                            <div class="LiSelect mui-pull-right"></div>
+                            <div class="overflow_Body">
+                                <div id="PunckArea" style="height:40px;line-height:40px;padding:0 10px;">江苏宿迁 </div>
+                                <input id="Area_P" name="Area_P" type="hidden" value="江苏" />
+                                <input id="Area_C" name="Area_C" type="hidden" value="宿迁" />
+                                <input id="Area_D" name="Area_D" type="hidden" value="" />
+                            </div>
+                        </li>
+                        <li>
+                            <label class="mui-pull-left">详细街道<span>*</span></label>
+                            <div class="overflow_Body">
+                                <input data-val="true" data-val-required="请输入具体的 街道地址" id="Address" name="Address" placeholder="请输入详细街道" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="Address" data-valmsg-replace="true"></span>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="NewFast_CodeBox">
+                        <button id="GetCode" type="button" class="CodeBoxBtn mui-pull-right" onclick="getvcode(this, 'Tel')">获取验证码</button>
+                        <div class="NewFast_Code overflow_Body">
+                            <label class="mui-pull-left"><span class="letterSpacing05">验证</span>码<span style="color:#FE1D1E">*</span></label>
+                            <div class="overflow_Body">
+                                <input data-val="true" data-val-required="请输入验证码" id="vcode" name="vcode" placeholder="请输入验证码" type="text" value="" />
+                                <span class="field-validation-valid" data-valmsg-for="vcode" data-valmsg-replace="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="NewFast_TwoBtn">
+                    <a class="NewFast_Btn" href="javascript:;" onclick="lastJumpPrev()">上一步</a>
+                    <a class="NewFast_Btn" href="javascript:;" onclick="sumbitOrder()">提交</a>
+                </div>
+            </div>
+
+            <div class="NewFast_StepBox" style="display:block;">
+                <div class="NewFast_Content">
+                    <div class="NewFast_Yuan NewFast_JobType">衣服干洗</div>
+                    <div class="NewFast_Step">
+                        <p>step2</p>
+                        请选择您的需求（可多选）。
+                    </div>
+
+                    <div class="NewFast_Work">
+                        <span name="WorkSpan" data-val="2274">帽子</span>
+                        <span name="WorkSpan" data-val="2275">外套</span>
+                        <span name="WorkSpan" data-val="2276">裤子</span>
+                        <span name="WorkSpan" data-val="2277">皮衣</span>
+                        <span name="WorkSpan" data-val="2278">真丝貂绒</span>
+                        <span name="WorkSpan" data-val="2279">鞋袜</span>
+                        <span name="WorkSpan" data-val="2280">被套</span>
+                        <span name="WorkSpan" data-val="2281">毯子</span>
+                        <span name="WorkSpan" data-val="2282">其他</span>
+
+                        <input type="hidden" id="smalljob" name="smalljob" value="" />
+                    </div>
+                </div>
+                <div class="NewFast_TwoBtn">
+                    <a class="NewFast_Btn" href="/Mobile/FastOrder/Index?cid=0">上一步</a>
+                    <a class="NewFast_Btn" href="javascript:;" onclick="showNewFastIndex(2, checkChildrenJob,true)">下一步</a>
+                </div>
+            </div>
+
+
+
+            <div class="NewFast_StepBox">
+                <div class="NewFast_Content">
+                    <div class="NewFast_Yuan NewFast_JobType">衣服干洗</div>
+                    <div class="NewFast_Step">
+                        <p>step3</p>
+                        请选择您的需求服务时间。
+                    </div>
+
+                    <div class="NewFast_WorkTime">
+                        <div class="WorkTimeBox">
+                            <label class="mui-pull-left">需求时间</label>
+                            <div class="overflow_Body">
+                                <div class="SysPunckTime_Pick" data-options='{"type":"date"}'>2019-03-05</div>
+                                <input type="hidden" id="WorkDate" name="WorkDate" value="2019-03-05" />
+                            </div>
+                        </div>
+
+                        <div class="WorkTimeBox">
+                            <label class="mui-pull-left">服务时长</label>
+                            <div class="overflow_Body">
+                                <div id="SysPunckTime_Type">2小时</div>
+                                <input type="hidden" id="WorkDate2" name="WorkDate2" value="2" />
+                            </div>
+                        </div>
+
+                        <div class="WorkTimeBox">
+                            <label class="mui-pull-left">上门时间</label>
+                            <div class="overflow_Body">
+                                <div class="SysPunckTime_Pick_Time" data-options='{"type":"time"}'>08:00</div>
+                                <input type="hidden" id="GoWorkTimeStart" name="GoWorkTimeStart" value="08:00" />
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="NewFast_TwoBtn">
+                    <a class="NewFast_Btn" href="javascript:;" onclick="showNewFastIndex(1)">上一步</a>
+                    <a class="NewFast_Btn" href="javascript:;" onclick="showNewFastIndex(3)">下一步</a>
+                </div>
+            </div>
+
+            <div class="NewFast_StepBox">
+                <div class="NewFast_Content">
+                    <div class="NewFast_Yuan NewFast_JobType">衣服干洗</div>
+                    <div class="NewFast_Step">
+                        <p>step4</p>
+                        为了给您提供更优质的服务，请填写您的详细需求。
+                    </div>
+
+                    <textarea class="NewFast_Note" id="ReadMe" name="ReadMe" rows="8" placeholder="写您的更多需求，如家政员籍贯、年龄、学历、工作经验。"></textarea>
+
+                </div>
+                <div class="NewFast_TwoBtn">
+                    <a class="NewFast_Btn" href="javascript:;" onclick="showNewFastIndex(2)">上一步</a>
+                    <a class="NewFast_Btn" href="javascript:;" onclick="showNewFastIndex(0)">下一步</a>
+                </div>
+            </div>
+
+            <input type="hidden" id="StepBoxNum" value="4" />
+
+            <ul id="TimeLong" style="display:none">
+                <li data-val="2" data-name="2小时"></li>
+                <li data-val="2.5" data-name="2.5小时"></li>
+                <li data-val="3" data-name="3小时"></li>
+                <li data-val="3.5" data-name="3.5小时"></li>
+                <li data-val="4" data-name="4小时"></li>
+                <li data-val="4.5" data-name="4.5小时"></li>
+                <li data-val="5" data-name="5小时"></li>
+                <li data-val="5.5" data-name="5.5小时"></li>
+                <li data-val="6" data-name="6小时"></li>
+                <li data-val="6.5" data-name="6.5小时"></li>
+                <li data-val="7" data-name="7小时"></li>
+                <li data-val="7.5" data-name="7.5小时"></li>
+                <li data-val="8" data-name="8小时"></li>
+                <li data-val="8.5" data-name="8.5小时"></li>
+                <li data-val="9" data-name="9小时"></li>
+                <li data-val="9.5" data-name="9.5小时"></li>
+                <li data-val="10" data-name="10小时"></li>
+                <li data-val="10.5" data-name="10.5小时"></li>
+                <li data-val="11" data-name="11小时"></li>
+                <li data-val="11.5" data-name="11.5小时"></li>
+                <li data-val="12" data-name="12小时"></li>
+                <li data-val="12.5" data-name="12.5小时"></li>
+                <li data-val="13" data-name="13小时"></li>
+                <li data-val="13.5" data-name="13.5小时"></li>
+                <li data-val="14" data-name="14小时"></li>
+                <li data-val="14.5" data-name="14.5小时"></li>
+                <li data-val="15" data-name="15小时"></li>
+                <li data-val="15.5" data-name="15.5小时"></li>
+                <li data-val="16" data-name="16小时"></li>
+                <li data-val="16.5" data-name="16.5小时"></li>
+                <li data-val="17" data-name="17小时"></li>
+                <li data-val="17.5" data-name="17.5小时"></li>
+                <li data-val="18" data-name="18小时"></li>
+                <li data-val="18.5" data-name="18.5小时"></li>
+                <li data-val="19" data-name="19小时"></li>
+                <li data-val="19.5" data-name="19.5小时"></li>
+                <li data-val="20" data-name="20小时"></li>
+                <li data-val="20.5" data-name="20.5小时"></li>
+                <li data-val="21" data-name="21小时"></li>
+                <li data-val="21.5" data-name="21.5小时"></li>
+                <li data-val="22" data-name="22小时"></li>
+                <li data-val="22.5" data-name="22.5小时"></li>
+                <li data-val="23" data-name="23小时"></li>
+                <li data-val="23.5" data-name="23.5小时"></li>
+                <li data-val="24" data-name="24小时"></li>
+            </ul>
+
+            <script>
+
+                $(document).ready(function () {
+
+                    $('.SysPunckTime_Pick').pickDate();
+                    $('.SysPunckTime_Pick_Time').pickDate();
+
+                    InitMuiSelect("TimeLong", "SysPunckTime_Type", "WorkDate2");
+                });
+
+            </script>
+
+        </div>
+
+    </form>
+</div>
+
+
+
+<!--lodding-->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+
+<div id="topPopover" class="mui-popover" style="display: none; top: 57px; left: 35px;">
+    <div class="mui-popover-arrow" style="left:248px"></div>
+    <div class="mui-scroll-wrapper" data-scroll="1">
+        <div class="mui-scroll" style="transform: translate3d(0px, 0px, 0px) translateZ(0px);">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell">
+                    <a href="#">Item1</a>
+                </li>
+                <li class="mui-table-view-cell">
+                    <a href="#">Item2</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mui-scrollbar mui-scrollbar-vertical"><div class="mui-scrollbar-indicator" style="transition-duration: 0ms; display: none; height: 8px; transform: translate3d(0px, -8px, 0px) translateZ(0px);"></div></div>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+    var baseurl = 'http://jztx.com/';
+    var sourseurl = 'http://jztx.com/Assets/';
+</script>
+
+
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+<script src="/Assets/Scripts/verify.js"></script>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery.cookie/1.4.1/jquery.cookie.min.js"></script>
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/Mobile/main.js?v=1.0.0.1"></script>
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/jquery.cityselect/jquery.cityselect.js"></script>
+
+<script>
+
+    mui.init({
+        swipeBack: true //启用右滑关闭功能
+    });
+    mui('.mui-scroll-wrapper').scroll();
+    mui('body').on('shown', '.mui-popover', function (e) {
+        //console.log('shown', e.detail.id);//detail为当前popover元素
+    });
+    mui('body').on('hidden', '.mui-popover', function (e) {
+        //console.log('hidden', e.detail.id);//detail为当前popover元素
+    });
+
+</script>
+
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+    var template = '3';
+    $(document).ready(function () {
+        InitMuiArea("PunckArea", "Area_P", "Area_C", "Area_D",'江苏');
+
+        $("[name=WorkSpan]").click(function () {
+            if ($(this).hasClass("active")) {
+                $(this).removeClass("active");
+            } else {
+                $(this).addClass("active");
+            }
+
+            var checkVal = "";
+
+            $("[name=WorkSpan]").each(function () {
+                if ($(this).hasClass("active")) {
+                    var val = $(this).attr("data-val");
+                    if (checkVal == "") {
+                        checkVal = val;
+                    } else {
+                        checkVal = checkVal + "," + val;
+                    }
+                }
+            });
+
+            $("#smalljob").val(checkVal);
+        });
+    });
+
+    wx.config({
+        debug: false,
+        appId: 'wxca9073e0d7972496',
+        timestamp: '1551736221',
+        nonceStr: '9e4a9b6dea5d414e93f471a7f92eb70b',
+        signature: 'dab537836f6fd1dc1c95d62df34d434cf044075a',
+        jsApiList:
+                ['checkJsApi',
+                    'onMenuShareAppMessage',
+                    'hideMenuItems',
+                    'showMenuItems',
+                    'getLocation',
+                    'onMenuShareTimeline']
+    });
+
+    wx.ready(function () {
+        wx.checkJsApi({
+            jsApiList: [
+                'onMenuShareAppMessage',
+                'hideMenuItems',
+                'showMenuItems',
+                'getLocation',
+                'onMenuShareTimeline'
+            ],
+            success: function (res) {
+                //alert(JSON.stringify(res));
+            }
+        });
+
+        wx.hideMenuItems({
+            menuList: [
+                //'menuItem:share:timeline',
+                'menuItem:share:qq',
+                'menuItem:share:weiboApp',
+                'menuItem:favorite',
+                'menuItem:share:email',
+                //'menuItem:copyUrl',
+                'menuItem:share:QZone'
+            ]
+        });
+
+
+        wx.onMenuShareAppMessage({
+            title: '预约家政服务',
+            desc: '家政员实名认证，历史服务记录及评价公开，从业人员诚信记录可查。',
+            link: 'http://jztx.com/Mobile/FastOrder/Index?cid=0&sid=0&source=2',
+            imgUrl: 'http://jztx.com/Assets//Template/jztx/Img/wx-share-Logo.jpg',
+            success: function () {
+
+            },
+            cancel: function () {
+
+            }
+        });
+
+        wx.onMenuShareTimeline({
+            title: '预约家政服务 家政员实名认证，历史服务记录及评价公开，从业人员诚信记录可查。',
+            link: 'http://jztx.com/Mobile/FastOrder/Index?cid=0&sid=0&source=2',
+            imgUrl: 'http://jztx.com/Assets//Template/jztx/Img/wx-share-Logo.jpg',
+            success: function () {
+
+            },
+            cancel: function () {
+
+            }
+        });
+    });
+
+    function checkChildrenJob() {
+        var chlidren = $("#smalljob").val();
+
+        if (chlidren == "") {
+            alert("请选择您的需求");
+            return false;
+        }
+        return true;
+    }
+
+
+    function showNewFastIndex(num, func, isNext) {
+        if (func != undefined && func != null && func != "") {
+            var result = func();
+
+            if (!result) {
+                return false;
+            }
+        }
+
+        $(".NewFast_StepBox").hide();
+        $(".NewFast_StepBox").each(function () {
+            if ($(this).index() == num) {
+                $(this).show();
+            }
+        });
+
+        if (template == "6" && isNext == true) {
+            showClock();
+        }
+
+    }
+
+    function lastJumpPrev() {
+        var boxNum = $("#StepBoxNum").val();
+        var num = boxNum - 1;
+
+        showNewFastIndex(num);
+    }
+
+
+    function sumbitOrder() {
+
+        var result = checkForm();
+        if (!result) {
+            return false;
+        }
+
+        var jdata = {
+            url: '/Mobile/FastOrder/FlowPath',
+            paramData: $("#formbox").serialize(),
+            func: function (result) {
+                if (result.r) {
+                    window.location.href = "/Mobile/Home/NewFocus?oid=" + result.oid + "&type=1";
+                } else {
+                    alert(result.msg);
+                }
+            }
+        };
+        $.submit(jdata);
+    }
+
+    function checkForm() {
+        var name = $("#FullName").val();
+        if (name == "") {
+            alert("请填写您的姓名");
+            return false;
+        }
+
+        var tel = $("#Tel").val();
+        if (tel == "") {
+            alert("请填写您的手机号码");
+            return false;
+        } else {
+            if (!(/^1[3|4|5|6|7|8|9][0-9]\d{4,8}$/.test(tel))) {
+                alert("手机号不正确");
+                return false;
+            }
+        }
+
+        var areap = $("#Area_P").val();
+        if (areap == "") {
+            alert("请选择服务地区");
+            return false;
+        }
+
+        var address = $("#Address").val();
+        if (address == "") {
+            alert("请填写详细街道地址");
+            return false;
+        }
+
+        var code = $("#vcode").val();
+        if (code == "") {
+            alert("请填写验证码");
+            return false;
+        }
+
+        return true;
+
+    }
+
+</script>
+
+
+</body>
+</html>

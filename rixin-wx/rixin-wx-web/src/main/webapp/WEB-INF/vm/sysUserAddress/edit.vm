@@ -1,0 +1,224 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <meta content="email=no" name="format-detection">
+    <meta content="" name="pgv">
+    <title>填写地址</title>
+    <link href="/css/edaixi/base.css" rel="stylesheet" type="text/css">
+    <link href="/css/edaixi/order.css" rel="stylesheet" type="text/css" />
+    <script src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script src="/js/common.js"></script>
+    <script type="text/javascript">
+        var category_id = "1010", sub_id = "", sign = "create", home_city = "北京", city_name = "北京",
+                area_name = "", verifyUrl = "/mobile.php?m=wap&act=address&do=ajax_verify_address&city_id=1&mark=66d5e0da-65b8-11e5-a990-5cb901892a54", SCFlag = 1; //城市搜索标识
+        if(sign == 'update'){SCFlag = 2;} //编辑地址初始化
+    </script>
+</head>
+
+<body>
+<!-- 正在定位 start -->
+<section class="waiting">
+    <div class="wait-block">
+        <span id="wait_msg">正在定位</span> <em class="bounce1"></em><em class="bounce2"></em><em class="bounce3"></em>
+    </div>
+</section>
+<!-- 正在定位 end -->
+
+<div id="mainWin" style="padding: 0">
+    <div class="space-split10"></div>
+    <form method="post" id="addr_form" action="#">
+        <input type="hidden" id="id" name="id" value="$!info.id">
+
+        <!-- 地址信息 start -->
+        <div class="white-bg">
+            <div class="m_input select y_hover" id="select_wrap">
+                <div id="cmbCity_wrap" class="select y_hover after1">
+                    <select id="city" name="city" class="J_city select_J_ytag" name="city">
+                        <option class='default' value='' disabled='disabled'>请选择城市</option>
+                        <option city_sn='city_1' value='宿迁' selected='selected'>宿迁</option>
+                    </select>
+                </div>
+                <div id="cmbArea_wrap" class="select y_hover after2">
+                    <div class="borderP"></div>
+                    <select id="district" name="district" class="J_area select_J_ytag" name="area">
+                        <option class='default' value=''>请选择区域</option>
+                        <option class='city_1' value='宿城区' rel='1' #if($info.district == "宿城区") selected='selected' #end>宿城区</option>
+                        <option class='city_1' value='宿豫区' rel='2' #if($info.district == "宿豫区") selected='selected' #end>宿豫区</option>
+                    </select>
+                </div>
+                <div class="clearBoth"></div>
+            </div>
+            <div class="borderD"></div>
+
+            <div class="m_input m_input_5" style="margin-top: 10px">
+                <div id="cmbArea_wrap" class="select y_hover after2" style="width: 100%">
+                    <select id="community" name="community" class="J_area select_J_ytag" name="area">
+                        <option class='default' value=''>请选择小区或社区名</option>
+                        <option class='city_1' value='恒大华府' rel='1' #if($info.community == "恒大华府") selected='selected' #end>恒大华府</option>
+                    </select>
+                </div>
+                <div class="borderD"></div>
+            </div>
+
+            <div class="m_input m_input_5" style="margin-bottom: 0">
+                <div class="borderD"></div>
+                <div class="input">
+					<textarea id="detail" name="detail" placeholder="请输入门牌号等详细地址" maxlength="50" class="textarea-address">$!info.detail</textarea>
+                </div>
+            </div>
+        </div>
+        <div class="borderD2"></div>
+        <!-- 地址信息 end -->
+
+        <div style="height: 10px; background: #f0f0f0"></div>
+
+        <!-- 个人基本信息 start -->
+        <div class="borderD2"></div>
+        <section class="section_4" style="padding: 1px">
+            <div class="m_input m_input_5">
+                <div class="input" style="margin-top: 10px">
+                    <input value="$!info.fullName" id="fullName" name="fullName" maxlength="30" placeholder="您的姓名" class="address_input" />
+                </div>
+
+            </div>
+        </section>
+        <div class="borderD2"></div>
+        <div style="height: 10px; background: #f0f0f0"></div>
+        <div class="borderD2"></div>
+        <section class="section_4">
+
+            <div class="m_input m_input_5">
+                <div class="check-div">
+                    女士
+                    <div class="label-radio">
+                        <input type="radio" name="sex" value="2" checked="checked" class="gender" />
+                        <label for="lady" name="lady"><b></b></label>
+                    </div>
+                </div>
+                <div class="check-div">
+                    先生
+                    <div class="label-radio">
+                        <input type="radio" name="sex" value="1"  class="gender" />
+                        <label for="man" name="man"><b></b></label>
+                    </div>
+                </div>
+                <div class="clearBoth"></div>
+                <div class="borderD"></div>
+            </div>
+
+            <div class="m_input m_input_5" style="margin-bottom:0">
+                <div class="input">
+                    <input placeholder="手机号码" value="$!info.mobile" id="mobile" type='tel' maxlength="11" name="mobile"
+                           onkeyup="value=value.replace(/[^\d]/g,'')"
+                           onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\d]/g,''))"
+                           class="cleartet need_clear" />
+
+                    <span id="tel_clear" class="clearInput clearCommon" onclick="clearInput(this, 'mobile');" style="display: none"></span>
+                </div>
+            </div>
+        </section>
+        <!-- 个人基本信息 end -->
+
+        <!-- 保存 start -->
+        <sectoin class="true-btn">
+            <div class="">
+                <input type="submit" class="btn_order y_hover J_ytag" id="save_address" value="保存" disabled='disabled' />
+            </div>
+        </sectoin>
+        <!-- 保存 end -->
+    </form>
+</div>
+
+<!-- 信息提示浮层 start -->
+<div id="codFloat" style="display: none" class="cod" style="height:60px">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner" id="wx_confirm_float">
+            <div class="wx_confirm_hd">
+                <div class="wx_confirm_tit" id="show_mes" style="font-size: 14px; line-height: 22px">
+                    <!-- 提示信息 -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 信息提示浮层 end -->
+
+<!-- 操作提示 start -->
+<div id="msg_win" style="display:none" class="cod" style="height:60px">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm ">
+        <div class="wx_confirm_inner" id="wx_confirm_float">
+            <div class="wx_confirm_hd">
+                <div class="wx_confirm_tit" id = "msg_tip" style="font-size:1em"><!-- 提示信息 --></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 操作提示 end -->
+
+<!-- 是否快递取件 start -->
+<div id="confirm_express" style="display:none" class="cod">
+    <div class="wx_mask"></div>
+    <div class="wx_confirm">
+        <div class="wx_confirm_inner" style="padding:6% 0 0 0;width:100%">
+            <div class="wx_confirm_hd bigfont p10">
+                根据您选择的地址，订单将分配顺丰速运为您进行取件服务，请点击【继续】跳转到下单页重新预约哦~
+            </div>
+            <div class="wx_confirm_bd">
+                <div class="borderD"></div>
+                <div class="wx_confirm_btns" style="position:relative">
+                    <input type="hidden" id="city_id" value="" />
+                    <input type="hidden" id="city_name" value="" />
+                    <button type="cancel" id="cancel_express">取消</button>
+                    <button type="submit" id="ok_express">继续</button>
+                    <div class="borderL"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 是否快递取件 end -->
+
+<script type='text/javascript' src="/js/edaixi/address.js"></script>
+<script>
+    $(document).ready(function() {
+        $('#save_address').click(function() {
+            if(false === checkform()){
+                return false;
+            }
+            var id = $("#id").val();
+            var params = {city: $("#city").val(), district: $("#district").val(), community: $("#community").val(), detail: $("#detail").val(), fullName: $("#fullName").val(), sex: $("#sex").val(), mobile: $("#mobile").val()};
+            var url = "/sysUserAddress/create";
+            if(id) {
+                params["id"] = id;
+                url = "/sysUserAddress/update";
+            }
+            ajax_post_json(url, JSON.stringify(params), function() {
+                window.location.href = "/sysUserAddress";
+            });
+        });
+
+        $('#city, #district, #community').on('change', function() {
+            setSaveBtn();
+        });
+
+        $('#mobile, #detail, #fullName').on('focus input blur', function(){
+            setSaveBtn();
+        });
+        $(":radio[name='sex']").on('change', function(){
+            setSaveBtn();
+        });
+        setSaveBtn();
+    });
+</script>
+
+</body>
+</html>

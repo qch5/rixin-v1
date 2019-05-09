@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8"/>
+    <title>工单管理</title>
+    <link href="/css/base.css" rel="stylesheet">
+    <link href="/css/form.css" rel="stylesheet">
+    <link href="/js/layer/skin/default/layer.css" rel="stylesheet">
+    <script type="text/javascript">document.domain = "jd.com";</script>
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery-placeholder.js"></script>
+    <script type="text/javascript" src="/js/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="/js/jquery/Modernizr.js"></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
+    <script type="text/javascript" src="/js/area.js"></script>
+</head>
+<body>
+
+<div class="c-right" style="height: 100%;">
+    <div class="mainCon">
+        <div class="section">
+            <form class="formBox" action="$path">
+                <dl class="cl">
+                    <dt>名称：</dt>
+                    <dd>
+                        <input type="hidden" id="id" name="id" value="$!{info.id}">
+                        #if(!$info.pId)
+                            #set($info.pId = 0)
+                        #end
+                        <input type="hidden" id="pId" name="pId" #if($pId) value="$pId" #else value="$!{info.pId}" #end">
+                        <input class="mod_input" id="name" name="name" value="$!{info.name}" placeholder="请输入菜单名称" maxlength="30" type="text" data-must="true" data-name="名称">
+                    </dd>
+                    <dt>链接：</dt>
+                    <dd>
+                        <input class="mod_input" id="url" name="url" value="$!{info.url}" placeholder="请输入菜单链接" maxlength="30" type="text" data-must="true" data-name="链接">
+                    </dd>
+                    <dt>图标：</dt>
+                    <dd>
+                        <input class="mod_input" id="icon" name="icon" value="$!{info.icon}" placeholder="请输入图标" maxlength="30" type="text" data-name="图标">
+                    </dd>
+                    <dt>描述：</dt>
+                    <dd>
+                        <textarea class="txt_description" id="desc" name="desc" placeholder="请输入描述说明">$!{info.desc}</textarea>
+                    </dd>
+                </dl>
+                <div class="btn_wrap">
+                    <a id="submit" class="mod_btn btn_submit">提交</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>

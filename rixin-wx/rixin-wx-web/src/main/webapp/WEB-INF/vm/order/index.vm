@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" style="font-size: 55.2px;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <title>日新洗衣</title>
+    <link href="/css/yujia/global.css?t=20170824_1" rel="stylesheet" type="text/css">
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css">
+    <link href="/assets/weiui/weui.css" rel="stylesheet">
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css">
+    <style>
+        .wheet {
+            background-color: #f0f3f5 !important;
+        }
+    </style>
+</head>
+<body class="wheet" style="">
+<div class="mcontainer">
+    <div class="head containered">
+        <a class="one l GoBack" onclick="window.history.go(-1);" style="">
+            <span class="icon_back"></span>
+        </a>
+        <div class="two l fc">
+            <p class="Sub fc text-ellipsis">我的订单</p>
+        </div>
+        <div class="third l fr naved">
+            <div class="nav_out"></div> </div>
+    </div>
+    <div class="headheight"></div>
+    <div style="display: none;" class="weui_toptips weui_warn js_tooltips"></div>
+    <div class="myorder">
+        <div class="ddlb-cd">
+            <ul>
+                <li class="on"><a class="search-fw" href="/Order/OrderList">全部服务</a></li>
+                <li class=""><a class="search-fw" href="/Order/OrderList?ServiceState=1">未服务</a></li>
+                <li class=""><a class="search-fw" href="/Order/OrderList?ServiceState=2">已服务</a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div id="orderList" class="orderList paging_list" data-page="1" data-pagecount="1">
+            <div class="ddlb-row order_row" data-page="1" data-pagecount="1">
+                <div class="ddlb-hd" onclick="getOrder(1903101530240212)">
+                    <span class="ddlb-ddh">订单号：1903101530240212</span>
+                    <span class="ddlb-ddzt colord91010">
+待支付
+</span>
+                    <div class="ddlb-prompt colord91010">
+                        请在十分钟内完成支付
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="ddlb-box" onclick="getOrder(1903101530240212)">
+                    <div class="dd-cp-icon l"><img class="cp-icon" src="/imgs/xiadan.jpg"></div>
+                    <div class="dd-xq l">
+                        <span class="dd-cp">洗衣</span>
+                        <div class="dd-con">
+                            <div class="dd-row">
+                                <span class="dd-cell dd-lab">预约时间：</span>
+                                <span class="dd-cell dd-val">03月12日 14:00</span>
+                            </div>
+                            <div class="dd-row">
+                                <span class="dd-cell dd-lab">服务地址：</span>
+                                <span class="dd-cell dd-val"> 宿迁市恒大华府</span>
+                            </div>
+                            <div class="dd-row">
+                                <span class="hdd-cell dd-lab">服务备注：</span>
+                                <span class="dd-cell dd-val"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="ddlb-foot">
+                    <div class="foot-dd r">
+                        <span class="foot-total">共计：<span class="colord91010">¥300.00</span></span>
+                        <div class="foot-btn">
+                            <a href="/payment/pay" class="hmwx-btn hmwx-btn-radius bg-ffbf74">现在付款</a>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//pingjs.qq.com/h5/stats.js?v2.0.4" name="MTAH5" sid="500665928" cid="500665929"></script>
+    #parse("/common/share.vm")
+    #parse("/common/menu.vm")
+</div>
+##<script src="/bundles/jquery?v=QRLKVG_Xx6dQNG8i26GuXfNZzCriV9JX2xBS8PhczpE1"></script>
+<script src="/js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/Scripts/comm.js?t=v1.0"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    function getOrder(billNo) {
+        location.href = "/Payment/OrderDetails?billNo="+billNo;
+    }
+    //点击加载更多
+    function LoadMore(obj) {
+        $(obj).attr("disabled", "disabled");
+        $(obj).text("正在加载...");
+        var page = parseInt($(".paging_list").attr("data-page")) + 1;
+        var pagecount = parseInt($(".paging_list").attr("data-pagecount"))
+        if (page <= pagecount) {
+            $.ajax({
+                url: '/Order/OrderList?IsAjax=true&page=' + page +"&ServiceState="+'',
+                type: 'get',
+                cache: false,
+                //async: false,
+                success: function (r) {
+                    $(".paging_list").append(r);
+                    $(".paging_list").attr("data-page", $(".order_row:last-child").attr("data-page"))
+                    $(".paging_list").attr("data-pagecount", $(".order_row:last-child").attr("data-pagecount"))
+                    $(obj).removeAttr("disabled");
+                    $(obj).text("点击加载更多...");
+                    if (page == pagecount) {
+                        $(obj).remove()
+                    }
+                }
+            });
+        }
+    }
+</script>
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&amp;web_id=1260785617" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1260785617&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1260785617" target="_blank" title="站长统计">站长统计</a>
+    <script>
+        var _mtac = {};
+        (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500665928");
+            mta.setAttribute("cid", "500665929");
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+</div>
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    $.cookie("PayMethod", "", { expires: -1 });
+    if (GetQueryString('PayMethod') != null) {
+        $.cookie('PayMethod', GetQueryString('PayMethod'));
+    }
+</script></body></html>

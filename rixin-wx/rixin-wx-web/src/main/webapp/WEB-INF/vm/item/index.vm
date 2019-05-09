@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow:hidden">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" type="text/css" href="/css/edaixi/prices.css?date=20170417">
+    <link href="/css/yujia/globalAll.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/weiui/weui.css" rel="stylesheet" type="text/css" />
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css" />
+    <title>日新洗衣</title>
+</head>
+<body>
+
+<div id="html_Layout">
+    <div id="html_body">
+        <div class="head containered" style="position:fixed;width:100%;z-index:500;top:0;clear: both;">
+            <a class="one l GoBack" href="javascript:history.back(-1)" style="">
+                <span class="icon_back"></span>
+            </a>
+            <div class="two l fc">
+                <p class="Sub fc text-ellipsis">洗衣</p>
+            </div>
+            <div class="third l fr naved" >
+                <div class="nav_out"></div>
+            </div>
+
+            #parse("/common/menu.vm")
+        </div>
+
+        <style>
+            body, html { }
+        </style>
+
+        <div id="main" style="margin-bottom:0.98rem">
+            <div class="fwlb">
+                <img src="/imgs/xiadan.jpg" class="img1" />
+                <div class="nt auto">
+                    <h1>日新洗衣</h1>
+                    <p>本产品为您提供洗衣服务，起步价30元，客户预约下单后，服务人员将上门根据衣物情况确认实际价格、并按专业流程完成服务。预计2-3天送回。</p>
+                    <img class="icon-fx" src="/imgs/cp-fx.png" />
+                </div>
+                <div class="jg">
+                    #*<label><span>￥</span>8<span></span></label>*#
+                </div>
+            </div>
+
+            <div class="fwxq" style="position:relative;">
+##                <div class="t ovh"><span class="l">服务详情</span></div>
+                <div class="box" style="position:absolute; z-index:4; width:100%;font-size:0; padding: 0;">
+                    <iframe src="/washing" id="iframes" frameborder="0" marginwidth="0" marginheight="0" style="width:100%; z-index: 999999999999" scrolling="no"></iframe>
+                </div>
+                <div id="neir" style="position:absolute; z-index:3; width:100%;"></div>
+                <div id="neir2"></div>
+            </div>
+        </div>
+
+        <!-- 下单按钮 -->
+        <div class="hmwx-btn-fixed" style="display: none">
+            <a href="/order/create" class="hmwx-btn hmwx-btn-radiu">立即预约</a>
+        </div>
+
+        <!--拼团 去拼团-->
+        <div data-reactroot="" class="g-group-pop-up" style="display:none">
+            <div class="bg-fill"></div>
+            <div class="g-group-pop-up-wrapper">
+                <div class="g-group-header">
+                    <div class="g-group-title">参加<span class="g-group-user-name">一路上有你</span>的拼单</div>
+                    <div class="g-group-info">
+                        仅剩
+                        <span>1</span>个名额
+                        <i>
+                            <span class="h-1">23</span>:
+                            <span class="m-1">45</span>:<span class="s-1">34</span>
+                        </i>后结束
+                    </div>
+                    <div class="g-group-close"></div>
+                </div>
+                <div class="g-group-content">
+                    <ul class="g-group-users">
+                    </ul>
+                </div>
+                <div class="g-group-footer">
+                    <button data-active="before-red" data-CollageKey="" class="addCollageSave">参与拼单</button>
+                </div>
+            </div>
+        </div>
+
+        <!--拼团 查看更多-->
+        <div>
+            <div data-reactroot="" class="local-groups-popup-wrapper" style="display:none;">
+                <div class="lgp-position">
+                    <div class="lgp-modal">
+                        <div class="lgp-title">
+                            正在拼单
+                        </div>
+                        <div id="local-group-popup-list" class="local-group-popup-list-container more-height" style="overflow-y: scroll;">
+                        </div>
+                        <div class="lgp-close"></div>
+                    </div>
+                </div><div class="lgp-background">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/js/yujia/my.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.js" type="text/javascript"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script src="/js/yujia/leftTime.js"></script>
+
+<script type="text/javascript">
+    function setIframeHeight() {
+        var iframe = document.getElementById('iframes');
+    	if (iframe) {
+    		var iframeWin = iframe.contentWindow || iframe.contentDocument.parentWindow;
+    		if (iframeWin.document.body) {
+    			var height = iframeWin.document.body.scrollHeight || iframeWin.document.documentElement.scrollHeight || iframeWin.document.body.scrollHeight;
+    			$(iframe).height(height);
+    		}
+    	}
+    };
+
+    window.onload = function () {
+       setIframeHeight();
+    };
+
+    var clearTime;
+    function AddCollage(date, CollageKey, Name,CollageNumPeople) {
+        clearTime = $.leftTime(date, function (d) {
+            if (d.status) {
+                $(".h-1").html(d.h);
+                $(".m-1").html(d.m);
+                $(".s-1").html(d.s);
+            }
+        });
+
+        $.ajax({
+            url: '/Collage/GetOne?CollageKey=' + CollageKey ,
+            type: 'GET',
+            cache: false,
+            //async: false,
+            success: function (r) {
+                if (CollageNumPeople <= r.length) {
+                    $.my.dialog({
+                        content: '订单人数已满！'
+                    });
+                    window.location.reload();
+                    return false;
+                } else
+                {
+                    if (r.length == 0) {
+                        $.my.dialog({
+                            content: '拼团订单已取消！'
+                        });
+                        window.location.reload();
+                        return false;
+                    } else
+                    {
+                        $(".addCollageSave").attr("data-CollageKey", CollageKey);
+                        if (r[0].Name.match(/^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/)) {
+                            $(".g-group-user-name").html(r[0].Name);
+                            $(".g-group-user-name").html(r[0].Name.substring(0, 3) + "****" + r[0].Name.substring(7, 11));
+                        } else {
+                            $(".g-group-user-name").html(r[0].Name);
+                        }
+
+                        var str = "";
+                        for (var i = 0; i < r.length; i++) {
+                            str += ' <li class="g-group-detail-user ' + (i == 0 ? "g-group-detail-owner" : "") + '" style="background: url(' + ((r[i].HeadImg == "" || r[i].HeadImg == null) ? "/Content/images/user.png" : r[i].HeadImg) + ') 0% 0% / 100% 100%;"></li>';
+                        }
+                        for (var i = 0; i < CollageNumPeople - r.length; i++) {
+                            str += '<li class="g-group-wait-user"></li>';
+                        }
+                        $(".g-group-users").html('');
+                        $(".g-group-users").append(str);
+                    }
+                }
+            }
+        });
+        $(".g-group-pop-up").fadeIn(1);
+
+        // window.location.href = "/Order/Add?pid=139&city=1&Method=拼团模板&Master=2&" + CollageKey+"";
+    }
+
+    function AddCollage2(date, CollageKey, Name, CollageNumPeople) {
+        $.ajax({
+            url: '/Collage/GetOne?CollageKey=' + CollageKey,
+            type: 'GET',
+            cache: false,
+            //async: false,
+            success: function (r) {
+                if (CollageNumPeople <= r.length) {
+                    $.my.dialog({
+                        content: '订单人数已满！'
+                    });
+                    window.location.reload();
+                    return false;
+                }
+                if (r.length == 0) {
+                    $.my.dialog({
+                        content: '拼团订单已取消！'
+                    });
+                    window.location.reload();
+                    return false;
+                }
+                window.location.href = "/Order/Add?pid=139&city=1&Method=2&Master=2&CollageKey=" + CollageKey+"";
+            }
+        });
+    }
+
+    $(".addCollageSave").click(function () {
+        window.location.href = "/Order/Add?pid=139&city=1&Method=2&Master=2&CollageKey=" + $(".addCollageSave").attr("data-CollageKey")+"";
+    })
+
+    $(function () {
+        $("#more").click(function () {
+            $(".local-groups-popup-wrapper").fadeIn(1);
+            var data_show = $('.data-box-1');
+            for (var i = 1; i <= data_show.length; i++) {
+                function_name($("#dateshow-" + i).data("date"), "#dateshow-" + i);
+            }
+        })
+        $(".lgp-close").click(function () {
+            $(".local-groups-popup-wrapper").fadeOut(1);
+        })
+        $(".g-group-close").click(function () {
+            $(".g-group-pop-up").fadeOut(1);
+            //清除倒计时
+            window.clearInterval(clearTime);
+        })
+        var data_show = $('.data-box');
+         for (var i = 1; i <= data_show.length; i++) {
+             function_name($("#dateshow" + i).data("date"), "#dateshow" + i);
+         }
+
+         function function_name(time, obj) {
+             ## $.leftTime(time, function (d) {
+             ##     if (d.status) {
+             ##         var $dateshow1 = $(obj);
+             ##         $dateshow1.find(".d").html(d.d);
+             ##         $dateshow1.find(".h").html(d.h);
+             ##         $dateshow1.find(".m").html(d.m);
+             ##         $dateshow1.find(".s").html(d.s);
+             ##     }
+             ## });
+         }
+        $("#iframes").load(function () {
+            resizeHeight();
+        });
+    });
+
+    function resizeHeight() {
+        var iframe = $("#iframes");
+        var height = iframe.contents().find("html").outerHeight(true);
+        iframe.height(height);
+        $("#neir").height(height);
+        $("#neir2").height(height);
+    }
+</script>
+
+#parse("/common/share.vm")
+</body>
+</html>
+
+<script>
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+
+    if (GetQueryString('PayMethod') != null) {
+        var date = new Date();
+        date.setTime(date.getTime() + 60 * 60 * 1000);
+        $.cookie('PayMethod', GetQueryString('PayMethod'), {
+            expires: date
+        });
+    }
+    //else {
+    //      $.cookie('PayMethod', '', { expires: -1 }); // 删除 cookie
+    //}
+</script>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd"
+       default-autowire="byName">
+	
+	<context:component-scan base-package="com.rixin.**" use-default-filters="false">
+		<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+	
+	<aop:aspectj-autoproxy/>
+	
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="objectMapper">
+					<bean class="com.fasterxml.jackson.databind.ObjectMapper">
+						<property name="dateFormat">
+							<bean class="java.text.SimpleDateFormat">
+								<constructor-arg type="java.lang.String" value="yyyy-MM-dd HH:mm:ss" />
+							</bean>
+						</property>
+					</bean>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	
+	<bean id="mvcVelocityEngine" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+		<property name="preferFileSystemAccess" value="false"/>
+		<property name="resourceLoaderPath" value="/WEB-INF/vm/" />
+		<property name="velocityProperties">
+			<props>
+				<!-- 指定模板引擎进行模板处理的编码 -->
+				<prop key="input.encoding">${encoding}</prop>
+				<!-- 指定输出流的编码 -->
+				<prop key="output.encoding">${encoding}</prop>
+				<!-- 不缓存，少量模板时使用 -->
+				<prop key="spring.resource.loader.cache">false</prop>
+			</props>
+		</property>
+	</bean>
+	
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+		<property name="prefix" value=""/>
+		<property name="suffix" value=".vm"/>
+		<property name="cache" value="false"/>
+		<property name="contentType" value="text/html;charset=${encoding}"/>
+		<property name="exposeRequestAttributes" value="true"/>
+		<property name="requestContextAttribute" value="request"/>
+		<property name="allowRequestOverride" value="true"></property>
+		<property name="exposeSessionAttributes" value="true" />
+		<property name="allowSessionOverride" value="true" />
+		<property name="dateToolAttribute" value="dateTool" />
+	</bean>
+	
+	<!-- 支持上传文件 -->
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+	<!-- 异常处理器 -->
+	<bean id="exceptionHandlerExceptionResolver" class="org.springframework.web.servlet.mvc.method.annotation.ExceptionHandlerExceptionResolver"/>
+	<!-- 登录认证 -->
+	<import resource="spring/spring-config-hrm.xml" />
+</beans>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <title>日新洗衣</title>
+    <link href="/css/yujia/global.css?t=20170824_1" rel="stylesheet" type="text/css" />
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/weiui/weui.css" rel="stylesheet" />
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css" />
+</head>
+<body class="wheet">
+<div class="mcontainer">
+    <div class="head containered">
+        <a class="one l GoBack" href="javascript:history.back(-1);" style="">
+            <span class="icon_back"></span>
+        </a>
+        <div class="two l fc">
+            <p class="Sub fc text-ellipsis">优惠券</p>
+        </div>
+        <div class="third l fr naved">
+            <div class="nav_out"></div> </div>
+    </div>
+    <div class="headheight"></div>
+    <div style="display: none;" class="weui_toptips weui_warn js_tooltips"></div>
+    <div class="yhq-main">
+#*        <div class="yhq-ecode">
+            <div class="hscp-inpbtn exchange-key l">
+                <input type="text" class="hscp-inpbtn-inp" id="key" placeholder="输入兑换码" value="" />
+                <input type="button" id="exchange" value="兑换" class="hscp-inpbtn-btn" />
+            </div>
+            <div class="yhq-help r">
+                <a href="/Help/CouponAgreement" class="">
+                    <img class="yhq-icon" src="/Content/images/help.png">
+                </a>
+            </div>
+        </div>
+        <div class="yhq-divider"></div>*#
+        <div class="yhq-my">
+            <div class="yhq-my-hd">
+                我的优惠券
+            </div>
+            <div class="empty-data"><img class="yhq-k" src="/Content/images/yhq-k.png" /></div>
+        </div>
+    </div>
+    #parse("/common/share.vm")
+    #parse("/common/menu.vm")
+</div>
+<script src="/bundles/jquery?v=QRLKVG_Xx6dQNG8i26GuXfNZzCriV9JX2xBS8PhczpE1"></script>
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/js/yujia/comm.js?t=v1.0"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    $(document).ready(function () {
+        var keys = GetQueryString('CouponId')
+        $("#key").val(keys)
+    })
+</script>
+<script>
+    $("#exchange").click(function () {
+        var t = this;
+        var key = $("#key").val();
+        $.ajax({
+            url: "/Coupon/Exchange",
+            data: { key: key },
+            type: "POST",
+            beforeSend: function () {
+                $(t).attr("disabled", "disabled");
+            },
+            success: function (r) {
+                if (r.State == 1) //成功
+                {
+                    $.weui.toast(r.Msg, function () { }, 'weui_icon_toastsucess');
+                    location.href = "/Coupon/Index";
+                } else // 其他问题
+                {
+                    $.weui.toast(r.Msg, function () { }, 'weui_icon_toast');
+                }
+                $(t).removeAttr("disabled");
+            },
+            error: function () {
+                $.weui.toast('发生异常', function () { }, 'weui_icon_toast');
+                $(t).removeAttr("disabled");
+            }
+        });
+    })
+    //点击加载更多
+    function LoadMore(obj) {
+        $(obj).attr("disabled", "disabled");
+        $(obj).text("正在加载...");
+        var page = parseInt($(".paging_list").attr("data-page")) + 1;
+        var pagecount = parseInt($(".paging_list").attr("data-pagecount"))
+        if (page <= pagecount) {
+            $.ajax({
+                url: '/Coupon/Index?IsAjax=true&ProductId=&CouponId=&page=' + page,
+                type: 'get',
+                cache: false,
+                //async: false,
+                success: function (r) {
+                    $(".paging_list").append(r);
+                    $(".paging_list").attr("data-page", $(".pag:last-child").find(".pick").attr("data-page"));
+                    $(".paging_list").attr("data-pagecount", $(".pag:last-child").find(".pick").attr("data-pagecount"));
+                    $(obj).removeAttr("disabled");
+                    $(obj).text("点击加载更多...");
+                    if (page == pagecount) {
+                        $(obj).remove();
+                    }
+                }
+            });
+        }
+    }
+</script>
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&web_id=1260785617" language="JavaScript"></script>
+    <script>
+        var _mtac = {};
+        (function() {
+            var mta = document.createElement("script");
+            mta.src = "//pingjs.qq.com/h5/stats.js?v2.0.4";
+            mta.setAttribute("name", "MTAH5");
+            mta.setAttribute("sid", "500665928");
+            mta.setAttribute("cid", "500665929");
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(mta, s);
+        })();
+    </script>
+</div>
+</body>
+</html>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    $.cookie("PayMethod", "", { expires: -1 });
+    if (GetQueryString('PayMethod') != null) {
+        $.cookie('PayMethod', GetQueryString('PayMethod'));
+    }
+</script>

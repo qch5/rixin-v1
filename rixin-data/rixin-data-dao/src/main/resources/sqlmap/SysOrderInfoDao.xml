@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysOrderInfoDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysOrderInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="openid" jdbcType="VARCHAR" property="openid"/>
+        <result column="fullName" jdbcType="VARCHAR" property="fullName"/>
+        <result column="orderName" jdbcType="VARCHAR" property="orderName"/>
+        <result column="orderTime" jdbcType="TIMESTAMP" property="orderTime"/>
+        <result column="prices" jdbcType="DOUBLE" property="prices"/>
+        <result column="discount" jdbcType="DOUBLE" property="discount"/>
+        <result column="payWay" jdbcType="TINYINT" property="payWay"/>
+        <result column="payment" jdbcType="DOUBLE" property="payment"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="comment" jdbcType="VARCHAR" property="comment"/>
+        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, openid, fullName, orderName, orderTime, prices, discount, payWay, payment, address, `comment`, mobile, `status`, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_order_info
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_order_info
+        where openid = #{openid, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_order_info
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.openid != null and info.openid != ''">
+                and openid = #{info.openid, jdbcType=VARCHAR}
+            </if>
+            <if test="info.fullName != null and info.fullName != ''">
+                and fullName = #{info.fullName, jdbcType=VARCHAR}
+            </if>
+            <if test="info.fullName != null and info.fullName != ''">
+                and fullName = #{info.fullName, jdbcType=VARCHAR}
+            </if>
+            <if test="info.orderName != null and info.orderName != ''">
+                and orderName like CONCAT('%', #{info.id}, '%')
+            </if>
+            <if test="info.payWay != null">
+                and payWay = #{info.payWay, jdbcType=TINYINT}
+            </if>
+            <if test="info.address != null and info.address != ''">
+                and address like CONCAT('%', #{info.address}, '%')
+            </if>
+            <if test="info.mobile != null and info.mobile != ''">
+                and mobile = #{info.mobile, jdbcType=VARCHAR}
+            </if>
+            <if test="info.status != null">
+                and `status` = #{info.status, jdbcType=TINYINT}
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_order_info where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysOrderInfo" useGeneratedKeys="true">
+        insert into sys_order_info (openid, fullName, orderName, orderTime, prices, discount, payWay, payment, address, `comment`, mobile, `status`, createTime)
+        values (
+            #{openid, jdbcType=VARCHAR},
+            #{fullName, jdbcType=VARCHAR},
+            #{orderName, jdbcType=VARCHAR},
+            #{orderTime, jdbcType=TIMESTAMP},
+            #{prices, jdbcType=DOUBLE},
+            #{discount, jdbcType=DOUBLE},
+            #{payWay, jdbcType=TINYINT},
+            #{payment, jdbcType=DOUBLE},
+            #{address, jdbcType=VARCHAR},
+            #{comment, jdbcType=VARCHAR},
+            #{mobile, jdbcType=VARCHAR},
+            #{status, jdbcType=TINYINT},
+            #{createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysOrderInfo" useGeneratedKeys="true">
+        insert into sys_order_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="fullName != null">
+                fullName,
+            </if>
+            <if test="orderName != null">
+                orderName,
+            </if>
+            <if test="orderTime != null">
+                orderTime,
+            </if>
+            <if test="prices != null">
+                prices,
+            </if>
+            <if test="discount != null">
+                discount,
+            </if>
+            <if test="payWay != null">
+                payWay,
+            </if>
+            <if test="payment != null">
+                payment,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="comment != null">
+                `comment`,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="openid != null">
+                #{openid, jdbcType=VARCHAR},
+            </if>
+            <if test="fullName != null">
+                #{fullName, jdbcType=VARCHAR},
+            </if>
+            <if test="orderName != null">
+                #{orderName, jdbcType=VARCHAR},
+            </if>
+            <if test="orderTime != null">
+                #{orderTime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="prices != null">
+                #{prices, jdbcType=DOUBLE},
+            </if>
+            <if test="discount != null">
+                #{discount, jdbcType=DOUBLE},
+            </if>
+            <if test="payWay != null">
+                #{payWay, jdbcType=TINYINT},
+            </if>
+            <if test="payment != null">
+                #{payment, jdbcType=DOUBLE},
+            </if>
+            <if test="address != null">
+                #{address, jdbcType=VARCHAR},
+            </if>
+            <if test="comment != null">
+                #{comment, jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                #{mobile, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysOrderInfo">
+        update sys_order_info
+        <set>
+            <if test="openid != null">
+                openid = #{openid, jdbcType=VARCHAR},
+            </if>
+            <if test="fullName != null">
+                fullName = #{fullName, jdbcType=VARCHAR},
+            </if>
+            <if test="orderName != null">
+                orderName = #{orderName, jdbcType=VARCHAR},
+            </if>
+            <if test="orderTime != null">
+                orderTime = #{orderTime, jdbcType=TIMESTAMP},
+            </if>
+            <if test="prices != null">
+                prices = #{prices, jdbcType=DOUBLE},
+            </if>
+            <if test="discount != null">
+                discount = #{discount, jdbcType=DOUBLE},
+            </if>
+            <if test="payWay != null">
+                payWay = #{payWay, jdbcType=TINYINT},
+            </if>
+            <if test="payment != null">
+                payment = #{payment, jdbcType=DOUBLE},
+            </if>
+            <if test="address != null">
+                address = #{address, jdbcType=VARCHAR},
+            </if>
+            <if test="comment != null">
+                `comment` = #{comment, jdbcType=VARCHAR},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysOrderInfo">
+        update sys_order_info
+        set openid = #{openid, jdbcType=VARCHAR},
+            fullName = #{fullName, jdbcType=VARCHAR},
+            orderName = #{orderName, jdbcType=VARCHAR},
+            orderTime = #{orderTime, jdbcType=TIMESTAMP},
+            prices = #{prices, jdbcType=DOUBLE},
+            discount = #{discount, jdbcType=DOUBLE},
+            payWay = #{payWay, jdbcType=TINYINT},
+            payment = #{payment, jdbcType=DOUBLE},
+            address = #{address, jdbcType=VARCHAR},
+            `comment` = #{comment, jdbcType=VARCHAR},
+            mobile = #{mobile, jdbcType=VARCHAR},
+            `status` = #{status, jdbcType=TINYINT},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

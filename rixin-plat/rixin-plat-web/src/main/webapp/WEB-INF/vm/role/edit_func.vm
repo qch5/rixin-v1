@@ -1,0 +1,227 @@
+<html lang="zh-CN">
+<head>
+    <link rel="stylesheet" href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/page.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/layui.css" rel="stylesheet">
+    <link rel="stylesheet" href="/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="/js/WdatePicker/skin/twoer/datepicker.css">
+    <link rel="stylesheet" href="/js/jqGrid/css/ui.jqgrid.css" rel="stylesheet">
+    <link rel="stylesheet" href="/js/zTree/zTreeStyle.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jqGrid/grid.locale-cn.js" ></script>
+    <script type="text/javascript" src="/js/jqGrid/jquery.jqGrid.min.js" ></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/WdatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/js/zTree/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="/js/zTree/jquery.ztree.excheck.js"></script>
+    <script type="text/javascript" src="/js/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script>document.domain = "rixin.com";</script>
+    <style>
+        .layui-form input {
+            width: 250px;
+        }
+        .layui-form input[type="checkbox"], .layui-form input[type="radio"], .layui-form select {
+            display: block!important;
+        }
+        .layui-form input {
+            width: 25px;
+        }
+        .webButtom {
+            padding: 10px 0px;
+            margin-top: 5px;
+            height: 34px;
+            line-height: 34px;
+            color: #666;
+            border-top: 1px solid #d9e2e9;
+        }
+    </style>
+</head>
+
+<body>
+<div class="c-right">
+    <div class="mainCon">
+        <div class="section">
+            <!-- 搜索框 - 开始 -->
+            <div class="webDiv">
+                <div class="fl">
+                    <form id="queryForm" action="" method="post">
+                        <input type="hidden" id="roleId" value="$!{roleId}">
+                        搜索菜单：<input type="text" id="searchName" name="searchName" class="inputMode w200">
+                        <a href="#" id="search" class="schBtn">搜索</a>
+                    </form>
+                </div>
+            </div>
+            <!-- 搜索框 - 结束 -->
+
+            <div id="content" style="min-height: 390px; margin-top: 10px;">
+                <div style="width: 30%;float: left; margin-top:4px;">
+                    <div id="allDiv">
+                        <a id="expandAll"><b>全部展开</b></a> | <a id="collapseAll"><b>全部收缩</b></a>
+                    </div>
+                    <ul id="menuTree" class="ztree"></ul>
+                </div>
+
+                <!-- 功能详情 - 开始 -->
+                <div id="funcDiv" style="display:none; width: 70%; float: left;">
+                    <div class="layui-form">
+                        <div class="layui-form-item" style="margin-left: -40px;">
+                            <label class="layui-form-label" style="margin-top:-5px;"><b>菜单功能</b></label>
+                        </div>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th style="width: 40px;"><input type="checkbox" name="checkAll" onclick="checkAll(this)"/></th>
+                                <th>名称</th>
+                                <th>路径</th>
+                            </tr>
+                            </thead>
+                            <tbody id="funcList">
+                            <tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 功能详情 - 结束 -->
+            </div>
+            <!-- 底层操作 - 开始 -->
+            <div class="webButtom">
+                <div style="text-align: center;">
+                    <a href="#" id="save" class="schBtn">提交</a>
+                </div>
+            </div>
+            <!-- 底层操作 - 结束 -->
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<SCRIPT type="text/javascript">
+    var setting = {
+        check: {
+            enable: true,
+            chkboxType:  {"Y" : "ps", "N" : "ps"}
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        callback: {
+            onCheck: function(event, treeId, treeNode) {
+                refreshFunc(event, treeId, treeNode, treeNode.checked);
+            },
+            onClick: function(event, treeId, treeNode, clickFlag) {
+                var checked = false;
+                if(treeNode.checked) {
+                    checked = true;
+                };
+                refreshFunc(event, treeId, treeNode, checked);
+            }
+        }
+    };
+
+    $(document).ready(function() {
+        var zTree = {};
+        ajax_post_data("/menu/list", null, function (data) {
+            $.each(data, function(i, node) {
+                delete node.url;
+                delete node.icon;
+                var list = "$!{list}";
+                if(!list) {
+                    list = "[]";
+                }
+                var funcs = JSON.parse(list);
+                if($.inArray(node.id, funcs) > -1) {
+                    node.checked = true;
+                }
+            });
+            zTree = $.fn.zTree.init($("#menuTree"), setting, data);
+            zTree.setting.check.chkboxType = {"Y" : "ps", "N" : "ps"};
+            $("#expandAll").click();
+        });
+
+        $("#search").click(function() {
+            var searchName = $("#searchName").val().trim();
+            if(!searchName) {
+                return;
+            }
+            var nodes = zTree.getNodesByParamFuzzy("name", searchName);
+            for(var i = 0; i < nodes.length ; i++) {
+                zTree.selectNode(nodes[i]);
+                if(i+1 == nodes.length) {
+                    return;
+                }
+                var msg = "当前查询结果："+(i+1)+"/"+nodes.length+"\n是否查找下一个？";
+                if(!confirm(msg)){
+                    break;
+                }
+            }
+        });
+
+        $("#save").click(function() {
+            var zTree = $.fn.zTree.getZTreeObj("menuTree");
+            var nodes = zTree.getCheckedNodes(true);
+            var data = [];
+            for(var i = 0; i < nodes.length; i++) {
+                data.push(nodes[i].id);
+            }
+            ajax_post_data("/role/func", {roleId: $("#roleId").val(), funcIds: data.join(",")}, function (data) {
+                layer.msg("添加成功");
+            });
+        });
+
+        $("#expandAll").click(function() {
+            zTree.expandAll(true);
+        });
+
+        $("#collapseAll").click(function() {
+            zTree.expandAll(false);
+        });
+    });
+
+    function checkAll(el) {
+        var checked = $(el).attr("checked");
+        if(checked) {
+            $("input[name='checkFunc']").attr("checked", true);
+        } else {
+            $("input[name='checkFunc']").removeAttr("checked");
+        }
+    };
+
+    function refreshFunc(event, treeId, treeNode, checked) {
+        $("#menuDiv").hide();
+        $("#funcDiv").hide();
+        var index = layer.load(1, {
+            shade: [0.1,'#fff']
+        });
+        ajax_post_data("/menu/info", {id: treeNode.id}, function (data) {
+            $("#menuDiv").show();
+            $("#funcDiv").show();
+            $("#id").val(data.id);
+            $("#name").val(data.name);
+            $("#url").val(data.url);
+            $("#icon").val(data.icon);
+            $("#path").val(data.path);
+            $("#desc").val(data.desc);
+            layer.close(index);
+        });
+        ajax_post_data("/menu/funcList", {id: treeNode.id}, function (data) {
+            $("#funcList").empty();
+            $.each(data, function(i, node) {
+                $("#funcList").append(
+                        "<tr id='tr_" + node.id + "'>" +
+                        "<td><input type='checkbox' name='checkFunc' funcId='" + node.id + "'></td>" +
+                        "<td>" + node.name + "</td>" +
+                        "<td>" + node.url + "</td>" +
+                        "</tr>"
+                );
+            });
+            $("input[name='checkAll']").attr("checked", checked);
+            $("input[name='checkFunc']").attr("checked", checked);
+            $("#content").css("height", $("#funcDiv").height() + 10);
+        });
+    }
+
+</SCRIPT>

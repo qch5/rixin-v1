@@ -1,0 +1,55 @@
+<html lang="zh-CN">
+<head>
+    <link rel="stylesheet" href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form.css">
+    <link rel="stylesheet" href="/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="/js/WdatePicker/skin/twoer/datepicker.css">
+    <link rel="stylesheet" href="/js/jqGrid/css/ui.jqgrid.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jqGrid/grid.locale-cn.js" ></script>
+    <script type="text/javascript" src="/js/jqGrid/jquery.jqGrid.min.js" ></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/WdatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/form.js"></script>
+    <script>document.domain = "jd.com";</script>
+</head>
+
+<body>
+<div class="c-right">
+    <div class="mainCon">
+        <div class="section">
+            <form class="formBox" action="$path" method="post">
+                <input type="hidden" id="username" name="username" value="$!{username}">
+                <dl class="cl">
+					#foreach($role in $roleList)
+                        <dt style="margin-top:-4px;">$!role.name：</dt>
+						#set($flag = false)
+                        <dd style="min-height:28px;">
+							#foreach($user in $userRole)
+								#if($user.id eq $role.id)
+									#set($flag = true)
+								#end
+							#end
+							#if($flag)
+                                <input type="checkbox" name="roles" value="$!role.id" checked="checked" style="width: 100px;">
+							#else
+                                <input type="checkbox" name="roles" value="$!role.id" style="width: 100px;">
+							#end
+                        </dd>
+					#end
+                </dl>
+
+                <div class="btn_wrap">
+                    <a href="#" id="submit" class="mod_btn btn_submit" location="/identity/user/list">提交</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+
+</script>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysAreaInfoDao">
+
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysAreaInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="sname" jdbcType="VARCHAR" property="sname"/>
+        <result column="pId" jdbcType="INTEGER" property="pid"/>
+        <result column="level" jdbcType="TINYINT" property="level"/>
+        <result column="sort" jdbcType="INTEGER" property="sort"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="longitude" jdbcType="DOUBLE" property="longitude"/>
+        <result column="latitude" jdbcType="DOUBLE" property="latitude"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, `name`, sname, pId, `level`, sort, `status`, longitude, latitude, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_area_info
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_area_info
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.name != null and info.name != ''">
+                and `name` like CONCAT('%', #{info.id}, '%')
+            </if>
+            <if test="info.sname != null and info.sname != ''">
+                and sname like CONCAT('%', #{info.sname}, '%')
+            </if>
+            <if test="info.pId != null">
+                and pId = #{info.pId, jdbcType=INTEGER}
+            </if>
+            <if test="info.level != null">
+                and `level` = #{info.level, jdbcType=INTEGER}
+            </if>
+            <if test="info.sort != null">
+                and sort = #{info.sort, jdbcType=INTEGER}
+            </if>
+            <if test="info.status != null">
+                and `status` = #{info.status, jdbcType=TINYINT}
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_area_info where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysAreaInfo" useGeneratedKeys="true">
+        insert into sys_area_info (`name`, sname, pId, `level`, sort, `status`, longitude, latitude, createTime)
+        values (
+            #{name, jdbcType=VARCHAR},
+            #{sname, jdbcType=VARCHAR},
+            #{pid, jdbcType=INTEGER},
+            #{level, jdbcType=TINYINT},
+            #{sort, jdbcType=INTEGER},
+            #{status, jdbcType=TINYINT},
+            #{longitude, jdbcType=DOUBLE},
+            #{latitude, jdbcType=DOUBLE},
+            #{createTime, jdbcType=TIMESTAMP}
+          )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysAreaInfo" useGeneratedKeys="true">
+        insert into sys_area_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="sname != null">
+                sname,
+            </if>
+            <if test="pid != null">
+                pId,
+            </if>
+            <if test="level != null">
+                `level`,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="longitude != null">
+                longitude,
+            </if>
+            <if test="latitude != null">
+                latitude,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="sname != null">
+                #{sname, jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null">
+                #{pid, jdbcType=INTEGER},
+            </if>
+            <if test="level != null">
+                #{level, jdbcType=TINYINT},
+            </if>
+            <if test="sort != null">
+                #{sort, jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                #{status, jdbcType=TINYINT},
+            </if>
+            <if test="longitude != null">
+                #{longitude, jdbcType=DOUBLE},
+            </if>
+            <if test="latitude != null">
+                #{latitude, jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysAreaInfo">
+        update sys_area_info
+        <set>
+            <if test="name != null">
+                `name` = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="sname != null">
+                sname = #{sname, jdbcType=VARCHAR},
+            </if>
+            <if test="pid != null">
+                pId = #{pid, jdbcType=INTEGER},
+            </if>
+            <if test="level != null">
+                `level` = #{level, jdbcType=TINYINT},
+            </if>
+            <if test="sort != null">
+                sort = #{sort, jdbcType=INTEGER},
+            </if>
+            <if test="status != null">
+                `status` = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="longitude != null">
+                longitude = #{longitude, jdbcType=DOUBLE},
+            </if>
+            <if test="latitude != null">
+                latitude = #{latitude, jdbcType=DOUBLE},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysAreaInfo">
+        update sys_area_info
+        set `name` = #{name, jdbcType=VARCHAR},
+            sname = #{sname, jdbcType=VARCHAR},
+            pId = #{pid, jdbcType=INTEGER},
+            `level` = #{level, jdbcType=TINYINT},
+            sort = #{sort, jdbcType=INTEGER},
+            `status` = #{status, jdbcType=TINYINT},
+            longitude = #{longitude, jdbcType=DOUBLE},
+            latitude = #{latitude, jdbcType=DOUBLE},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

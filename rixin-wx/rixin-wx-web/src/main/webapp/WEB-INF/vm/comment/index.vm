@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport" />
+    <meta content="yes" name="apple-mobile-web-app-capable" />
+    <meta content="black" name="apple-mobile-web-app-status-bar-style" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta content="email=no" name="format-detection" />
+    <meta content="" name="pgv" />
+    <title>用户评价</title>
+    <link href="https://cdnwx.edaixi.com/1551857089/framework/style/css/index.css" rel="stylesheet" type="text/css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/framework/style/js/jquery-1.11.1.min.js">\x3C/script>')</script>
+    <script src="https://jic.talkingdata.com/app/h5/v1?appid=642B7ECDFB9C4E3B7A3F3EF9B9014BF2&vn=1.0&vc=4.0.1"></script>
+</head>
+<body>
+<section id="comment-list" class="user_commont" data-total-pages="84" data-page="1">
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">上海用户</span><span>136****0691</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>第一次使用网上洗衣，感觉专业、规范、认真，比社区的洗衣小店放心。谢谢</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>185****0274</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>衣服清洗特别干净，说到的没说到的都洗到了，送回的包装也很不错。</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>153****2870</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>非常好的老板，谢谢。非常干净。尤其是领子，原先都蹭的是粉底粉饼，拿到手打开像新的一样.从老板拍的洗前的图片来看，真的是细节都照顾到了，白色衣服也洗的超干净的。</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>138****3536</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>一直在他家洗，服务好，取送都可以预约，方便上班族</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗鞋服务</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>138****8347</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>孔德春师傅取送及时，热情周到！洗衣质量好，周期短。</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>136****0317</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>必须五星好评啊，鞋子处理得很好，主要是态度很好，主动打电话沟通。</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗鞋服务</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">上海用户</span><span>159****6376</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>送衣小哥人超级好，有问题也能及时帮助解决，洗衣配送感觉很专业，让人放心</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>152****0773</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>衣服洗的很干净 鞋子洗的干净 没有异味 没有水渍</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗鞋服务</span><span>2019.03.06</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>131****8880</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>穿了2年多的衬衫，洗出了刚买时候的样子。洗的超级干净，每次都超乎想象。快递小哥服务态度好，辛苦了！十分好评</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp"></span><span>2019.03.05</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">北京用户</span><span>136****3755</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>非常非常方便快捷，衣服送回来还带了防尘袋，太完美了！感谢！</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.05</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">深圳用户</span><span>136****5168</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>服务只能说是超赞😂，上门服务很方便，真心推荐给大家</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗衣家纺</span><span>2019.03.05</span></div>
+            </div>
+        </div>
+    </div>
+    <div class="comment-item user_appraise">
+        <div class="user_list">
+            <div class="appraise_list">
+                <div class="area_phone"><span class="nbsp">上海用户</span><span>139****3111</span></div>
+                <div class="borderD"></div>
+                <div class="appraise_detail">
+                    <span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>
+                    <span>鞋子洗的不错，小哥服务超级好，超级超级赞，很方便</span>
+                    <span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>
+                </div>
+                <div class="borderD"></div>
+                <div class="service_date"><span class="nbsp">洗鞋服务</span><span>2019.03.05</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="loading" style="text-align:center;color:#A1A1A1;height:32px;line-height:32px;margin-bottom:16px;display:none;">
+    加载中 ...
+</section>
+
+#*<script type="text/javascript">
+    var
+        $loading = $('#loading'),
+        $commentList = $('#comment-list'),
+            totalHeight = 0,  // 滚动距离 + 窗口高度
+            jqueryXhr = null; // jquery-ajax 对象
+
+    // 向下滑动屏幕加载下一页
+    (function(){
+        $(window).scroll(function() {
+            totalHeight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());
+            var totalPages = parseInt($commentList.data('total-pages'));
+            var page = parseInt($commentList.data('page')) + 1;
+            if (totalHeight + 50 >= $(document).height()) {
+                if(page <= totalPages){
+                        $loading.show();
+                    setTimeout(function(){
+                        nextPageFavourableComments(page);
+                    }, 0);
+                }
+            }
+        });
+    })();
+    function nextPageFavourableComments(page){
+        if(jqueryXhr){
+            // 终止之前的未结束的ajax请求，重新开始新的请求
+            jqueryXhr.abort();
+        }
+        jqueryXhr = $.ajax({
+            url: "/mobile.php?m=wap&act=homepage&do=ajax_next_favourable_comments&city_id=1&per_page=12&mark=66d5e0da-65b8-11e5-a990-5cb901892a54&page=" + page,
+            type: "GET",
+            async: true,        // 异步请求
+            timeout: 3000,      // 超时时间
+            dataType: "json",
+            complete: function (){
+                // 请求完成
+                jqueryXhr = null;
+            },
+            success: function (resp) {
+                    $commentList.data('total-pages', resp.message.total_pages);
+                    $commentList.data('page', page);
+                setTimeout(function(){
+                    if(resp.message.rows_count > 0){
+                            $commentList.append(resp.message.html);
+                    }
+                        $loading.hide();
+                }, 500);
+            },
+            error:function (xhr, ts, err){
+                // ...
+                setTimeout(function(){
+                        $loading.hide();
+                }, 500);
+            }
+        });
+    }
+</script>*#
+</body>
+</html>

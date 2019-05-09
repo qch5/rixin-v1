@@ -1,0 +1,162 @@
+<html lang="zh-CN">
+<head>
+    <link rel="stylesheet" href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="/js/WdatePicker/skin/twoer/datepicker.css">
+    <link rel="stylesheet" href="/js/jqGrid/css/ui.jqgrid.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jqGrid/grid.locale-cn.js" ></script>
+    <script type="text/javascript" src="/js/jqGrid/jquery.jqGrid.min.js" ></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/WdatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script>document.domain = "rixin.com";</script>
+</head>
+
+<body>
+<div class="c-right">
+    <div class="mainCon">
+        <div class="indexTit">
+            <h2>
+                <i class="titIcon"></i><span id="indexPage">角色管理</span>
+            </h2>
+        </div>
+        <div class="section">
+            <!-- 搜索框 - 开始 -->
+            <div class="webDiv">
+                <div class="fl">
+                    <form id="queryForm" action="" method="post">
+                        角色名称：<input type="text" id="name" name="name" value="$!{name}" class="inputMode w200">
+                        <a href="#" id="search" class="schBtn">搜索</a>
+                        <a href="#" id="create" class="schBtn">添加</a>
+                    </form>
+                </div>
+            </div>
+            <!-- 搜索框 - 结束 -->
+            <table id="jqGrid" class="table table-striped table-bordered table-hover dataTable"></table>
+            <div id="jqGridPager"></div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<script type="text/javascript">
+    $("#jqGrid").jqGrid({
+        url : '/role/list',
+        mtype: 'POST',
+        datatype: "json",
+        colModel: [
+            { label: '角色名称', sortable:false, name: 'name', width:65, align:"center"},
+            { label: '添加日期', sortable:false, name: 'createTime', width:65, align:"center"},
+            { label: '更新日期', sortable:true, name: 'updateTime', width:100, align:"center"},
+            { label: '描述', sortable:false, name: 'desc', width:65, align:"center"},
+            { label: '操作',sortable:false, width: 85, align:"center",
+                formatter:function(value, options, rData) {
+                    return "<a onclick='Info(" + JSON.stringify(rData) + ")' target='_blank' class='selected'>查看</a>　" +
+                            "<a onclick='Update(" + JSON.stringify(rData) + ")' target='_blank' class='selected'>修改</a>　" +
+                            "<a onclick='AuthSet(" + JSON.stringify(rData) + ")' target='_blank' class='selected'>权限设置</a>　" +
+                            "<a onclick='Delete(" + JSON.stringify(rData) + ")' target='_blank' class='selected'>删除</a>　";
+                }
+            }
+        ],
+        rownumbers : true,
+        viewrecords: true,
+        height: 'auto',
+        width :document.body.clientWidth - 90,
+        shrinkToFit:true,
+        rowNum: 0,
+        pager: "#jqGridPager",
+        loadComplete:function() {
+        },
+        jsonReader:{
+            root:"json",
+            repeatitems: false,
+            page : "page.page",
+            total : "page.totalPage",
+            records : "page.totalRow"
+        },
+        prmNames: {
+            page:"page.page",
+            totalrows:"page.totalRow"
+        }
+    });
+
+    $("#search").click(function() {
+        var params = $("#queryForm").serialize();
+        $("#jqGrid").jqGrid('setGridParam',{
+            url: '/role/list?' + params,
+            mtype: 'POST',
+            datatype:'json',
+            page:1
+        }).trigger("reloadGrid");
+    });
+
+    $("#create").click(function() {
+        var index = layer.open({
+            type: 2,
+            title: '角色管理 - 添加',
+            shadeClose: true,
+            shade: 0.8,
+            maxmin: true,
+            area: ['700px', '470px;'],
+            content: "/role/create"
+        });
+        layer.full(index);
+    });
+
+    function Info(data) {
+        var id = data["id"];
+        var index = layer.open({
+            type: 2,
+            title: '角色管理 - 查看',
+            shadeClose: true,
+            shade: 0.8,
+            maxmin: true,
+            area: ['700px', '470px;'],
+            content: "/role/info?id=" + id
+        });
+        layer.full(index);
+    };
+
+    function Update(data) {
+        var id = data["id"];
+        var index = layer.open({
+            type: 2,
+            title: '角色管理 - 修改',
+            shadeClose: true,
+            shade: 0.8,
+            maxmin: true,
+            area: ['700px', '470px;'],
+            content: "/role/update?id=" + id
+        });
+        layer.full(index);
+    };
+
+    function AuthSet(data) {
+        var id = data["id"];
+        var index = layer.open({
+            type: 2,
+            title: '角色管理 - 授权',
+            shadeClose: true,
+            shade: 0.8,
+            maxmin: true,
+            area: ['900px', '600px;'],
+            content: "/role/func?id=" + id
+        });
+    }
+
+    function Delete(data) {
+        layer.confirm('您确定要删除该条记录？', {
+                btn: ['确定', '取消']
+            },
+            function() {
+                ajax_post_data("/role/delete", {id: data['id']}, function(data) {
+                    layer.msg('删除成功');
+                    location.reload();
+                });
+            },
+            function() {}
+        );
+    }
+</script>

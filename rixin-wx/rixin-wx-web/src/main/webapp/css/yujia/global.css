@@ -1,0 +1,66 @@
+/* 默认值 */
+@font-face {
+    font-family: 'OpenSans-Regular';
+    src:url(../fonts/OpenSans-Regular.ttf) format('truetype');
+}
+*{box-sizing: border-box; font-family: "OpenSans-Regular",Arial,"Microsoft YaHei","微软雅黑",sans-serif;}
+html{font-size:0;}
+body, html { color: #333333; }
+body.wheet{background-color: #ffffff; }
+html, body, div, span, p, applet, object, iframe, h1, h2, h3, h4, h5, h6, img, small, strong, ul, li, ol, dd, dl, dt, form, label, table, tbody, tfoot, thead, tr, th, td, input { margin: 0; padding: 0; border: 0; }
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+ul,ol,li,dl,dt,dd { list-style-type: none; }
+/* 表格 */
+table { border-collapse: collapse; border-spacing: 0; }
+/* a标签点击 */
+a:hover, a:link, a:visited { text-decoration: none; }
+/* 1.去除android a/button/input标签被点击时产生的边框 2.去除ios a标签被点击时产生的半透明灰色背景 */
+a,button,input,div,img{-webkit-tap-highlight-color:rgba(255,0,0,0);}
+a{color: #382101;}
+/*去除手机端select边框和三角*/
+select{-moz-appearance:none; /* Firefox */-webkit-appearance:none; /* Safari 和 Chrome */}
+/*IOS下移除按钮原生样式*/
+input{-webkit-appearance: none;border-radius: 0;}
+/* 浮动 */
+.l{float:left;}
+.r{float:right;}
+/*清除浮动*/
+.clear{clear:both;}
+/* 圆角 */
+.radius{border-radius:3px;}
+/* display */
+.db{display:block;}
+.dn{display:none;}
+/* 无框文本框文本域 */
+.bo_none{border:0; outline:none;}
+/*textarea禁用拖动*/
+.re_none{resize: none;}
+/* position */
+.rel{position:relative;}
+.abs{position:absolute;}
+/* overflow */
+.ovh{overflow:hidden;}
+/* 块状元素水平居中 */
+.auto{margin:0 auto;}
+/*高亮*/
+em{font-style:normal;color:#fe0000;}
+/* 文本超过部分+省略号 */
+.text-ellipsis{overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+
+html, body {
+    height: 100%;
+}
+.mcontainer {
+    height: 100%;
+}
+.headheight {
+    height: 0.88rem;
+}
+
+.head {
+    position: fixed;
+    width: 100%;
+    z-index: 500;
+    top: 0;
+    clear: both;
+}

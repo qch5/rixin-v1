@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow:hidden">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <link href="/css/yujia/globalAll.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/weiui/weui.css" rel="stylesheet" type="text/css" />
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css" />
+
+    <link type="text/css" rel="stylesheet" href="/assets/swiper/swiper.min.css" />
+    <style>
+        #html_Layout { display: none; }
+        .weui_dialog_hd { display: inline-block; position: relative; }
+
+        .weui_dialog_hd .delete { position: absolute; top: 0.1rem; right: 0.1rem; width: 0.4rem; height: 0.4rem; }
+        body { background-color: white; }
+    </style>
+    <style>
+        .comment-list {
+            font-size: 14px!important;
+        }
+        .user_appraise .user_list {
+            margin: 1.5% 1.5% 3%;
+            background: #fff;
+            box-shadow: 0 0 0 1px #f1f1f1;
+            opacity: 0.9;
+            border-radius: 4px;
+            color: #A1A1A1;
+        }
+
+        .user_appraise .user_list .appraise_list {
+            padding: 2px 10px;
+        }
+
+        .user_appraise .user_list {
+            margin: 1.5% 1.5% 3%;
+            background: #fff;
+            box-shadow: 0 0 0 1px #f1f1f1;
+            opacity: 0.9;
+            border-radius: 4px;
+            color: #A1A1A1;
+        }
+
+        .nbsp {
+            padding-right: 14px;
+        }
+
+        .borderD {
+            border-bottom: 1px solid #dcdcdc;
+            transform: scaleY(0.5);
+            -webkit-transform: scaleY(0.5);
+        }
+
+        .appraise_detail {
+            padding: 10px 0px;
+            color: #1A1A1A;
+            /*line-height: 1.2rem;*/
+            display: table;
+        }
+
+        .appraise_detail span {
+            display: table-cell;
+            word-break: break-all;
+            word-wrap: break-word;
+        }
+
+        .appraise_detail img {
+            width: 16px;
+        }
+        .front_quote {
+            padding-right: 10px;
+            vertical-align: top;
+        }
+
+        input, img {
+            vertical-align: middle;
+        }
+        img {
+            border: 0 none;
+        }
+
+        .back_quote {
+            padding-left: 10px;
+            vertical-align: bottom;
+        }
+
+        .service_date {
+            text-align: right;
+        }
+
+        .nbsp {
+            padding-right: 14px;
+        }
+    </style>
+    <title>日新洗衣</title>
+</head>
+<body>
+
+<div id="globalload">
+    <div class="spinner">
+        <div class="bounce1"></div>
+        <div class="bounce2"></div>
+        <div class="bounce3"></div>
+    </div>
+</div>
+
+<div id="html_Layout">
+    <div id="html_body">
+
+        <div class="head containered" style="position:fixed;width:100%;z-index:500;top:0;clear: both;">
+            <a class="one l GoBack" href="/home/selectcity" style="">
+                <img src="/imgs/dw.png" alt="定位" />
+                <span id="CurrentCity" class="head-span">宿迁</span>
+            </a>
+            <div class="two l fc">
+                #*<img class="sy-ujoy" src="/imgs/sy-ujoy.png" />*#
+                <span>日新洗衣</span>
+            </div>
+            <div class="third l fr naved" >
+                <div class="nav_out"></div>
+            </div>
+        </div>
+
+        <div id="main">
+            <!--幻灯片开始-->
+            <div class="swiper-container banner">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide">
+                        <a class="swiper-slide widb" href="/item">
+##                            <img src="https://statics.xiaoyujia.com/Advertising/carouselFigure/2018/05/04/09475551197/750x386.jpg" style="width:100%;" />
+                            <img src="/imgs/slide1.png" style="width:100%;" />
+                        </a>
+                    </li>
+                    <li class="swiper-slide">
+                        <a class="swiper-slide widb" href="/item">
+##                            <img src="https://statics.xiaoyujia.com/Advertising/carouselFigure/2018/06/11/17393977297/750x386.jpg" style="width:100%;" />
+                            <img src="/imgs/slide2.jpg" style="width:100%;" />
+                        </a>
+                    </li>
+                </ul>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!--幻灯片结束-->
+
+            <!-- 优选推荐 -->
+            <div class="yxtj">
+                <div class="yxtj-img" id="ProductImgs">
+                    <a href="/item"><img class="yxtj-png" src="/imgs/xiadan.jpg" data-pid="153"></a>
+                    <a href="/item"><img class="yxtj-png" src="https://statics.xiaoyujia.com/product/recommendImg/2018/10/25/18281874997/670x407.jpg" data-pid="153" style="display: none;"></a>
+                    <a href="/item"><img class="yxtj-png" src="https://statics.xiaoyujia.com/product/recommendImg/2019/01/25/11212930446/670x407.jpg" data-pid="180" style="display: none;"></a>
+                    <a href="/item"><img class="yxtj-png" src="https://statics.xiaoyujia.com/product/recommendImg/2018/09/27/16525740546/670x407.jpg" data-pid="67" style="display: none;"></a>
+                </div>
+                <div class="yxtj-product">
+                    <div class="yxtj-product-row title">优选推荐</div>
+                    <div class="yxtj-product-row yxtj-pro" id="Products">
+                        <ul>
+                            <li class="on" onclick="optimization(this)" data-pid="153">洗衣</li>
+                            <li class="" onclick="optimization(this)" data-pid="180">洗鞋</li>
+                            <li class="" onclick="optimization(this)" data-pid="67">洗家纺</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- 优选推荐 -->
+
+            <div class="gradient-line"></div>
+
+            <!-- 产品分类 -->
+            <div class="home-cpfl" id="ProductCategorys">
+                <ul>
+                    #*<li>
+                        <a href="/Product/AllServices?pcid=24&amp;city=1">
+                            <img src="https://statics.xiaoyujia.com/productCategory/icon/2018/04/09/11480094220/90x90.jpg">
+                            <label class="home-cpfl-lab">家庭保洁</label>
+                        </a>
+                    </li>*#
+                    <li>
+                        <a href="/item">
+                            <img src="https://statics.xiaoyujia.com/productCategory/icon/2016/08/05/09534505936/90x90.jpg">
+                            <label class="home-cpfl-lab">洗衣服务</label>
+                        </a>
+                    </li>
+#*                    <li>
+                        <a href="/Product/AllServices?pcid=26&amp;city=1">
+                            <img src="https://statics.xiaoyujia.com/productCategory/icon/2017/03/23/16550509918/90x90.jpg">
+                            <label class="home-cpfl-lab">家电卫士</label>
+                        </a>
+                    </li>*#
+                    <li>
+                        <a href="/Product/AllServices?pcid=0&amp;city=1">
+                            <img src="http://statics.xiaoyujia.com/productCategory/icon/AllServices.jpg">
+                            <label class="home-cpfl-lab">更多服务</label>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div style="height:0.3rem;width:100%;"></div>
+            <div class="gradient-line"></div>
+            <!-- 产品分类 -->
+
+            <!--链接开始-->
+
+            <!--链接结束-->
+
+            <!--图片链接开始-->
+            <div class="index_img ovh">
+                <ul>
+                </ul>
+            </div>
+            <!--图片链接结束-->
+        </div>
+
+        <!-- 评价 -->
+        <div>
+            <section id="comment-list" class="user_commont" data-total-pages="84" data-page="1">
+                <div class="comment-item user_appraise">
+                    <div class="user_list">
+                        <div class="appraise_list">
+                            <div class="area_phone"><span class="nbsp" style="font-size: 14px;">恒大华府</span><span style="font-size: 14px;">186****5668</span></div>
+                            <div class="borderD"></div>
+                            <div class="appraise_detail">
+                                #*<span><img class="front_quote" src="https://cdnwx.edaixi.com/1551857089/framework/style/images/front_quote.png" alt=""></span>*#
+                                <span style="font-size: 14px;">第一次使用网上洗衣，感觉专业、规范、认真，比社区的洗衣小店放心。谢谢</span>
+                                #*<span  class="back_quote"><img src="https://cdnwx.edaixi.com/1551857089/framework/style/images/back_quote.png" alt=""></span>*#
+                            </div>
+                            <div class="borderD"></div>
+                            <div class="service_date"><span class="nbsp" style="font-size: 14px;"></span><span style="font-size: 14px;">2019.03.06</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- 评价 -->
+
+        <div class="foot-lxrx">
+            <img class="lxrx-img" src="/imgs/lx2.png" />
+        </div>
+
+        <!--弹出层begin-->
+        <div class="weui_dialog_title" id="dialog1" style="display:none;">
+            <div class="weui_mask"></div>
+            <div class="weui_dialog">
+                <span class="weui_icon_checked"></span>
+                <div></div>
+                <div class="weui_dialog_hd" style="padding: 0.3em 0.1em !important ;border-top-left-radius: 1em !important ;border-top-right-radius: 1em  !important ;    width: 100%; background-color:#ffe775">
+                    <strong class="weui_dialog_title"></strong>
+                    <a id="del">
+                        <i class="weui_icon_cancel delete"></i>
+                    </a>
+                </div>
+                <div class="weui_dialog_bd" style="padding: 0 10px !important;">
+                    <div class="yhq-my" style="    overflow-y: auto;    max-height: 6rem;">
+                        <ul id="couponList" class="paging_list" data-page="1" data-pagecount="2">
+                            <li>没有有效的劵可以领！</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="weui_dialog_ft">
+
+                    <a onclick="SaveCoupon()" class="weui_btn_dialog primary">领取</a>
+                </div>
+            </div>
+        </div>
+        <!--弹出层end-->
+
+        #parse("/common/share.vm")
+        #parse("/common/menu.vm")
+    </div>
+</div>
+
+<!--弹出框开始-->
+
+<!--弹出框结束-->
+
+<script src="/js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/js/yujia/my.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.js" type="text/javascript"></script>
+<script src="/js/jquery/jquery.cookie.js"></script>
+
+<script src="/assets/swiper/swiper.min.js" type="text/javascript"></script>
+<script>
+    $(document).ready(function () {
+        if ('' != '') {
+            $.weui.toast('', function () { }, 'weui_icon_toast');
+        }
+        $("#html_Layout").show();
+        $("#globalload").remove();
+        if ("" != "") {
+            if (GetQueryString('time') != null) {
+                var myDate = new Date;
+                if (GetQueryString('time') == myDate.getFullYear()) {
+                    $('#dialog1').fadeIn(200);
+                }else{
+                    $.weui.toast("会员消息已过期", function () { }, 'weui_icon_toast');
+                }
+            }else{
+                $('#dialog1').fadeIn(200);
+            }
+        }
+        $('#del').on('click',  function () {
+
+            $('#dialog1').fadeOut(200);
+        });
+        if (0== 0)
+        {
+            $(".weui_btn_dialog").attr("disabled", "disabled");
+        }
+    })
+    function SaveCoupon() {
+        var t = this;
+        $.ajax({
+            url: "/Marketing/Channel",
+            data: { channelcode: '' },
+            type: "POST",
+            beforeSend: function () {
+                $(t).attr("disabled", "disabled");
+            },
+            success: function (r) {
+                if (r.State == 1) //成功
+                {
+                    $.weui.toast(r.Msg, function () { }, 'weui_icon_toastsucess');
+                    $('#dialog1').fadeOut(200);
+                    location.href = "/coupon/index";
+                } else // 其他问题
+                {
+                    $('#dialog1').fadeOut(200);
+                    $.weui.toast(r.Msg, function () { }, 'weui_icon_toast');
+                }
+                $(t).removeAttr("disabled");
+            },
+            error: function () {
+                $.weui.toast('发生异常', function () { }, 'weui_icon_toast');
+                $(t).removeAttr("disabled");
+            }
+        });
+    }
+</script>
+<script type="text/javascript">
+    $(function () {
+        var myswiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            paginationClickable: true,
+            autoplay: 5000,
+            autoplayDisableOnInteraction: false,
+            onTransitionEnd: function (swiper) {
+                swiper.onResize();//刷新
+            }
+        });
+        myswiper.onResize();
+        window.onload = function () { $(".hidd").show(); }
+
+        if (getCookie("HSCP.Member.WeiXin.City") == "") {
+            LocationCity()
+        } else {
+            $("#CurrentCity").html(getCookie("HSCP.Member.WeiXin.City"))
+            getProduct();
+        }
+    })
+    //定位城市
+/*    function LocationCity() {
+        var map, geolocation;
+        //加载地图，调用浏览器定位服务
+        map = new AMap.Map('container', {
+            resizeEnable: true
+        });
+        map.plugin('AMap.Geolocation', function () {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+                buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                buttonPosition: 'RB'
+            });
+            map.addControl(geolocation);
+            geolocation.getCurrentPosition();
+            //$.weui.loading('正在定位...')
+            $("#CurrentCity").html('定位中')
+            AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+            AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+        });
+        //解析定位结果
+        function onComplete(data) {
+            var str = ['定位成功'];
+            str.push('经度：' + data.position.getLng());
+            str.push('纬度：' + data.position.getLat());
+            str.push('精度：' + data.accuracy + ' 米');
+            str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+            //$.weui.hideLoading();
+            console.log(str.join('<br>'))
+            var lnglatXY = [data.position.getLng(), data.position.getLat()]
+            AMap.service('AMap.Geocoder', function () {//回调函数
+                //实例化Geocoder
+                geocoder = new AMap.Geocoder();
+                geocoder.getAddress(lnglatXY, function (status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        SaveCityCookie(result.regeocode.addressComponent.city)
+                    } else {
+                        $.weui.toast('无法获取位置', function () { }, 'weui_icon_toast');
+                        SaveCityCookie("宿迁")
+                        getProduct();
+                    }
+                });
+            })
+        }
+        //解析定位错误信息
+        function onError(data) {
+            //$.weui.hideLoading();
+            $.weui.toast('定位失败', function () {
+            }, 'weui_icon_toast');
+            SaveCityCookie("宿迁");
+            getProduct();
+        }
+    }
+    function SaveCityCookie(city) {
+        setCookie("HSCP.Member.WeiXin.City", city.replace("市", ""), 2)
+        $("#CurrentCity").html(city.replace("市", ""))
+        $.weui.closeDialog();
+        getProduct();
+    }*/
+
+    function getProduct() {
+        $.ajax({
+            url: '/Home/HomeProducts',
+            type: 'post',
+            cache: false,
+            async: false,
+            success: function (r) {
+                if (r.State == 1) {
+                    var rowProduct = "<ul>";
+                    var rowProductImg = "";
+                    var rowCategory = "<ul>";
+                    var data = r.Data;
+                    for (var i = 0; i < data.length ; i++) {
+                        //var urlPro = "/Product/Details?pid=" + data[i].Id + "&city=" + r.City;
+                        //if (data[i].ProductCategoryId == 0) {
+                        //    urlPro = "/Product/AllServices?pcid=" + data[i].Id + "&city=" + r.City;
+                        //}
+                        //if (data[i].ProductCode == "10000") {
+                        //    urlPro = "/Payment/OrderAdd?pCode=10000&isCall=true";
+                        //}
+                        //row += '<a href="' + urlPro + '" style="background: url(' + data[i].Icon + ') no-repeat center top / 1.3rem 1.3rem;">' + data[i].Name + '</a>';
+                        var urlPro = "";
+                        if (data[i].ProductCategoryId != 0) {
+                            urlPro = "/Product/Details?pid=" + data[i].Id + "&city=" + r.City;
+                            if (i==0){
+                                rowProductImg += '<a href="' + urlPro + '"><img class="yxtj-png" src="' + data[i].ProductRecommendImg + '" data-pid="' + data[i].Id + '" style="" /></a>';
+                                rowProduct += '<li class="on" onclick="optimization(this)" data-pid="' + data[i].Id + '">' + data[i].Name + '</li>';
+                            } else {
+                                rowProductImg += '<a href="' + urlPro + '"><img class="yxtj-png" src="' + data[i].ProductRecommendImg + '" data-pid="' + data[i].Id + '" style="display: none;" /></a>';
+                                rowProduct += '<li class="" onclick="optimization(this)" data-pid="' + data[i].Id + '">' + data[i].Name + '</li>';
+                            }
+                        }
+                        if (data[i].ProductCategoryId == 0) {
+                            urlPro = "/Product/AllServices?pcid=" + data[i].Id + "&city=" + r.City;
+                            rowCategory += '<li><a href="' + urlPro + '"><img src= "' + data[i].Icon + '" /><label class="home-cpfl-lab">' + data[i].Name +'</label></a></li>';
+                        }
+                    }
+                    $("#Products").html(rowProduct +'</ul>');
+                    $("#ProductImgs").html(rowProductImg);
+                    $("#ProductCategorys").html(rowCategory + '</ul>');
+                    if (data.length ==1){
+                        $.my.dialog({
+                            content: "亲，日新还未入驻您的城市，我们正在快马加鞭赶过去....",
+                            buttons: [{
+                                label: '确认',
+                                type: 'default',
+                                onClick: function () {
+
+                                }
+                            }]
+                        });
+                    }
+                }
+            }
+        });
+    }
+    function optimization(t) {
+        $("#Products").find("li").removeClass("on");
+        $(t).addClass("on");
+        $("#ProductImgs").find(".yxtj-png").hide();
+        var pid = $(t).attr("data-pid");
+        $("#ProductImgs").find(".yxtj-png").each(function () {
+            var imgpid = $(this).attr("data-pid");
+            if (pid != "" && imgpid != "" &&pid == imgpid){
+                $(this).show();
+            }
+        })
+    }
+</script>
+<script src="https://webapi.amap.com/maps?v=1.4.3&key=b81093df27d6801461e9bf0151210b09"></script>
+
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&web_id=1260785617" language="JavaScript"></script>
+</div>
+</body>
+</html>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    if (GetQueryString('PayMethod') != null) {
+        var date = new Date();
+        date.setTime(date.getTime() + 60 * 60 * 1000);
+        $.cookie('PayMethod', GetQueryString('PayMethod'), {
+            expires: date
+        });
+    }
+    //else {
+    //      $.cookie('PayMethod', '', { expires: -1 }); // 删除 cookie
+    //}
+</script>

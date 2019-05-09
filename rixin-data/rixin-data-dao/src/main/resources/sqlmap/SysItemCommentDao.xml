@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysItemCommentDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysItemComment">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="itemId" jdbcType="INTEGER" property="itemId"/>
+        <result column="itemName" jdbcType="VARCHAR" property="itemName"/>
+        <result column="loginName" jdbcType="VARCHAR" property="loginName"/>
+        <result column="head" jdbcType="VARCHAR" property="head"/>
+        <result column="address" jdbcType="VARCHAR" property="address"/>
+        <result column="score" jdbcType="TINYINT" property="score"/>
+        <result column="comment" jdbcType="VARCHAR" property="comment"/>
+        <result column="pId" jdbcType="INTEGER" property="pId"/>
+        <result column="level" jdbcType="TINYINT" property="level"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.rixin.data.domain.SysItemComment">
+        <result column="images" jdbcType="LONGVARCHAR" property="images"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, itemId, itemName, loginName, head, address, score, `comment`, images, pId, `level`, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+        select <include refid="Base_Column_List"/>
+        from sys_item_comment
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_item_comment
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.itemId != null">
+                and itemId = #{info.itemId, jdbcType=INTEGER}
+            </if>
+            <if test="info.itemName != null and info.itemName != ''">
+                and itemName like CONCAT('%', #{info.itemName}, '%')
+            </if>
+            <if test="info.loginName != null and info.loginName != ''">
+                and loginName = #{info.loginName, jdbcType=VARCHAR}
+            </if>
+            <if test="info.address != null and info.address != ''">
+                and address like CONCAT('%', #{info.address}, '%')
+            </if>
+            <if test="info.pId != null">
+                and pId = #{info.pId, jdbcType=INTEGER}
+            </if>
+            <if test="info.level != null">
+                and `level` = #{info.level, jdbcType=TINYINT}
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_item_comment where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysItemComment" useGeneratedKeys="true">
+        insert into sys_item_comment (itemId, itemName, loginName, head, address, score, `comment`, images, pId, `level`, createTime)
+        values (
+            #{itemId, jdbcType=INTEGER},
+            #{itemName, jdbcType=VARCHAR},
+            #{loginName, jdbcType=VARCHAR},
+            #{head, jdbcType=VARCHAR},
+            #{address, jdbcType=VARCHAR},
+            #{score, jdbcType=TINYINT},
+            #{comment, jdbcType=VARCHAR},
+            #{images, jdbcType=LONGVARCHAR},
+            #{pId, jdbcType=INTEGER},
+            #{level, jdbcType=TINYINT},
+            #{createTime, jdbcType=TIMESTAMP}
+          )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysItemComment" useGeneratedKeys="true">
+        insert into sys_item_comment
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="itemId != null">
+                itemId,
+            </if>
+            <if test="itemName != null">
+                itemName,
+            </if>
+            <if test="loginName != null">
+                loginName,
+            </if>
+            <if test="head != null">
+                head,
+            </if>
+            <if test="address != null">
+                address,
+            </if>
+            <if test="score != null">
+                score,
+            </if>
+            <if test="comment != null">
+                `comment`,
+            </if>
+            <if test="images != null">
+                images,
+            </if>
+            <if test="pId != null">
+                pId,
+            </if>
+            <if test="level != null">
+                `level`,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="itemId != null">
+                #{itemId, jdbcType=INTEGER},
+            </if>
+            <if test="itemName != null">
+                #{itemName, jdbcType=VARCHAR},
+            </if>
+            <if test="loginName != null">
+                #{loginName, jdbcType=VARCHAR},
+            </if>
+            <if test="head != null">
+                #{head, jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address, jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                #{score, jdbcType=TINYINT},
+            </if>
+            <if test="comment != null">
+                #{comment, jdbcType=VARCHAR},
+            </if>
+            <if test="images != null">
+                #{images, jdbcType=LONGVARCHAR},
+            </if>
+            <if test="pId != null">
+                #{pId, jdbcType=INTEGER},
+            </if>
+            <if test="level != null">
+                #{level, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysItemComment">
+        update sys_item_comment
+        <set>
+            <if test="itemId != null">
+                itemId = #{itemId, jdbcType=INTEGER},
+            </if>
+            <if test="itemName != null">
+                itemName = #{itemName, jdbcType=VARCHAR},
+            </if>
+            <if test="loginName != null">
+                loginName = #{loginName, jdbcType=VARCHAR},
+            </if>
+            <if test="head != null">
+                head = #{head, jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                address = #{address, jdbcType=VARCHAR},
+            </if>
+            <if test="score != null">
+                score = #{score, jdbcType=TINYINT},
+            </if>
+            <if test="comment != null">
+                `comment` = #{comment, jdbcType=VARCHAR},
+            </if>
+            <if test="images != null">
+                images = #{images, jdbcType=LONGVARCHAR},
+            </if>
+            <if test="pId != null">
+                pId = #{pId, jdbcType=INTEGER},
+            </if>
+            <if test="level != null">
+                `level` = #{level, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysItemComment">
+        update sys_item_comment
+        set itemId = #{itemId, jdbcType=INTEGER},
+            itemName = #{itemName, jdbcType=VARCHAR},
+            loginName = #{loginName, jdbcType=VARCHAR},
+            head = #{head, jdbcType=VARCHAR},
+            address = #{address, jdbcType=VARCHAR},
+            score = #{score, jdbcType=TINYINT},
+            `comment` = #{comment, jdbcType=VARCHAR},
+            images = #{images, jdbcType=LONGVARCHAR},
+            pId = #{pId, jdbcType=INTEGER},
+            `level` = #{level, jdbcType=TINYINT},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

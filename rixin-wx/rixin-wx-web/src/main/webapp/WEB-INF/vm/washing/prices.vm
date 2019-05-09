@@ -1,0 +1,1235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <meta content="email=no" name="format-detection"/>
+    <meta content="" name="pgv"/>
+    <script src="https://cdnwww.edaixi.com/assets/jquery-1.10.1.min-524d94c94daece44b744b703a4fcb84e.js"></script>
+    <link href="https://cdnwww.edaixi.com/assets/price_word-91b9056c210144dd0dd282f83cadb4c2.css" media="screen" rel="stylesheet"/>
+    <title>价目中心     </title>
+</head>
+<body>
+<div class="nav-head">
+    <ul id="list" style="transform: translate(0px, 0px) scale(1);">
+        <li class="selected">洗衣</li>
+        <li>家纺</li>
+        <li>洗鞋</li>
+        <li>洗窗帘</li>
+        <li>高端成衣家纺</li>
+        <li>奢侈品养护</li>
+        <li>袋洗</li>
+    </ul>
+</div>
+<div class="price-content">
+    <ul>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>上衣</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>单衬衫</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>T恤/polo衫</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>背心</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>西服上衣</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>卫衣</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>保暖衬衫</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>单睡衣</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛背心(马甲)</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>保暖衣</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛衣</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>棉睡衣</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>夹克</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝衬衫</td>
+                    <td>59.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝上衣</td>
+                    <td>59.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>唐装</td>
+                    <td>59.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>pu类上衣</td>
+                    <td>79.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>大衣外套</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>风衣</td>
+                    <td>49.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>棉服</td>
+                    <td>49.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>羽绒服</td>
+                    <td>49.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>羊毛／绒外套</td>
+                    <td>59.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>棉/羽绒背心(马甲)</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>冲锋衣（无内胆）</td>
+                    <td>39.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>冲锋衣(含内胆)</td>
+                    <td>49.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>PU类大衣</td>
+                    <td>109.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>裤装裙装</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>普通半身裙</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>短裤</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>西裤</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>休闲裤</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>牛仔裤</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>连体裤</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛呢半身裙</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>普通睡裙</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛裤</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>保暖裤</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>单睡裤</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>普通连衣裙</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>棉裤/羽绒裤</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>棉睡裤</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>睡袍</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛呢连衣裙</td>
+                    <td>49.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>PU类裤子</td>
+                    <td>49.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>PU类半身裙</td>
+                    <td>49.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>真丝半身裙</td>
+                    <td>59.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝裤</td>
+                    <td>59.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>PU类连衣裙</td>
+                    <td>79.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>旗袍</td>
+                    <td>79.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝连衣裙</td>
+                    <td>89.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>配件</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>领带</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>帽子</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>围巾</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>丝巾</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>披肩</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛领</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>家纺</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>枕套</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>床单</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>被罩</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>枕巾</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛巾</td>
+                    <td>19.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>浴巾</td>
+                    <td>29.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝枕套</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝床单</td>
+                    <td>89.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>真丝被罩</td>
+                    <td>89.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>加绒床单</td>
+                    <td>39.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>加绒被罩</td>
+                    <td>49.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>毛巾被</td>
+                    <td>49.0 元</td>
+                    <td>3-4天</td>
+                </tr>
+                <tr>
+                    <td>靠垫/抱枕</td>
+                    <td>39.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>汽车坐垫（非皮质）／位</td>
+                    <td>49.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>汽车坐垫(毛皮、皮革)／位</td>
+                    <td>119.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>包（非皮质）</td>
+                    <td>49.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>床罩/床笠</td>
+                    <td>79.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>床褥/软床垫</td>
+                    <td>79.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>毛毯</td>
+                    <td>79.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>普通被子/踏花被</td>
+                    <td>99.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>羽绒被</td>
+                    <td>109.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>蚕丝被/羊毛被</td>
+                    <td>119.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>沙发套（白袋洗）</td>
+                    <td>158.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>沙发套（蓝袋洗）</td>
+                    <td>299.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>鞋类</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>运动鞋（普通面料）</td>
+                    <td>29.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>帆布鞋</td>
+                    <td>29.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>拖鞋</td>
+                    <td>29.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>传统布鞋</td>
+                    <td>29.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>凉鞋</td>
+                    <td>29.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>运动鞋（光面皮革）</td>
+                    <td>29.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>运动鞋（部分绒面）(1/2面积以内含）</td>
+                    <td>49.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>部分绒面鞋(1/2面积以内含）</td>
+                    <td>49.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>光面皮鞋</td>
+                    <td>49.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>棉鞋</td>
+                    <td>49.0 元</td>
+                    <td>4-5天</td>
+                </tr>
+                <tr>
+                    <td>运动鞋（全绒面）</td>
+                    <td>69.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>绒面鞋</td>
+                    <td>69.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>靴类</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>短款非绒面靴</td>
+                    <td>49.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>中款非绒面靴</td>
+                    <td>59.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>长款非绒面靴</td>
+                    <td>59.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>短款绒面靴</td>
+                    <td>89.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>中款绒面靴</td>
+                    <td>109.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>长款绒面靴</td>
+                    <td>109.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>短款雪地靴</td>
+                    <td>89.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>中款雪地靴</td>
+                    <td>109.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                <tr>
+                    <td>长款雪地靴</td>
+                    <td>109.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>大窗帘</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>大袋</td>
+                    <td>299.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>窗帘拆装费</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>窗帘拆装费</td>
+                    <td>100.0 元</td>
+                    <td>6-7天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>上衣</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>夹克</td>
+                    <td>118.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>西装上衣</td>
+                    <td>118.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>马甲</td>
+                    <td>88.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>毛衣</td>
+                    <td>118.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>羽绒服</td>
+                    <td>138.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>棉服</td>
+                    <td>138.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>大衣</td>
+                    <td>138.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>冲锋衣（含内胆）</td>
+                    <td>138.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>卫衣</td>
+                    <td>88.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>衬衫</td>
+                    <td>78.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>T恤</td>
+                    <td>78.0 元</td>
+                    <td>11天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>裤装裙装</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>连衣裙</td>
+                    <td>118.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>连体裤</td>
+                    <td>118.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>裤装</td>
+                    <td>78.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>半身裙</td>
+                    <td>78.0 元</td>
+                    <td>11天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>婚纱礼服</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>礼服</td>
+                    <td>188.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>旗袍</td>
+                    <td>188.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>婚纱</td>
+                    <td>588.0 元</td>
+                    <td>13天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>床上用品</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>被子</td>
+                    <td>288.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>毛毯</td>
+                    <td>288.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>枕套</td>
+                    <td>78.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>床单</td>
+                    <td>138.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>被罩</td>
+                    <td>138.0 元</td>
+                    <td>13天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>家居用品</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>地毯每平</td>
+                    <td>288.0 元</td>
+                    <td>20天</td>
+                </tr>
+                <tr>
+                    <td>纱帘／平米</td>
+                    <td>20.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>窗帘／平米</td>
+                    <td>40.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>抱枕套</td>
+                    <td>88.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>沙发套/位</td>
+                    <td>118.0 元</td>
+                    <td>13天</td>
+                </tr>
+                <tr>
+                    <td>汽车坐垫/位</td>
+                    <td>118.0 元</td>
+                    <td>13天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>配饰</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>毛领</td>
+                    <td>68.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>领带</td>
+                    <td>78.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>围巾</td>
+                    <td>78.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>非皮毛帽子</td>
+                    <td>68.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>非皮毛披肩</td>
+                    <td>118.0 元</td>
+                    <td>11天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>箱包洗护</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>钱包（不分大小、材质）</td>
+                    <td>188.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>大牌手袋（不分大小、材质）</td>
+                    <td>388.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>旅行箱/袋</td>
+                    <td>988.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>琴盒</td>
+                    <td>988.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>高尔夫球袋</td>
+                    <td>988.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>包包改黑</td>
+                    <td>588.0 元</td>
+                    <td>20天</td>
+                </tr>
+                <tr>
+                    <td>轻奢手袋（不分大小、材质、品牌详见下单页提示）</td>
+                    <td>388.0 元</td>
+                    <td>15天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>鞋靴洗护</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>鞋（不限材质）</td>
+                    <td>188.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>靴（不限材质）</td>
+                    <td>288.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>鞋子改黑</td>
+                    <td>298.0 元</td>
+                    <td>20天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>皮质服饰洗护</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>毛领</td>
+                    <td>68.0 元</td>
+                    <td>11天</td>
+                </tr>
+                <tr>
+                    <td>局部拼皮上衣</td>
+                    <td>288.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮衣（光面）</td>
+                    <td>388.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮裤</td>
+                    <td>289.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮裙</td>
+                    <td>289.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮衣（绒面）</td>
+                    <td>488.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮草</td>
+                    <td>588.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>黑色光面皮衣</td>
+                    <td>388.0 元</td>
+                    <td>15天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>皮质饰品洗护</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>皮带</td>
+                    <td>188.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮帽</td>
+                    <td>188.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮手套</td>
+                    <td>188.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮质沙发/位</td>
+                    <td>588.0 元</td>
+                    <td>15天</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>维修服务</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>更换拉链头/尾/拉链牌</td>
+                    <td>188.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换拉链</td>
+                    <td>488.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>原扣安装</td>
+                    <td>118.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>换扣/个</td>
+                    <td>288.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>换锁／个</td>
+                    <td>488.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>金属钉颜色还原／只</td>
+                    <td>58.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>金属扣颜色还原／只</td>
+                    <td>188.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>金属肩带／条</td>
+                    <td>688.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>车线</td>
+                    <td>188.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>修补缺口／裂缝（处）</td>
+                    <td>288.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>打孔／个</td>
+                    <td>58.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>粘胶／处</td>
+                    <td>58.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>皮边油修复</td>
+                    <td>289.0 元</td>
+                    <td>20天</td>
+                </tr>
+                <tr>
+                    <td>皮带／肩带改短（条）</td>
+                    <td>288.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换肩带／手挽（条）</td>
+                    <td>388.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换布类</td>
+                    <td>688.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换皮类</td>
+                    <td>888.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换/修补耳仔（个）</td>
+                    <td>288.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>皮带换皮</td>
+                    <td>688.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换行李箱轮／个</td>
+                    <td>388.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换手挽／对</td>
+                    <td>688.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换挂肩／对</td>
+                    <td>788.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换长肩带／条</td>
+                    <td>788.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换袋口皮</td>
+                    <td>588.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>钱包局部换皮／革／布</td>
+                    <td>588.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>钱包整体换皮／革／布</td>
+                    <td>788.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换边骨／条</td>
+                    <td>600.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>四角加皮／个</td>
+                    <td>288.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>缩角／个</td>
+                    <td>188.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>鞋加前掌</td>
+                    <td>189.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>鞋加后掌／后钉</td>
+                    <td>189.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>鞋跟还原／修补</td>
+                    <td>388.0 元</td>
+                    <td>15天</td>
+                </tr>
+                <tr>
+                    <td>更换鞋跟(含掌)</td>
+                    <td>378.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换鞋带/绳子（条）</td>
+                    <td>48.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>更换蝴蝶结/个</td>
+                    <td>288.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>手袋定型</td>
+                    <td>1388.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>皮带定型</td>
+                    <td>488.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>钱包定型</td>
+                    <td>588.0 元</td>
+                    <td>23天</td>
+                </tr>
+                <tr>
+                    <td>皮服改短</td>
+                    <td>788.0 元</td>
+                    <td>23天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+        <li>
+            <table class="price-list">
+                <tbody>
+                <tr>
+                    <th>袋洗</th>
+                    <th>价格</th>
+                    <th>洗护周期</th>
+                </tr>
+                <tr>
+                    <td>白袋洗</td>
+                    <td>158.0 元</td>
+                    <td>3-7天</td>
+                </tr>
+                <tr>
+                    <td>蓝袋洗</td>
+                    <td>299.0 元</td>
+                    <td>3-7天</td>
+                </tr>
+                </tbody>
+            </table>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    if ($(".nav-head li").hasClass("selected")) {
+        var index = $(this).index() + 1;
+        $(".price-content ul li").eq(index).show().siblings().hide();
+    }
+    $(".nav-head li").on('click', function() {
+        var index = $(this).index();
+        if (index > 3) {
+            var n = index - 4;
+            $(".nav-head ul").scrollLeft(145 + (n * 100));
+        }
+        $(this).addClass("selected").siblings().removeClass("selected");
+        $(".price-content ul li").eq(index).show().siblings().hide();
+    });
+</script>

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysCategoryInfoDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysCategoryInfo">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="level" jdbcType="TINYINT" property="level"/>
+        <result column="parent" jdbcType="INTEGER" property="parent"/>
+        <result column="path" jdbcType="VARCHAR" property="path"/>
+        <result column="image" jdbcType="VARCHAR" property="image"/>
+        <result column="fullName" jdbcType="VARCHAR" property="fullName"/>
+        <result column="status" jdbcType="TINYINT" property="status"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, `name`, `level`, parent, `path`, image, fullName, `status`, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_category_info
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_category_info
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.name != null and info.name != ''">
+                and `name` like CONCAT('%', #{info.id}, '%')
+            </if>
+            <if test="info.level != null">
+                and `level` = #{info.level, jdbcType=TINYINT}
+            </if>
+            <if test="info.parent != null">
+                and parent = #{info.parent, jdbcType=INTEGER}
+            </if>
+            <if test="info.path != null">
+                and path = like CONCAT(#{info.path}, '%')
+            </if>
+            <if test="info.fullName != null and info.fullName != ''">
+                and fullName like CONCAT(#{info.fullName}, '%')
+            </if>
+            <if test="info.status != null">
+                and status = #{info.status, jdbcType=TINYINT}
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_category_info where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysCategoryInfo" useGeneratedKeys="true">
+        insert into sys_category_info (`name`, `level`, parent, `path`, image, fullName, `status`, createTime)
+        values (
+            #{name, jdbcType=VARCHAR},
+            #{level, jdbcType=TINYINT},
+            #{parent, jdbcType=INTEGER},
+            #{path, jdbcType=VARCHAR},
+            #{image, jdbcType=VARCHAR},
+            #{fullName, jdbcType=VARCHAR},
+            #{status, jdbcType=TINYINT},
+            #{createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysCategoryInfo" useGeneratedKeys="true">
+        insert into sys_category_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="level != null">
+                `level`,
+            </if>
+            <if test="parent != null">
+                parent,
+            </if>
+            <if test="path != null">
+                `path`,
+            </if>
+            <if test="image != null">
+                image,
+            </if>
+            <if test="fullName != null">
+                fullName,
+            </if>
+            <if test="status != null">
+                `status`,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="name != null">
+                #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="level != null">
+                #{level, jdbcType=TINYINT},
+            </if>
+            <if test="parent != null">
+                #{parent, jdbcType=INTEGER},
+            </if>
+            <if test="path != null">
+                #{path, jdbcType=VARCHAR},
+            </if>
+            <if test="image != null">
+                #{image, jdbcType=VARCHAR},
+            </if>
+            <if test="fullName != null">
+                #{fullName, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysCategoryInfo">
+        update sys_category_info
+        <set>
+            <if test="name != null">
+                `name` = #{name, jdbcType=VARCHAR},
+            </if>
+            <if test="level != null">
+                `level` = #{level, jdbcType=TINYINT},
+            </if>
+            <if test="parent != null">
+                parent = #{parent, jdbcType=INTEGER},
+            </if>
+            <if test="path != null">
+                `path` = #{path, jdbcType=VARCHAR},
+            </if>
+            <if test="image != null">
+                image = #{image, jdbcType=VARCHAR},
+            </if>
+            <if test="fullName != null">
+                fullName = #{fullName, jdbcType=VARCHAR},
+            </if>
+            <if test="status != null">
+                `status` = #{status, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysCategoryInfo">
+        update sys_category_info
+        set `name` = #{name, jdbcType=VARCHAR},
+            `level` = #{level, jdbcType=TINYINT},
+            parent = #{parent, jdbcType=INTEGER},
+            `path` = #{path, jdbcType=VARCHAR},
+            image = #{image, jdbcType=VARCHAR},
+            fullName = #{fullName, jdbcType=VARCHAR},
+            `status` = #{status, jdbcType=TINYINT},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

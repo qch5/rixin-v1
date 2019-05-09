@@ -1,0 +1,302 @@
+.NewFastBox {
+    background: #EFEFF4;
+    font-family: '微软雅黑';
+}
+
+.NewFast_Content {
+    position: relative;
+    background: #ffffff;
+    width: 90%;
+    margin: 0 auto;
+    padding: 65px 15px 30px 15px;
+    margin-top: 70px;
+    border: 1px solid #dddddd;
+    box-shadow: 1px 1px 1px 1px #dddddd;
+    border-radius: 30px;
+}
+
+.NewFast_Yuan {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    left: 50%;
+    margin-left: -60px;
+    top: -60px;
+    background: url(/imgs/img_topMig.png) no-repeat center center;
+    background-size: 60%;
+    background-color: #FFE7E2;
+    border-radius: 100%;
+    border: 1px solid #dddddd;
+    box-shadow: 0px 1px 2px #dddddd;
+}
+
+.NewFast_Yuan_Zi {
+    font-size: 0.85em;
+    text-align: center;
+    background: #FFE7E2;
+    line-height: 80px;
+}
+
+.NewFast_Step {
+    text-align: center;
+    font-size: 0.85em;
+    color: #333333
+}
+
+.NewFast_Step p {
+    margin: 0;
+    color: #FE1D1E
+}
+
+.NewFast_Service {
+    margin: 40px 0 0px 0;
+    color: #333333;
+    position: relative;
+}
+
+.NewFast_Service span {
+    display: inline-block;
+    font-size: 0.7em;
+    width: 30%;
+    text-align: center;
+    border: 1px solid #EEEEEE;
+    padding: 15px 5px;
+    margin-bottom: 10px;
+    margin-left: 3%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.NewFast_Service span:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.NewFast_Service span.active {
+    border: 1px solid #8CEBDD;
+    color: #19D7BB;
+    background: url(/imgs/img_check.png) no-repeat right top;
+    background-size: 15%;
+}
+
+.NewFast_Btn {
+    background: #19D7BB;
+    color: #ffffff;
+    display: block;
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.75em;
+    padding: 5px 0;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.NewFast_Btn:hover {
+    color: #ffffff;
+}
+
+.letterSpacing05 {
+    letter-spacing: 0.5em;
+}
+
+.overflow_Body {
+    overflow: hidden;
+}
+
+.NewFast_Form {
+    font-size: 0.82em;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.NewFast_Form li {
+    border: 1px solid #eeeeee;
+    padding: 0 0 0 10px;
+    margin: 10px 0 0 0;
+}
+
+.NewFast_Form li label {
+    margin-top: 9px;
+    color: #333333
+}
+
+.NewFast_Form li label span {
+    color: #FE1D1E;
+}
+
+.NewFast_Form li input {
+    margin: 0;
+    border: none;
+    padding: 5px 10px;
+    font-size: 0.95em;
+}
+
+.NewFast_Form li input::-webkit-input-placeholder {
+    color: #999999!important
+}
+
+.NewFast_Form li .LiSelect {
+    background: url(/imgs/img_right.png) no-repeat center center;
+    width: 10px;
+    height: 20px;
+    background-size: 100%;
+    margin: 9px 5px 0 0;
+}
+
+.NewFast_Code {
+    border: 1px solid #eeeeee;
+    padding: 0 10px;
+    font-size: 0.85em;
+    color: #333333;
+    font-family: '微软雅黑';
+    margin-top: 10px;
+}
+
+.NewFast_Code label {
+    margin-top: 8px;
+}
+
+.NewFast_Code input {
+    margin: 0;
+    padding: 5px 10px;
+    font-size: 0.95em;
+    border: none;
+}
+
+.CodeBoxBtn {
+    background: #FDC9BC;
+    color: #ffffff;
+    border: none;
+    border-radius: 0;
+    margin-left: 5px;
+    height: 42px;
+    font-size: 0.85em;
+    padding: 0 10px;
+}
+
+.NewFast_TwoBtn {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.NewFast_TwoBtn .NewFast_Btn {
+    float: left;
+    margin-left: 10%;
+    width: 45%;
+}
+
+.NewFast_TwoBtn .NewFast_Btn:first-child {
+    margin-left: 0;
+    background: #FE1D1E;
+}
+
+.NewFast_Work {
+    margin-top: 15px;
+}
+
+.NewFast_Work span {
+    position: relative;
+    display: inline-block;
+    font-size: 0.7em;
+    width: 30%;
+    text-align: center;
+    border: 1px solid #EEEEEE;
+    padding: 15px 5px;
+    margin-bottom: 10px;
+    margin-left: 3%;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.NewFast_Work span:nth-child(3n+1) {
+    margin-left: 0;
+}
+
+.NewFast_Work span.active {
+    border: 1px solid #8CEBDD;
+    color: #19D7BB;
+    background: url(/imgs/img_check.png) no-repeat right top;
+    background-size: 15%;
+}
+
+.NewFast_WorkTime {
+    margin: 40px 0 20px 0
+}
+
+.WorkTimeBox {
+    border: 1px solid #eeeeee;
+    padding: 5px 10px;
+    font-size: 0.85em;
+    color: #333333;
+    margin-bottom: 10px;
+    background: url(/imgs/img_right.png) no-repeat right center;
+    background-size: 8px;
+    background-position-x: 99%;
+}
+
+.WorkTimeBox label {
+    margin-right: 10px;
+}
+
+.WorkTimeBox input {
+    margin-bottom: 0;
+    height: 23px;
+    padding: 0;
+    border: 0;
+    font-size: 0.95em;
+    color: #333333
+}
+
+.WorkTimeSelect {
+    border: 1px solid #eeeeee;
+    margin-left: 10px;
+}
+
+.WorkTimeSelect select {
+    margin: 0;
+    height: 34px;
+    line-height: 34px;
+    padding: 0 20px 0 10px;
+    color: #999999
+}
+
+.RestWay_Pick {
+    height: 34px;
+    line-height: 34px;
+    padding: 0 20px 0 10px;
+    background: url(/imgs/img_right.png) no-repeat right center;
+    background-position-x: 94%;
+    font-size: 0.85em;
+    color: #666666;
+    background-size: 8px;
+}
+
+.NewFast_Note {
+    padding: 5px 10px;
+    font-size: 0.85em;
+    border: 1px solid #eeeeee;
+    margin-top: 20px;
+    color: #333333
+}
+
+.NewFast_Note::-webkit-input-placeholder {
+    color: #999999!important;
+    font-size: 0.85em;
+}
+
+.NewFast_JobType {
+    background: url(/imgs/NewFast_JobType.png) no-repeat top center;
+    background-size: 40%;
+    background-position-y: 15px;
+    background-color: #FFE7E2;
+    text-align: center;
+    color: #666666;
+    font-family: '微软雅黑';
+    padding: 75px 20px 0 20px;
+    font-size: 0.75em;
+    line-height: 1.25
+}

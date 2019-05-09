@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="keywords" content="广州清洁公司,广州家政公司,广州保姆,广州家政服务,广州清洁,广州清洁服务,广州家庭服务,广州家政公司,找家政员,找阿姨,月嫂,带小孩,育婴师,育儿嫂,陪护工,小时工,保洁,保养,搞卫生,开荒,维修,家教,管家,家政,家政O2O,家政服务,家庭服务,家政系统,免费家政系统,家政经营,家政管理软件,云管理,家政SAAS系统,家政会员管理,家政客户管理,家政平台,家政移动管理,家政大数据,家政互联,家政信息化,家政无纸化,家政同业合作,家政诚信,高端家政,涉外家政,家政可视化,广州家政网,家政天下,家政公司管理系统" />
+    <meta name="description" content="找家政服务，就上家政天下！全平台家政员实名认证，信用等级管理，客户评价公开，找优质门店、安心保姆，尽在家政天下！" />
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <title>意向订单</title>
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/weui.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.picker.min.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/mui/css/mui.poppicker.css" rel="stylesheet" />
+    <link href="http://jztx.com/Assets//Content/Mobile/v3/style.css?v=20190304215736" rel="stylesheet" />
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+    <script src="http://jztx.com/Assets//Scripts/jquery.cookie.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.picker.min.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.poppicker.js"></script>
+    <script src="http://jztx.com/Assets//Content/Mobile/mui/js/city.data-3_1.js"></script>
+    <script src="http://jztx.com/Assets//Scripts/Mobile/v3/time-cycles.v3.js"></script>
+    <script>mui.init();</script>
+
+
+
+</head>
+<body>
+
+
+<style>
+    #topPopover { height: 300px; width: 150px; }
+
+    .list-search-box { top: 44px; }
+
+    .list-select-menu { top: 94px; }
+
+    .list-box { padding-top: 99px; }
+</style>
+<style>
+    .tuijian-title { margin-bottom: 5px; margin-top: 5px; padding-top: 5px; border-top: 1px dashed #eee; color: #333; }
+    .tuijian-box { padding: 0 8px; background-color: #F8F9FB; margin-bottom: 5px; }
+    .tuijian-box .selected-nurse-box { background-color: transparent; }
+    .tuijian-flag { position: absolute; top: 8px; right: 10px; width: 53px; height: 53px; }
+</style>
+
+
+<div class="mui-content" id="biddetail">
+    <div>
+
+        <div class="mui-card detail-card" style="margin-top:0px;">
+            <div class="mui-card-content">
+                <a href="/Mobile/V3Wills/Detail?tab=2&amp;oid=496736">
+                    <div class="mui-card-content-inner" style="background-color:red;">
+                        <div style="display:table">
+                            <div style="display:table-cell;vertical-align:middle; width:10000px; overflow:hidden;">
+                                        <span class="text-yellow right-icon " style="color: white;">
+                                                <span>暂无报价</span>
+                                                <br />
+                                            意向订单最多可有5家公司参与报价
+                                        </span>
+                            </div>
+                            <div style="display:table-cell;vertical-align:middle; color:#fff; overflow:hidden;">
+                                <span class="icon-white-forward"></span>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div id="detailControl" class="mui-content" style="padding-bottom:60px;">
+
+
+            <div class="mui-card detail-card" style="margin-top:0;">
+                <div class="mui-card-content bg-order-map">
+                    <div class="mui-card-content-inner">
+
+                        <div class="tb-box">
+                            <div class="tb-left-title">服务对象：</div>
+                            <div class="tb-right-content">
+                                戴
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">服务地址：</div>
+                            <div class="tb-right-content">
+                                恒大华府6#1207
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">用工时间：</div>
+                            <div class="tb-right-content">
+                                2019-03-05 08:00至2019-03-05 10:00
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mui-card detail-card">
+                <div class="mui-card-header">服务需求</div>
+                <div class="mui-card-content">
+                    <div class="mui-card-content-inner">
+
+                        <div class="tb-box">
+                            <div class="tb-left-title">服务项目：</div>
+                            <div class="tb-right-content">
+                                衣服干洗
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">服务内容：</div>
+                            <div class="tb-right-content">
+                                帽子,真丝貂绒
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">房子面积：</div>
+                            <div class="tb-right-content">
+                                --
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">家庭成员：</div>
+                            <div class="tb-right-content">
+                                --
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">照顾对象：</div>
+                            <div class="tb-right-content">
+                                --
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">自理能力：</div>
+                            <div class="tb-right-content">
+                                --
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">住宿条件：</div>
+                            <div class="tb-right-content">
+                                面议
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">餐饮条件：</div>
+                            <div class="tb-right-content">
+                                面议
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">家有宠物：</div>
+                            <div class="tb-right-content">
+                                --
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">服务备注：</div>
+                            <div class="tb-right-content">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mui-card detail-card">
+                <div class="mui-card-header">
+                    需求完善信息（选人要求）
+                    <a class="circle-btn circle-btn-danger" href="/Mobile/V3Wills/Fill?oid=496736">完善需求</a>
+                </div>
+                <div class="mui-card-content">
+                    <div class="mui-card-content-inner">
+
+                        <div class="mui-ellipsis mui-text-center three-sign">
+                                <span class="p-d-r-10 mui-pull-left">
+                                    <span class="icon-sign-empty"></span>
+                                    <span>健康证</span>
+                                </span>
+                            <span class="p-d-r-10">
+                                    <span class="icon-sign-empty"></span>
+                                    <span>购买保险</span>
+                                </span>
+                            <span class="mui-pull-right">
+                                    <span class="icon-sign-empty"></span>
+                                    <span>实名认证</span>
+                                </span>
+                        </div>
+
+                        <div class="content-group">
+                            <div class="tb-box">
+                                <div class="tb-left-title">性别要求：</div>
+                                <div class="tb-right-content">
+                                    无
+                                </div>
+                            </div>
+                            <div class="tb-box">
+                                <div class="tb-left-title">学历要求：</div>
+                                <div class="tb-right-content">
+                                    无
+                                </div>
+                            </div>                                                                    <div class="tb-box">
+                            <div class="tb-left-title">属相要求：</div>
+                            <div class="tb-right-content">
+                                无
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="content-group">
+                            <div class="tb-box">
+                                <div class="tb-left-title">年龄要求：</div>
+                                <div class="tb-right-content">--</div>
+                            </div>
+                            <div class="tb-box">
+                                <div class="tb-left-title">薪资要求：</div>
+                                <div class="tb-right-content">
+                                    面议
+                                </div>
+                            </div>
+                            <div class="tb-box">
+                                <div class="tb-left-title">籍贯要求：</div>
+                                <div class="tb-right-content">
+                                    --
+                                </div>
+                            </div>                            </div>
+                        <div>
+                            <div class="lbl-title">做饭口味</div>
+                            <div class="edit-box-checkbox">
+
+                                --
+                            </div>
+                        </div>
+                        <div>
+                            <div class="lbl-title">语言能力</div>
+                            <div class="edit-box-checkbox">
+                                --
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="mui-card detail-card">
+                <div class="mui-card-content">
+                    <div class="mui-card-content-inner">
+                        <div class="tb-box">
+                            <div class="tb-left-title">订单来源：</div>
+                            <div class="tb-right-content">
+                                平台手机网站
+                            </div>
+                        </div>
+                        <div class="tb-box">
+                            <div class="tb-left-title">创建时间：</div>
+                            <div class="tb-right-content">
+                                2019-03-04 21:55:47
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="fiexd-bottom-box">
+                <div class="mui-pull-left">报价情况：0/5</div>
+                <div class="fiexd-btn-box">
+                    <a class="circle-btn circle-btn-gray" href="#" onclick="irecall(496736)">取消订单</a>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+
+<div class="weui_dialog_confirm" id="CancelOrder" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">取消订单</strong></div>
+        <div class="weui_dialog_bd dialogCotent">
+            您确认要取消订单吗？
+        </div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" onclick="HideSureDialog('CancelOrder');" class="weui_btn_dialog default">取消</a>
+            <a href="javascript:;" onclick="CancelOrder();" class="weui_btn_dialog primary">确定</a>
+        </div>
+    </div>
+</div>
+
+<div class="weui_dialog_confirm" id="CpyCancelBox" style="display: none;">
+    <div class="weui_mask"></div>
+    <div class="weui_dialog">
+        <div class="weui_dialog_hd"><strong class="weui_dialog_title">取消竞标</strong></div>
+        <div class="weui_dialog_bd dialogCotent">
+            您确定要取消竞标吗？
+            <p>
+                <small class="text-danger">取消竞标后将不能再次竞标此单，慎重考虑</small>
+            </p>
+        </div>
+        <div class="weui_dialog_ft">
+            <a href="javascript:;" onclick="HideSureDialog('CpyCancelBox');" class="weui_btn_dialog default">考虑一下</a>
+            <a href="javascript:;" onclick="CpyCancel();" class="weui_btn_dialog primary">残忍确定</a>
+        </div>
+    </div>
+</div>
+
+
+
+
+<!--lodding-->
+<div id="loadingToast" class="weui_loading_toast" style="display:none;">
+    <div class="weui_mask_transparent"></div>
+    <div class="weui_toast">
+        <div class="weui_loading">
+            <!-- :) -->
+            <div class="weui_loading_leaf weui_loading_leaf_0"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_1"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_2"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_3"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_4"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_5"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_6"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_7"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_8"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_9"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_10"></div>
+            <div class="weui_loading_leaf weui_loading_leaf_11"></div>
+        </div>
+        <p class="weui_toast_content">数据加载中</p>
+    </div>
+</div>
+
+<!--dialog-->
+<div class=" normal-dialog" style="display:none;">
+    <div class="dialog_BgBox"></div>
+    <div class="dialog_Bg">
+        <div class="dialog_Title">标题</div>
+        <div class="dialog-content">
+
+        </div>
+        <div class="dialog-foot">
+            <a href="javascript:;" class="default-btn cancel-btn">取消</a>
+            <a href="javascript:;" class="primary-sure sure-btn">确定</a>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    var baseurl = 'http://jztx.com/';
+    var sourseurl = 'http://jztx.com/Assets/';
+
+    var mobileAgent = navigator.userAgent.toLowerCase();
+    if (!(mobileAgent.match(/(ipod|iphone os|midp|ucweb|android|windows ce|windows mobile)/i))) {
+        // 移动端跳转PC
+        var reg = new RegExp("(^|&)c=([^&]*)(&|$)", "i");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) {
+            window.location.href = "/Store/Index?c=" + encodeURI(r[2]);
+        }
+
+    }
+
+</script>
+
+<script src="https://ssl.captcha.qq.com/TCaptcha.js"></script>
+<script src="/Assets/Scripts/verify.js"></script>
+<script src="http://jztx.com/Assets//Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="http://jztx.com/Assets//Scripts/jquery.validate.min.js"></script>
+<script src="http://jztx.com/Assets//Scripts/jquery.validate.unobtrusive.min.js"></script>
+<!--common js start-->
+<script type="text/javascript" src="http://jztx.com/Assets//Scripts/Mobile/v3/common.v3.js?v=20190304215736"></script>
+<!--common js end-->
+<script>
+
+
+
+    var _hmt = _hmt || [];
+    (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?17c50647718215714adff4c37faa09b9";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+
+
+<script src="http://jztx.com/Assets//Content/Mobile/mui/js/mui.picker.min.js"></script>
+<script>
+    var id = '496736', openid = '', IsLongJob = '';
+    var timeschinese = "[{\"value\":\"3\",\"text\":\"3小时\"},{\"value\":\"3.5\",\"text\":\"3.5小时\"},{\"value\":\"4\",\"text\":\"4小时\"},{\"value\":\"4.5\",\"text\":\"4.5小时\"},{\"value\":\"5\",\"text\":\"5小时\"},{\"value\":\"5.5\",\"text\":\"5.5小时\"},{\"value\":\"6\",\"text\":\"6小时\"},{\"value\":\"6.5\",\"text\":\"6.5小时\"},{\"value\":\"7\",\"text\":\"7小时\"},{\"value\":\"7.5\",\"text\":\"7.5小时\"},{\"value\":\"8\",\"text\":\"8小时\"},{\"value\":\"8.5\",\"text\":\"8.5小时\"},{\"value\":\"9\",\"text\":\"9小时\"},{\"value\":\"9.5\",\"text\":\"9.5小时\"},{\"value\":\"10\",\"text\":\"10小时\"},{\"value\":\"10.5\",\"text\":\"10.5小时\"},{\"value\":\"11\",\"text\":\"11小时\"},{\"value\":\"11.5\",\"text\":\"11.5小时\"},{\"value\":\"12\",\"text\":\"12小时\"},{\"value\":\"12.5\",\"text\":\"12.5小时\"},{\"value\":\"13\",\"text\":\"13小时\"},{\"value\":\"13.5\",\"text\":\"13.5小时\"},{\"value\":\"14\",\"text\":\"14小时\"},{\"value\":\"14.5\",\"text\":\"14.5小时\"},{\"value\":\"15\",\"text\":\"15小时\"},{\"value\":\"15.5\",\"text\":\"15.5小时\"},{\"value\":\"16\",\"text\":\"16小时\"},{\"value\":\"16.5\",\"text\":\"16.5小时\"},{\"value\":\"17\",\"text\":\"17小时\"},{\"value\":\"17.5\",\"text\":\"17.5小时\"},{\"value\":\"18\",\"text\":\"18小时\"},{\"value\":\"18.5\",\"text\":\"18.5小时\"},{\"value\":\"19\",\"text\":\"19小时\"},{\"value\":\"19.5\",\"text\":\"19.5小时\"},{\"value\":\"20\",\"text\":\"20小时\"},{\"value\":\"20.5\",\"text\":\"20.5小时\"},{\"value\":\"21\",\"text\":\"21小时\"},{\"value\":\"21.5\",\"text\":\"21.5小时\"},{\"value\":\"22\",\"text\":\"22小时\"},{\"value\":\"22.5\",\"text\":\"22.5小时\"},{\"value\":\"23\",\"text\":\"23小时\"},{\"value\":\"23.5\",\"text\":\"23.5小时\"},{\"value\":\"24\",\"text\":\"24小时\"}]";
+    $(function () {
+        openid = $.getParam('openid');
+
+        $('.edit-box-form').on('click', '.pickdate', function () {
+            InitPickDate($(this));
+        });
+        $('.edit-box-form').on('click', '.picktime', function () {
+            InitPickTime($(this));
+        });
+        $('.edit-box-form').on('click', '.picktimelong', function () {
+            InitPickTimeLong($(this));
+        });
+        $('.edit-box-form').on('click', '.pickmonth', function () {
+            InitPickMonth($(this));
+        });
+
+        //document.getElementById('slider').addEventListener('slide', function (e) {
+        //    if (e.detail.slideNumber === 0) {
+
+        //    } else if (e.detail.slideNumber === 1) {
+
+        //    }
+        //});
+
+        $('input[name^=selectnurse_]').click(function () {
+            var _this = $(this);
+            $('input[name^=selectnurse_]').prop('checked', false);
+            _this.prop('checked', true);
+            var data_val = _this.attr('data-val');
+            //$('.btn-choise').removeClass('mui-btn-success').addClass('btn-custom');
+            //$('.btn-choise[data-val=' + data_val + ']').addClass('mui-btn-success').removeClass('btn-custom');
+
+        });
+
+        //$('.form-control').on('click', '.btn-custom', function () {
+        //    $.alertmsg("请选择家政员");
+        //    return;
+        //});
+
+        $('.workdates').click(function () {
+
+            var optionsJson = $(this).attr('data-options');
+            var options = JSON.parse(optionsJson);
+            var _this = $(this);
+            var picker = new mui.DtPicker(options);
+            picker.show(function (rs) {
+
+                _this.find('span').css({ 'color': '#000' }).html(rs.text);
+                _this.find('input').val(rs.text);
+
+                picker.dispose();
+            });
+
+        });
+
+        $('.workdate2').click(function () {
+            var _data = [];
+            var date2Picker = new mui.PopPicker();
+            for (var i = 6; i < 23; i++) {
+
+                var temp = {
+                    value: i,
+                    text: i + ":00"
+                };
+                _data.push(temp);
+            }
+            var _this = $(this);
+            date2Picker.setData(_data);
+            // date2Picker.pickers[0].setSelectedValue('2');
+            date2Picker.show(function (items) {
+
+                _this.find('span').css({ 'color': '#000' }).html(items[0].text);
+                _this.find('input').val(items[0].value);
+                date2Picker.dispose();
+            });
+        });
+
+        $('.workdate3').click(function () {
+            var _data = [];
+            var date2Picker = new mui.PopPicker();
+            if (IsLongJob == 'True' || IsLongJob == 'true') {
+                for (var i = 1; i < 13; i++) {
+
+                    var temp = {
+                        value: i,
+                        text: i + "个月"
+                    };
+                    _data.push(temp);
+                }
+            }
+            else {
+                _data = eval('(' + timeschinese + ')');
+            }
+
+            var _this = $(this);
+            date2Picker.setData(_data);
+            // date2Picker.pickers[0].setSelectedValue('2');
+            date2Picker.show(function (items) {
+
+                _this.find('span').css({ 'color': '#000' }).html(items[0].text);
+                _this.find('input').val(items[0].value);
+                date2Picker.dispose();
+            });
+        });
+
+        $('#readBids').click(function () {
+            $('[href="#item1mobile"]').removeClass('mui-active').siblings('[href="#item2mobile"]').addClass('mui-active');
+            $('#item1mobile').removeClass('mui-active');
+            $('#item2mobile').addClass('mui-active');
+        });
+
+    });
+
+    $('.form-control').on('click', '.mui-btn-success', function () {
+
+        var ids = $(this).attr('data-val');
+        var selectnurse = $('input[name=selectnurse_' + ids + ']:checked').val();
+        var start = $("# " + ids).val();
+        var starthour = $("#starthour_" + ids).val();
+        var hourormonth = $("#hourormonth_" + ids).val();
+
+        if (start == null || start == undefined || start == "") {
+            $.alertmsg("请选择用工时间");
+            return;
+        }
+
+        if (IsLongJob != 'True') {
+            if (starthour == null || starthour == undefined || starthour == "") {
+                $.alertmsg("请选择几点用工");
+                return;
+            }
+        }
+
+        if (hourormonth == null || hourormonth == undefined || hourormonth == "") {
+            $.alertmsg("请选择用工时长");
+            return;
+        }
+
+
+
+        //if (selectnurse == null || selectnurse == "" || selectnurse == undefined) {
+        //    $.alertmsg("请选择一名家政员");
+        //    return;
+        //}
+        var jdata = {
+            url: baseurl + '/Mobile/Will/ConfirmBid',
+            paramData: 'bid=' + ids + '&selectnurse=' + selectnurse + "&start=" + start + "&starthour=" + starthour + "&hourormonth=" + hourormonth,
+            func: function (result) {
+                $.alertmsg(result.msg);
+                if (result.r) {
+                    $.ReplaceUrl(baseurl + '/Mobile/V3Orders/Detail?oid=' + result.oid + '&cid=' + result.cid + '&openid=' + openid);
+                }
+            }
+        };
+        $.submit(jdata);
+
+        return false;
+    });
+
+    $('#cancelOrder').click(function () {
+        $("#CancelOrder").fadeIn(200);
+    });
+
+    $('#cancelBid').click(function () {
+        $("#CpyCancelBox").fadeIn(200);
+
+    });
+
+
+    function HideSureDialog(boxName) {
+        $("#" + boxName).hide();
+    }
+
+    function CancelOrder() {
+        HideSureDialog("CancelOrder");
+        var jdata = {
+            url: baseurl + '/Mobile/Will/BidCancel',
+            paramData: 'oid=' + id,
+            func: function (result) {
+                $.alertmsg(result.msg);
+                if (result.r) {
+                    $.ReplaceUrl(baseurl + '/Mobile/V3Wills/List');
+                }
+            }
+        };
+        $.submit(jdata);
+    }
+
+    function CpyCancel() {
+        HideSureDialog('CancelOrder');
+        var jdata = {
+            url: baseurl + '/Mobile/Will/WillBid',
+            paramData: 'OrderID=' + id + '&isDelete=1',
+            func: function (result) {
+                $.alertmsg(result.msg);
+                if (result.r) {
+                    $.ReplaceUrl(baseurl + '/Mobile/V3Wills/List');
+                }
+            }
+        };
+        $.submit(jdata);
+    }
+
+    function iwill(o) {
+        if (confirm("确定不看这个公司的报价吗？")) {
+            $.submit({
+                url: baseurl + '/Mobile/V3Wills/ignore/' + o,
+                func: function (result) {
+                    $.alertmsg(result.msg);
+                    if (result.r) {
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+    }
+    function irecall(o) {
+        if (confirm("确定取消您的订单吗？")) {
+            $.submit({
+                url: baseurl + '/Mobile/V3Wills/recall/' + o,
+                func: function (result) {
+                    $.alertmsg(result.msg);
+                    if (result.r) {
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+    }
+    function iCancel(o) {
+        if (confirm("确定取消您的报价吗？\r\n您将不能再次参与本订单的竞价！")) {
+            $.submit({
+                url: baseurl + '/Mobile/V3Wills/CancelBid/' + o,
+                func: function (result) {
+                    $.alertmsg(result.msg);
+                    if (result.r) {
+                        window.location.reload();
+                    }
+                }
+            });
+        }
+    }
+
+    function cwill() {
+        var obj = $('#confirmBidForm').serialize();
+        $.submit({
+            url: baseurl + '/Mobile/V3Wills/ConfirmBid',
+            paramData: obj,
+            func: function (result) {
+                $.alertmsg(result.msg);
+                if (result.r) {
+                    $.ReplaceUrl(baseurl + '/Mobile/V3Wills/Detail?tab=4&skip=1&oid=' + result.oid);
+                }
+            }
+        });
+    }
+
+</script>
+
+
+</body>
+</html>

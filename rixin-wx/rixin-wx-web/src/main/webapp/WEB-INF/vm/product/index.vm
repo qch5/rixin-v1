@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow:hidden">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <link href="/css/yujia/globalAll.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/yujia/layout.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/weiui/weui.css" rel="stylesheet" type="text/css" />
+    <link href="/css/yujia/master.css?20171212" rel="stylesheet" type="text/css" />
+    <title>日新洗衣</title>
+</head>
+<body>
+
+<div id="html_Layout">
+    <div id="html_body">
+
+        <div class="head containered" style="position:fixed;width:100%;z-index:500;top:0;clear: both;">
+            <a class="one l GoBack" href="/home/selectcity" style="">
+                <img src="/imgs/dw.png" alt="定位" />
+                <span id="CurrentCity" class="head-span"></span>
+            </a>
+            <div class="two l fc">
+                <p class="Sub fc text-ellipsis">更多服务</p>
+            </div>
+            <div class="third l fr naved" >
+                <div class="nav_out"></div>                </div>
+        </div>
+
+
+        <div id="main">
+            <div class="qbfw-bar">
+                <a href="/Payment/Recharge">
+                    <img src="http://statics.xiaoyujia.com/newimg/more_service_banner_ios.png" class="qbfw-img" />
+                </a>
+
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    家庭保洁
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=139&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/04/10/16023712465/90x90.jpg" />
+                                <label class="qbfw-product-lab">新装保洁</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=116&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/04/10/16080766974/90x90.jpg" />
+                                <label class="qbfw-product-lab">翡翠保洁</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=106&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/06/16/18355087678/90x90.jpg" />
+                                <label class="qbfw-product-lab">金牌保洁</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=112&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/04/11/14115722153/90x90.jpg" />
+                                <label class="qbfw-product-lab">夜间保洁</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=126&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/04/09/11503547305/90x90.jpg" />
+                                <label class="qbfw-product-lab">新手保洁</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=145&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/04/10/16155962798/90x90.jpg" />
+                                <label class="qbfw-product-lab">日常保洁</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=153&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/12/14/11110323285/90x90.jpg" />
+                                <label class="qbfw-product-lab">全能双人大扫除</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=163&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/02/24/19422208266/90x90.jpg" />
+                                <label class="qbfw-product-lab">深度大扫除</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    金牌家政
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=67&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16524800606/90x90.jpg" />
+                                <label class="qbfw-product-lab">金牌月嫂</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=68&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16510815577/90x90.jpg" />
+                                <label class="qbfw-product-lab">高级月嫂</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=180&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2019/01/25/11210438341/90x90.jpg" />
+                                <label class="qbfw-product-lab">特约保姆</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=114&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16492211326/90x90.jpg" />
+                                <label class="qbfw-product-lab">单餐保姆&#183;</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    家务管家
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=170&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/07/27/17261061401/90x90.jpg" />
+                                <label class="qbfw-product-lab">衣柜收纳整理</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=171&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16312506846/90x90.jpg" />
+                                <label class="qbfw-product-lab">益生菌冰箱清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=175&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/13/16254278228/90x90.jpg" />
+                                <label class="qbfw-product-lab">家务管家单次体验</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=176&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/13/16263194822/90x90.jpg" />
+                                <label class="qbfw-product-lab">家务管家年卡</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    保洁卡
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=133&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16452099356/90x90.jpg" />
+                                <label class="qbfw-product-lab">金牌年卡26次</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=134&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16465870823/90x90.jpg" />
+                                <label class="qbfw-product-lab">金牌年卡52次</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=146&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16395463173/90x90.jpg" />
+                                <label class="qbfw-product-lab">保洁体验卡</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=169&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/09/27/16413643469/90x90.jpg" />
+                                <label class="qbfw-product-lab">金牌年卡12次</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=136&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/08/08/18414274547/90x90.jpg" />
+                                <label class="qbfw-product-lab">翡翠年卡26次</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=137&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/08/08/17111057647/90x90.jpg" />
+                                <label class="qbfw-product-lab">翡翠年卡52次</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    家电卫士
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=110&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/06/16/18334034407/90x90.jpg" />
+                                <label class="qbfw-product-lab">家电清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=111&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/06/16/18342422937/90x90.jpg" />
+                                <label class="qbfw-product-lab">空调清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=141&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/15/22500452155/90x90.jpg" />
+                                <label class="qbfw-product-lab">家电拆装</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=142&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/13/16172595682/90x90.jpg" />
+                                <label class="qbfw-product-lab">空调维修</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=143&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/13/16251256248/90x90.jpg" />
+                                <label class="qbfw-product-lab">空调拆装</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=144&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/13/17553166527/90x90.jpg" />
+                                <label class="qbfw-product-lab">电路维修</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=147&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/28/17024310214/90x90.jpg" />
+                                <label class="qbfw-product-lab">家电组合洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=149&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/11/02/18275162791/90x90.jpg" />
+                                <label class="qbfw-product-lab">甲醛治理</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=151&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/11/17/16241355606/90x90.jpg" />
+                                <label class="qbfw-product-lab">块毯清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=152&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/11/17/16352079692/90x90.jpg" />
+                                <label class="qbfw-product-lab">窗帘清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=168&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/04/04/14430279527/90x90.jpg" />
+                                <label class="qbfw-product-lab">空调蒸汽清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=179&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/10/12/17591115475/90x90.jpg" />
+                                <label class="qbfw-product-lab">水路维修</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=148&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/11/02/18071994861/90x90.jpg" />
+                                <label class="qbfw-product-lab">床褥除螨</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    搬家运输
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=30&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/01/17264772289/90x90.jpg" />
+                                <label class="qbfw-product-lab">计时搬家</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=33&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/08/17591015629/90x90.jpg" />
+                                <label class="qbfw-product-lab">岛内运输</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=36&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/09/08/18044638444/90x90.jpg" />
+                                <label class="qbfw-product-lab">全城运输</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    疏通管道
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=113&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2017/06/16/18243152729/90x90.jpg" />
+                                <label class="qbfw-product-lab">疏通管道</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    家电清洗
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=46&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/07/02/19532071234/90x90.jpg" />
+                                <label class="qbfw-product-lab">灶台清洗</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=49&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/07/02/19511808769/90x90.jpg" />
+                                <label class="qbfw-product-lab">水管清洗</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    地面/石材保养
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=34&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/07/02/19492287802/90x90.jpg" />
+                                <label class="qbfw-product-lab">石材养护</label>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/Product/Details?pid=35&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/07/02/19442220205/90x90.jpg" />
+                                <label class="qbfw-product-lab">木地板保养/打蜡</label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="qbfw-table">
+                <div class="qbfw-row qbfw-categroy">
+                    居家清洗
+                </div>
+                <div class="qbfw-row qbfw-product">
+                    <ul>
+                        <li>
+                            <a href="/Product/Details?pid=44&city=1">
+                                <img class="qbfw-product-img" src="https://statics.xiaoyujia.com/product/icon/2018/07/02/19465228696/90x90.jpg" />
+                                <label class="qbfw-product-lab">皮沙发保养 </label>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        #parse("/common/share.vm")
+        #parse("/common/menu.vm")
+    </div>
+</div>
+
+<!--弹出框开始-->
+
+<!--弹出框结束-->
+
+<script src="/js/jquery/jquery-1.8.3.min.js" type="text/javascript"></script>
+<script src="/js/yujia/font-size.js" type="text/javascript"></script>
+<script src="/js/yujia/my.js" type="text/javascript"></script>
+<script src="/assets/weiui/weui.js" type="text/javascript"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+        window.onload = function () { $(".hidd").show(); }
+        if (getCookie("HSCP.Member.WeiXin.City") == "") {
+            LocationCity()
+        } else {
+            $("#CurrentCity").html(getCookie("HSCP.Member.WeiXin.City"));
+        }
+    })
+    //定位城市
+    function LocationCity() {
+        var map, geolocation;
+        //加载地图，调用浏览器定位服务
+        map = new AMap.Map('container', {
+            resizeEnable: true
+        });
+        map.plugin('AMap.Geolocation', function () {
+            geolocation = new AMap.Geolocation({
+                enableHighAccuracy: true,//是否使用高精度定位，默认:true
+                timeout: 10000,          //超过10秒后停止定位，默认：无穷大
+                buttonOffset: new AMap.Pixel(10, 20),//定位按钮与设置的停靠位置的偏移量，默认：Pixel(10, 20)
+                zoomToAccuracy: true,      //定位成功后调整地图视野范围使定位位置及精度范围视野内可见，默认：false
+                buttonPosition: 'RB'
+            });
+            map.addControl(geolocation);
+            geolocation.getCurrentPosition();
+            //$.weui.loading('正在定位...')
+            $("#CurrentCity").html('定位中')
+            AMap.event.addListener(geolocation, 'complete', onComplete);//返回定位信息
+            AMap.event.addListener(geolocation, 'error', onError);      //返回定位出错信息
+        });
+        //解析定位结果
+        function onComplete(data) {
+            var str = ['定位成功'];
+            str.push('经度：' + data.position.getLng());
+            str.push('纬度：' + data.position.getLat());
+            str.push('精度：' + data.accuracy + ' 米');
+            str.push('是否经过偏移：' + (data.isConverted ? '是' : '否'));
+            //$.weui.hideLoading();
+            //console.log(str.join('<br>'))
+            var lnglatXY = [data.position.getLng(), data.position.getLat()]
+            AMap.service('AMap.Geocoder', function () {//回调函数
+                //实例化Geocoder
+                geocoder = new AMap.Geocoder();
+                geocoder.getAddress(lnglatXY, function (status, result) {
+                    if (status === 'complete' && result.info === 'OK') {
+                        SaveCityCookie(result.regeocode.addressComponent.city)
+                    } else {
+                        $.weui.toast('无法获取位置', function () { }, 'weui_icon_toast');
+                        SaveCityCookie("宿迁")
+                    }
+                });
+            })
+        }
+        //解析定位错误信息
+        function onError(data) {
+            //$.weui.hideLoading();
+            $.weui.toast('定位失败', function () {
+            }, 'weui_icon_toast');
+            SaveCityCookie("宿迁");
+        }
+    }
+    function SaveCityCookie(city) {
+        setCookie("HSCP.Member.WeiXin.City", city.replace("市", ""), 2)
+        $("#CurrentCity").html(city.replace("市", ""))
+        $.weui.closeDialog();
+    }
+</script>
+
+<script src="http://webapi.amap.com/maps?v=1.3&key=b81093df27d6801461e9bf0151210b09"></script>
+
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&web_id=1260785617" language="JavaScript"></script>
+</div>
+</body>
+</html>
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    if (GetQueryString('PayMethod') != null) {
+        var date = new Date();
+        date.setTime(date.getTime() + 60 * 60 * 1000);
+        $.cookie('PayMethod', GetQueryString('PayMethod'), {
+            expires: date
+        });
+    }
+    //else {
+    //      $.cookie('PayMethod', '', { expires: -1 }); // 删除 cookie
+    //}
+</script>

@@ -1,0 +1,90 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=GBK"/>
+    <title>登录阡陌间</title>
+    <link type="text/css" rel="stylesheet" href="/css/commonLogin.css"/>
+    <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script type="text/javascript" src="/js/md5.js"></script>
+
+    <style>
+        #entry .btn-entry{width:100%;height:36px;margin-bottom:10px;font-family:"微软雅黑";line-height:36px;color:white; font-size:medium;font-weight: bold; background:#55bcf9; overflow:hidden;}
+    </style>
+</head>
+
+<body>
+<form id="loginForm" method="post">
+    <div class="w1" id="entry">
+        <div class="mc " id="bgDiv">
+            <div class="form ">
+                <!-- 输入用户名 -->
+                <div class="item fore1">
+                    <div class="item-ifo">
+                        <input id="username" name="username" placeholder="用户名" class="text" type="text" size="30" autocorrect="off" value="" autocapitalize="off" tabindex="1" autocomplete="off"/>
+                        <div class="i-name ico"></div>
+                        <label id="loginname_succeed" class="blank invisible"></label>
+                        <label id="loginname_error" class="hide"><b></b></label>
+                    </div>
+                </div>
+                <div id="capslock"><i></i><s></s>键盘大写锁定已打开，请注意大小写</div>
+
+                <!-- 输入密码 -->
+                <div class="item fore2">
+                    <div class="item-ifo">
+                        <input id="password" name="password" placeholder="密码" class="text" tabindex="2" type="password" size="30" autocorrect="off" autocapitalize="off" autocomplete="off"/>
+                        <div class="i-pass ico"></div>
+                        <label id="loginpwd_succeed" class="blank invisible"></label>
+                        <label id="loginpwd_error" class="hide"></label>
+                    </div>
+                </div>
+                <div class="errortip">您输入的账户名和密码不匹配，请重新输入</div>
+
+                <div id="submit" class="item login-btn2013">
+                    <input id="loginSubmit" type="button" class="btn-img btn-entry" value="登&nbsp;&nbsp;录" tabindex="8"/>
+                </div>
+
+                <div class="item fore4">
+                    <div style="float:right;"><a href="" style="color:#999;">忘记密码？</a></div>
+                    <div style="clear:both;"></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</form>
+
+<script>
+    $("#submit").click(function() {
+        var username = $("#username").val();
+        if(username == "") {
+            alert("用户名不能为空");
+            return;
+        }
+        var password = $("#password").val();
+        if(password == "") {
+            alert("密码不能为空");
+            return;
+        }
+
+        jQuery.ajax({
+            cache: false,
+            type: "POST",
+            url: "/login/ajaxLogin",
+
+            data: {username:username, password:md5(password)},
+            contentType:"application/x-www-form-urlencoded; charset=UTF-8",
+            success: function(result, status) {
+                if(!result || result["ret"] == 1) {
+                    alert("登录失败，" + result["message"]);
+                    return;
+                }
+                parent.location.href = "/"
+            },
+            error: function(e) {
+                alert('调用接口出现错误：' + e);
+            }
+        });
+    });
+</script>
+</body>
+</html>

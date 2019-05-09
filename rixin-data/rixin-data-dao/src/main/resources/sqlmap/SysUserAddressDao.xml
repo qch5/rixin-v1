@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.rixin.data.dao.mapper.SysUserAddressDao">
+    <resultMap id="BaseResultMap" type="com.rixin.data.domain.SysUserAddress">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="openid" jdbcType="VARCHAR" property="openid"/>
+        <result column="fullName" jdbcType="VARCHAR" property="fullName"/>
+        <result column="sex" jdbcType="INTEGER" property="sex"/>
+        <result column="mobile" jdbcType="VARCHAR" property="mobile"/>
+        <result column="city" jdbcType="VARCHAR" property="city"/>
+        <result column="district" jdbcType="VARCHAR" property="district"/>
+        <result column="community" jdbcType="VARCHAR" property="community"/>
+        <result column="detail" jdbcType="VARCHAR" property="detail"/>
+        <result column="isDefault" jdbcType="TINYINT" property="isDefault"/>
+        <result column="createTime" jdbcType="TIMESTAMP" property="createTime"/>
+        <result column="updateTime" jdbcType="TIMESTAMP" property="updateTime"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id, openid, fullName, sex, mobile, city, district, community, detail, isDefault, createTime, updateTime
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_user_address
+        where id = #{id, jdbcType=INTEGER}
+    </select>
+
+    <select id="selectByOpenId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select <include refid="Base_Column_List"/>
+        from sys_user_address
+        where openid = #{openid, jdbcType=VARCHAR}
+        order by updateTime desc
+    </select>
+
+    <select id="selectByPage" resultMap="BaseResultMap">
+        SELECT * FROM sys_user_address
+        <where>
+            <if test="info.id != null">
+                and id = #{info.id, jdbcType=INTEGER}
+            </if>
+            <if test="info.openid != null and info.openid != ''">
+                and openid = #{info.openid, jdbcType=INTEGER}
+            </if>
+            <if test="info.fullName != null and info.fullName != ''">
+                and fullName like CONCAT('%', #{info.fullName}, '%')
+            </if>
+            <if test="info.sex != null and info.sex != ''">
+                and sex = #{info.sex, jdbcType=INTEGER}
+            </if>
+            <if test="info.mobile != null and info.mobile != ''">
+                and mobile like CONCAT('%', #{info.mobile}, '%')
+            </if>
+            <if test="info.isDefault != null">
+                and isDefault = #{info.isDefault, jdbcType=TINYINT}
+            </if>
+        </where>
+        order by id desc
+        <if test="page != null">
+            limit #{page.from}, #{page.limit}
+        </if>
+    </select>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete from sys_user_address where id = #{id, jdbcType=INTEGER}
+    </delete>
+
+    <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysUserAddress" useGeneratedKeys="true">
+        insert into sys_user_address (openid, fullName, sex, mobile, city, district, community, detail, isDefault, createTime)
+        values (
+            #{openid, jdbcType=VARCHAR},
+            #{fullName, jdbcType=VARCHAR},
+            #{sex, jdbcType=INTEGER},
+            #{mobile, jdbcType=VARCHAR},
+            #{city, jdbcType=VARCHAR},
+            #{district, jdbcType=VARCHAR},
+            #{community, jdbcType=VARCHAR},
+            #{detail, jdbcType=VARCHAR},
+            #{isDefault, jdbcType=TINYINT},
+            #{createTime, jdbcType=TIMESTAMP}
+        )
+    </insert>
+
+    <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.rixin.data.domain.SysUserAddress" useGeneratedKeys="true">
+        insert into sys_user_address
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="openid != null">
+                openid,
+            </if>
+            <if test="fullName != null">
+                fullName,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="mobile != null">
+                mobile,
+            </if>
+            <if test="city != null">
+                city,
+            </if>
+            <if test="district != null">
+                district,
+            </if>
+            <if test="community != null">
+                community,
+            </if>
+            <if test="detail != null">
+                detail,
+            </if>
+            <if test="isDefault != null">
+                isDefault,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="openid != null">
+                #{openid, jdbcType=VARCHAR},
+            </if>
+            <if test="fullName != null">
+                #{fullName, jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex, jdbcType=INTEGER},
+            </if>
+            <if test="mobile != null">
+                #{mobile, jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                #{city, jdbcType=VARCHAR},
+            </if>
+            <if test="district != null">
+                #{district, jdbcType=VARCHAR},
+            </if>
+            <if test="community != null">
+                #{community, jdbcType=VARCHAR},
+            </if>
+            <if test="detail != null">
+                #{detail, jdbcType=VARCHAR},
+            </if>
+            <if test="isDefault != null">
+                #{isDefault, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <update id="updateByPrimaryKeySelective" parameterType="com.rixin.data.domain.SysUserAddress">
+        update sys_user_address
+        <set>
+            <if test="openid != null">
+                openid = #{openid, jdbcType=VARCHAR},
+            </if>
+            <if test="fullName != null">
+                fullName = #{fullName, jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex, jdbcType=INTEGER},
+            </if>
+            <if test="mobile != null">
+                mobile = #{mobile, jdbcType=VARCHAR},
+            </if>
+            <if test="city != null">
+                city = #{city, jdbcType=VARCHAR},
+            </if>
+            <if test="district != null">
+                district = #{district, jdbcType=VARCHAR},
+            </if>
+            <if test="community != null">
+                community = #{community, jdbcType=VARCHAR},
+            </if>
+            <if test="detail != null">
+                detail = #{detail, jdbcType=VARCHAR},
+            </if>
+            <if test="isDefault != null">
+                isDefault = #{isDefault, jdbcType=TINYINT},
+            </if>
+            <if test="createTime != null">
+                createTime = #{createTime, jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+
+    <update id="updateByPrimaryKey" parameterType="com.rixin.data.domain.SysUserAddress">
+        update sys_user_address
+        set openid = #{openid, jdbcType=VARCHAR},
+            fullName = #{fullName, jdbcType=VARCHAR},
+            sex = #{sex, jdbcType=INTEGER},
+            mobile = #{mobile, jdbcType=VARCHAR},
+            city = #{city, jdbcType=VARCHAR},
+            district = #{district, jdbcType=VARCHAR},
+            community = #{community, jdbcType=VARCHAR},
+            detail = #{detail, jdbcType=VARCHAR},
+            isDefault = #{isDefault, jdbcType=TINYINT},
+            createTime = #{createTime, jdbcType=TIMESTAMP}
+        where id = #{id, jdbcType=INTEGER}
+    </update>
+</mapper>

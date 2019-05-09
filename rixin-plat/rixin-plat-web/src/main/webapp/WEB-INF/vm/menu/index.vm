@@ -1,0 +1,367 @@
+<html lang="zh-CN">
+<head>
+    <link rel="stylesheet" href="/css/base.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/layui.css" rel="stylesheet">
+    <link rel="stylesheet" href="/js/layer/skin/default/layer.css">
+    <link rel="stylesheet" href="/js/WdatePicker/skin/twoer/datepicker.css">
+    <link rel="stylesheet" href="/js/jqGrid/css/ui.jqgrid.css" rel="stylesheet">
+    <link rel="stylesheet" href="/js/zTree/zTreeStyle.css" rel="stylesheet">
+    <script type="text/javascript" src="/js/jquery/jquery-1.8.3.min.js"></script>
+    <script type="text/javascript" src="/js/jqGrid/grid.locale-cn.js" ></script>
+    <script type="text/javascript" src="/js/jqGrid/jquery.jqGrid.min.js" ></script>
+    <script type="text/javascript" src="/js/layer/layer.js"></script>
+    <script type="text/javascript" src="/js/WdatePicker/WdatePicker.js"></script>
+    <script type="text/javascript" src="/js/zTree/jquery.ztree.core.js"></script>
+    <script type="text/javascript" src="/js/zTree/jquery.ztree.exedit.js"></script>
+    <script type="text/javascript" src="/js/layui/layui.js" charset="utf-8"></script>
+    <script type="text/javascript" src="/js/common.js"></script>
+    <script>document.domain = "jd.com";</script>
+    <style>
+        .layui-form input {
+            width: 250px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="c-right">
+    <div class="mainCon">
+        <div class="indexTit">
+            <h2>
+                <i class="titIcon"></i><span id="indexPage">菜单管理</span>
+            </h2>
+        </div>
+        <div class="section">
+            <!-- 搜索框 - 开始 -->
+            <div class="webDiv">
+                <div class="fl">
+                    <form id="queryForm" action="" method="post">
+                        搜索菜单：<input type="text" id="searchName" name="searchName" class="inputMode w200">
+                        <a href="#" id="search" class="schBtn">搜索</a>
+                        <a href="#" id="create" class="schBtn" style="width:100px;">添加顶层菜单</a>
+                    </form>
+                </div>
+            </div>
+            <!-- 搜索框 - 结束 -->
+
+            <div style="height: 500px; margin-top: 10px;">
+                <div style="width: 20%;float: left; margin-top:4px;">
+                    <div id="allDiv">
+                        <a id="expandAll"><b>全部展开</b></a> | <a id="collapseAll"><b>全部收缩</b></a>
+                    </div>
+                    <ul id="menuTree" class="ztree"></ul>
+                </div>
+
+                <!-- 菜单详情 - 开始 -->
+                <div id="menuDiv" style="display:none; width: 40%; float: left;">
+                    <div class="layui-form" style="width: 480px;">
+                        <div class="layui-form-item">
+                            <label class="layui-form-label" style="margin-top:-5px;"><b>菜单详情</b></label>
+                            <div class="layui-input-block">
+                                <div class="layui-btn-group" style="float: left;">
+                                    <button id="updateMenu" class="layui-btn layui-btn-primary layui-btn-small">修改菜单</button>
+                                    <button id="createChildren" class="layui-btn layui-btn-primary layui-btn-small">添加子菜单</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">名称</label>
+                            <div class="layui-input-block">
+                                <input type="hidden" id="id" name="id">
+                                <input type="text" id="name" name="name" lay-verify="title" autocomplete="off" class="layui-input" readonly>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">链接</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="url" name="url" lay-verify="title" autocomplete="off" class="layui-input" readonly>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">图标</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="icon" name="icon" lay-verify="title" autocomplete="off" class="layui-input" readonly>
+                            </div>
+                        </div>
+                        <div class="layui-form-item">
+                            <label class="layui-form-label">路径</label>
+                            <div class="layui-input-block">
+                                <input type="text" id="path" name="path" lay-verify="title" autocomplete="off" class="layui-input" readonly>
+                            </div>
+                        </div>
+                        <div class="layui-form-item layui-form-text">
+                            <label class="layui-form-label">描述</label>
+                            <div class="layui-input-block">
+                                <textarea id="desc" name="desc" class="layui-textarea" readonly></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 菜单详情 - 结束 -->
+
+                <!-- 功能详情 - 开始 -->
+                <div id="funcDiv" style="display:none; width: 40%; float: left;">
+                    <div class="layui-form">
+                        <div class="layui-form-item" style="margin-left: -40px;">
+                            <label class="layui-form-label" style="margin-top:-5px;"><b>菜单功能</b></label>
+                            <div class="layui-input-block">
+                                <div class="layui-btn-group" style="float: left;">
+                                    <button id="createFunc" class="layui-btn layui-btn-primary layui-btn-small">添加</button>
+                                </div>
+                            </div>
+                        </div>
+                        <table class="layui-table">
+                            <thead>
+                            <tr>
+                                <th>名称</th>
+                                <th>路径</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody id="funcList">
+                            <tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- 功能详情 - 结束 -->
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<SCRIPT type="text/javascript">
+    var setting = {
+        edit: {
+            enable: true,
+            showRemoveBtn: false,
+            showRenameBtn: false
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        },
+        view: {
+            addHoverDom: function(treeId, treeNode) {
+                var aObj = $("#" + treeNode.tId + "_a");
+                if ($("#deleteBtn_"+treeNode.id).length > 0) return;
+                var deleteStr = '<a id="deleteBtn_' + treeNode.id + '" onclick="delMenu(\''+treeNode.id+'\');" style="margin:0 0 0 10px;">删除</a>';
+                if(treeNode.children && treeNode.children.length > 0) {
+                    void(0);
+                } else {
+                    aObj.append(deleteStr);
+                }
+            },
+            removeHoverDom: function(treeId, treeNode) {
+                $("#deleteBtn_"+treeNode.id).unbind().remove();
+            }
+        },
+        callback: {
+            onClick: function(event, treeId, treeNode, clickFlag) {
+                $("#menuDiv").hide();
+                $("#funcDiv").hide();
+                var index = layer.load(1, {
+                    shade: [0.1,'#fff']
+                });
+                ajax_post_data("/menu/info", {id: treeNode.id}, function (data) {
+                    $("#menuDiv").show();
+                    $("#funcDiv").show();
+                    $("#id").val(data.id);
+                    $("#name").val(data.name);
+                    $("#url").val(data.url);
+                    $("#icon").val(data.icon);
+                    $("#path").val(data.path);
+                    $("#desc").val(data.desc);
+                    layer.close(index);
+                });
+                ajax_post_data("/menu/funcList", {id: treeNode.id}, function (data) {
+                    $("#funcList").empty();
+                    $.each(data, function(i, node) {
+                        $("#funcList").append(
+                                "<tr id='tr_" + node.id + "'>" +
+                                "<td>" + node.name + "</td>" +
+                                "<td>" + node.url + "</td>" +
+                                "<td>" +
+                                "<div class=\"layui-btn-group\">" +
+                                "<div onclick='updateFunc(" + node.id + ")' class=\"layui-btn layui-btn-primary layui-btn-small\"><i class=\"layui-icon\">&#xe642;</i></div>" +
+                                "<div onclick='deleteFunc(" + node.id + ")' class=\"layui-btn layui-btn-primary layui-btn-small\"><i class=\"layui-icon\">&#xe640;</i></div>" +
+                                "</div>" +
+                                "</td>" +
+                                "</tr>"
+                        );
+                    });
+                });
+            },
+            beforeDrop: function(treeId, treeNodes, targetNode, moveType) {
+                if(treeNodes.length > 1) {
+                    layer.msg("每次只能移动一个");
+                    return false;
+                }
+                var str;
+                if(moveType == 'inner'){
+                    str = "确定要把菜单'" + treeNodes[0].name + "'移动到'" + targetNode.name + "'下？";
+                }else if(moveType == 'prev'){
+                    str = "确定要把菜单'" + treeNodes[0].name + "'移动到'" + targetNode.name + "'前面？";
+                }else {
+                    str = "确定要把菜单'" + treeNodes[0].name + "'移动到'" + targetNode.name + "'后面？";
+                }
+                if(!confirm(str)) {
+                    return false;
+                }
+                var srcId = treeNodes[0].id;
+                var destId = targetNode.id;
+                ajax_post_data("/menu/move", {srcId: srcId, destId: destId, type: moveType}, function (data) {
+                    layer.msg("移动成功");
+                });
+            }
+        }
+    };
+
+    $(document).ready(function() {
+        var zTree = {};
+        ajax_post_data("/menu/list", null, function (data) {
+            $.each(data, function(i, node) {
+                delete node.url;
+                delete node.icon;
+            });
+            zTree = $.fn.zTree.init($("#menuTree"), setting, data);
+            $("#expandAll").click();
+        });
+
+        $("#search").click(function() {
+            var searchName = $("#searchName").val().trim();
+            if(!searchName) {
+                return;
+            }
+            var nodes = zTree.getNodesByParamFuzzy("name", searchName);
+            for(var i = 0; i < nodes.length ; i++) {
+                zTree.selectNode(nodes[i]);
+                if(i+1 == nodes.length) {
+                    return;
+                }
+                var msg = "当前查询结果："+(i+1)+"/"+nodes.length+"\n是否查找下一个？";
+                if(!confirm(msg)){
+                    break;
+                }
+            }
+        });
+
+        $("#create").click(function() {
+            var index = layer.open({
+                type: 2,
+                title: '菜单管理 - 添加',
+                shadeClose: true,
+                shade: 0.8,
+                maxmin: true,
+                area: ['700px', '470px;'],
+                content: "/menu/create"
+            });
+        });
+
+        $("#updateMenu").click(function() {
+            var id = $("#id").val();
+            if(!id) {
+                layer.msg("请选择您要修改菜单");
+                return;
+            }
+            var index = layer.open({
+                type: 2,
+                title: '菜单管理 - 修改',
+                shadeClose: true,
+                shade: 0.8,
+                maxmin: true,
+                area: ['700px', '470px;'],
+                content: "/menu/update?id=" + id
+            });
+        });
+
+        $("#createChildren").click(function() {
+            var id = $("#id").val();
+            if(!id) {
+                layer.msg("请选择父菜单");
+                return;
+            }
+            var index = layer.open({
+                type: 2,
+                title: '子菜单 - 添加',
+                shadeClose: true,
+                shade: 0.8,
+                maxmin: true,
+                area: ['700px', '470px;'],
+                content: "/menu/createChildren?id=" + id
+            });
+        });
+
+        $("#createFunc").click(function() {
+            var id = $("#id").val();
+            if(!id) {
+                layer.msg("请选择菜单");
+                return;
+            }
+            var index = layer.open({
+                type: 2,
+                title: '菜单功能 - 添加',
+                shadeClose: true,
+                shade: 0.8,
+                maxmin: true,
+                area: ['700px', '470px;'],
+                content: "/menu/createFunc?id=" + id
+            });
+        });
+
+        $("#expandAll").click(function() {
+            zTree.expandAll(true);
+        });
+
+        $("#collapseAll").click(function() {
+            zTree.expandAll(false);
+        });
+    });
+
+    function updateFunc(id) {
+        if(!id) {
+            layer.msg("请选择功能");
+            return;
+        }
+        var index = layer.open({
+            type: 2,
+            title: '菜单功能 - 修改',
+            shadeClose: true,
+            shade: 0.8,
+            maxmin: true,
+            area: ['700px', '470px;'],
+            content: "/menu/updateFunc?id=" + id
+        });
+    }
+
+    function delMenu(id) {
+        layer.confirm('您确定要删除该菜单吗？', {
+                    btn: ['确定', '取消']
+                },
+                function() {
+                    ajax_post_data("/menu/delete", {id: id}, function (data) {
+                        layer.msg('删除成功');
+                        location.reload();
+                    });
+                },
+                function() {}
+        );
+    }
+
+    function deleteFunc(id) {
+        layer.confirm('您确定要删除该功能吗？', {
+                    btn: ['确定', '取消']
+                },
+                function() {
+                    ajax_post_data("/menu/deleteFunc", {id: id}, function (data) {
+                        layer.msg('删除成功');
+                        $("#tr_" + id).remove();
+                    });
+                },
+                function() {}
+        );
+    }
+</SCRIPT>

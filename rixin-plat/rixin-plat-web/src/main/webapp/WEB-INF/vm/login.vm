@@ -1,0 +1,90 @@
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="robots" content="index,follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="renderer" content="ie-stand">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <title>阡陌间</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/login.css">
+
+    <script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="https://uc.jcloud.com/assets/js/jquery.form.min.js"></script>
+    <script type="text/javascript" src="https://uc.jcloud.com/assets/js/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="https://uc.jcloud.com/assets/js/additional-method.js"></script>
+    <script type="text/javascript">
+        window.jdpts={};jdpts._st=new Date().getTime();
+    </script>
+    <script type="text/javascript">
+
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-87492920-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+</head>
+
+<body>
+<!-- S header -->
+<header class="login-h">
+    <div class="s-area">
+        <a href="http://www.qmj.com"><span style="border-left: 0px">日新</span></a>
+        <span>登录</span>
+    </div>
+</header>
+<!-- E header -->
+
+<!-- S 登录欢迎页 content-->
+<div class="login-content">
+    <div class="s-area">
+        <div class="login-form">
+            <h3>账户登录</h3>
+            <div class="login-wrap">
+                <iframe width='346' height='260' id='login_frame' name='login_frame' src="/login/ajaxLogin" style='position:absolute;z-index:4;' frameborder='no' marginheight='0' marginwidth='0' scrolling='no'  allowTransparency='true'></iframe>
+            </div>
+            <div class="login-type">
+                <ul class="cl">
+                    <li></li>
+                    <li class="fr link-reg"><a href="/register"><i></i><span>立即注册</span></a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- E 登录欢迎页 content-->
+
+<!-- S footer-->
+<div class="s-area">
+    <div id="footer">
+        <div class="links">
+            <a href="www.qmj.com" target="_blank">阡陌间</a>
+        </div>
+        <div class="copyright c5d5e66 mt0">
+            Copyright©2004-2016&nbsp;&nbsp;qmj.com&nbsp;&nbsp;版权所有&nbsp;&nbsp;
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var jaq = jaq || [];
+        jaq.push(['account','JA2015_113319']);
+        jaq.push(['domain','www.jcloud.com']);
+        (function() {
+            var ja = document.createElement('script'); ja.type = 'text/javascript'; ja.async = true;
+            ja.src = ('https:' == document.location.protocol ? 'https://wlssl' : 'http://wl') + '.jd.com/joya.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ja, s);
+        })();
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en" style="overflow: hidden; font-size: 55.2px;"><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+    <meta name="format-detection" content="telephone=no">
+    <link href="/Content/globalAll.css" rel="stylesheet" type="text/css">
+    <link href="/Content/layout.css" rel="stylesheet" type="text/css">
+    <link href="/Scripts/weiui/weui.css" rel="stylesheet" type="text/css">
+    <link href="/Content/master.css?20171212" rel="stylesheet" type="text/css">
+
+    <style type="text/css">
+        body { background-color: #f0f3f5 !important; }
+        .btn-group { width: 100% !important }
+        .dropdown-menu { height: 134px !important }
+    </style>
+
+    <title>日新家政</title>
+</head>
+<body style="">
+
+<div id="html_Layout">
+    <div id="html_body" style="height: 736px;">
+
+        <div class="head containered" style="position:fixed;width:100%;z-index:500;top:0;clear: both;">
+            <a class="one l GoBack" href="javascript:void(0);" style="">
+                <span class="icon_back"></span>
+            </a>
+            <div class="two l fc">
+                <p class="Sub fc text-ellipsis">选择服务时间</p>
+            </div>
+            <div class="third l fr naved">
+                <div class="nav_out"></div>                </div>
+        </div>
+
+        <div id="Subpage" class="main" style="display: block;" data-thisseraddr="#serviceAddr0" data-idaddr="Addrs0" data-productsameare="SC001,SC002,0005" data-subpage="">
+            <style>
+                body{background:#ffffff!important;}
+            </style>
+            <div class="xdsj">
+                <div id="xdsj_optdate" style="touch-action: pan-y pinch-zoom;">
+                    <ul id="xdsj_datescroll" style="transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) translateZ(0px);">
+
+
+                        <li>
+                            <div class="date-box  date-full" data-timebox="xdsj_timebox_20190310">
+                                <p class="date-week">今天<span class="about-full">[约满]</span> </p>
+                                <p class="date-text">2019-03-10</p>
+                                <i class="date-angle"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date-box" data-timebox="xdsj_timebox_20190311">
+                                <p class="date-week">明天</p>
+                                <p class="date-text">2019-03-11</p>
+                                <i class="date-angle"></i>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="date-box on" data-timebox="xdsj_timebox_20190312">
+                                <p class="date-week">星期二</p>
+                                <p class="date-text">2019-03-12</p>
+                                <i class="date-angle"></i>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="xdsj_foot"></div>
+                </div>
+                <div class="xdsj-body mtop_r024">
+
+                    <div id="xdsj_timebox_20190310" class="xdsj-time-box" style="display:none;">
+                        <ul>
+
+                            <li class="time-full">
+                                <p class="fixed-time" data-starttimespan="08:00:00" data-endtimespan="12:00:00">08:00-12:00</p>
+                                <p class="about-full">约满</p>
+                            </li>
+                            <li class="time-full">
+                                <p class="fixed-time" data-starttimespan="14:00:00" data-endtimespan="18:00:00">14:00-18:00</p>
+                                <p class="about-full">约满</p>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="xdsj_timebox_20190311" class="xdsj-time-box" style="display: none;">
+                        <ul>
+
+                            <li class="">
+                                <p class="fixed-time" data-starttimespan="08:00:00" data-endtimespan="12:00:00">08:00-12:00</p>
+                                <p class="about-full">约满</p>
+                            </li>
+                            <li class="">
+                                <p class="fixed-time" data-starttimespan="14:00:00" data-endtimespan="18:00:00">14:00-18:00</p>
+                                <p class="about-full">约满</p>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <div id="xdsj_timebox_20190312" class="xdsj-time-box" style="display: block;">
+                        <ul>
+
+                            <li class="">
+                                <p class="fixed-time" data-starttimespan="08:00:00" data-endtimespan="12:00:00">08:00-12:00</p>
+                                <p class="about-full">约满</p>
+                            </li>
+                            <li class="">
+                                <p class="fixed-time" data-starttimespan="14:00:00" data-endtimespan="18:00:00">14:00-18:00</p>
+                                <p class="about-full">约满</p>
+                            </li>
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hmwx-btnfixed-height"></div>
+            <div class="hmwx-btn-fixed hmwx-display-flex">
+                <div class="hmwx-disflex-item"><input id="btnCancel" type="button" value="取消" class="hmwx-btn bg-ffe775"></div>
+                <div class="hmwx-disflex-item"><input id="btnDefine" type="button" value="确定" class="hmwx-btn"></div>
+            </div>
+            <script type="text/javascript" src="/Scripts/iscroll5.js"></script>
+            <script type="text/javascript">
+                var xdDateScroll;//日期滑动
+                function loadIScroll() {
+                    xdDateScroll = new IScroll('#xdsj_optdate', { eventPassthrough: true, scrollX: true, scrollY: false, preventDefault: false });
+                }
+                $(function () {
+                    setTimeout(function () {
+                        loadIScroll();
+                    }, 0);
+                })
+
+                //日期选择
+                $(".date-box").click(function () {
+                    var timebox = $(this).attr("data-timebox");
+                    if ($(this).hasClass("date-full")) {
+                        return false;
+                    }
+                    if (!$(this).hasClass("date-full")) {
+                        $(".date-box").removeClass("on");
+                        $(this).addClass("on");
+                        $(".xdsj-time-box").hide();
+                        $(".xdsj-time-box li").removeClass("on");
+                        $("#" + timebox).show();
+                    }
+                });
+                //时间段选择
+                $(".xdsj-time-box li").click(function () {
+                    if ($(this).hasClass("time-full")) {
+                        return false;
+                    }
+                    if (!$(this).hasClass("time-full")) {
+                        $(".xdsj-time-box li").removeClass("on");
+                        $(this).addClass("on");
+                    }
+                });
+                //取消
+                $("#btnCancel").click(function () {
+                    $("#Subpage").hide();
+                    $("#form1").show();
+                    $("#Subpage").html("");
+                    $(".Sub").html($("#ProductName").val());
+                    $("#Subpage").attr("data-subpage", "");
+                });
+                //确定
+                $("#btnDefine").click(function () {
+                    var data = $(".date-box.on").find(".date-text").html();
+                    var time = $(".xdsj-time-box li.on").find(".fixed-time").html();
+                    var starttimespan = $(".xdsj-time-box li.on").find(".fixed-time").attr("data-starttimespan");
+                    var endtimespan = $(".xdsj-time-box li.on").find(".fixed-time").attr("data-endtimespan");
+                    if (data == undefined || data=="") {
+                        alert("请选择服务日期！");
+                        return false;
+                    }
+                    if (starttimespan == undefined || starttimespan == "" || endtimespan == undefined || endtimespan == "") {
+                        alert("请选择服务时间段！");
+                        return false;
+                    }
+                    $("#StartTime").val(data);
+                    $("#StartTimeSpan").val(starttimespan);
+                    $("#EndTimeSpan").val(endtimespan);
+                    $("#DateTimeFixed").val(data + " " + time);
+                    $("#Subpage").hide();
+                    $("#form1").show();
+                    $("#Subpage").html("");
+                    $(".Sub").html($("#ProductName").val());
+                    $("#Subpage").attr("data-subpage", "");
+                    setTimeout(function () {
+                        var isnum = true;
+                        $("#serviceProject").find(".xd-num").each(function () {
+                            if (isnum && parseInt($(this).val()) > 0) {
+                                isnum = getSkuPrice(this);
+                            }
+                            if (!isnum && parseInt($(this).val()) > 0) {
+                                var min = parseInt($(this).parent(".xd-numbox").attr("data-min"));
+                                if ($(this).parents(".xd-xms").hasClass("skuList") || isNaN(min)) {
+                                    //多个sku-
+                                    min = 0;
+                                }
+                                $(this).parent(".xd-numbox").find(".xd-num").val(min);
+                                $(this).parent(".xd-numbox").find(".xd-num").attr("data-oldval", min);
+                                $(this).parents(".skuAndUnit").find(".gwcPrice").val(0);
+                                if ($(this).parents(".xd-xms").hasClass("skuList")) {
+                                    $(this).parents(".skuAndUnit").find(".skuPrice").html("¥" + 0);
+                                }
+                                orderTotalPrice();
+                            }
+                        });
+                    }, 0);
+                    Remove_select();
+                });
+            </script>
+        </div>
+        <input hidden="" id="sysYh" value="0">
+
+        #parse("/common/share.vm")
+        #parse("/common/menu.vm")
+    </div>
+</div>
+
+<!--弹出框开始-->
+
+<!--弹出框结束-->
+
+<script src="/Scripts/jquery-1.10.2.min.js" type="text/javascript"></script>
+
+<script src="/Scripts/font-size.js" type="text/javascript"></script>
+<script src="/Scripts/my.js" type="text/javascript"></script>
+<script src="/Scripts/weiui/weui.js" type="text/javascript"></script>
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+
+
+<link href="/Content/bootstrap-select.css" rel="stylesheet">
+<script src="/Scripts/bootstrap-select.js"></script>
+<link href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+    if ('0' == '1') {
+        $.my.dialog({
+            content: "你已参加   充值活动，不能再次参加 新装保洁 减价优惠",
+            buttons: [{
+                label: '确认',
+                type: 'default',
+                onClick: function () {
+                    history.back(-1);
+                }
+            }]
+        });
+    }
+    GetSelectpicker = false;
+    if (0!= 0.00) {
+        $("#sysYh").val( 0);
+        $("#prePrice").html("享受优惠：￥" +  0);
+        $("#prePrice").attr("data-yhqprice",  0);
+    }
+    $(window).on('load', function () {
+        $(".selectpicker").selectpicker({
+            'noneSelectedText': '请选择员工',
+            'noneResultsText': '没有找到员工',
+            'maxOptionsText': 2,
+            'minOptionsText': 2
+        });
+        $('.dropdown-menu').css('width', '100%');
+        // $('#PROJECT_NAME_SELECT').selectpicker('refresh');//重新刷新不好使
+        // $('#PROJECT_NAME_SELECT').selectpicker('render');//也不好使
+        //重新绑定监听
+        $('.selectpicker').on('show.bs.select', function (e) {
+            if (e.target.value) {
+                var project = viewModel._helper.projectCodes().filter(function (item) {
+                    return item.projectCode === e.target.value;
+                });
+            }
+        });
+    });
+    //function selectOnchang(e) {
+    //    alert(e.value);
+    //}
+    //清除select
+    function Remove_select(){
+        $("#id_select").selectpicker('val', '');
+        $(".dropdown-menu").find("li").removeClass("selected");
+        GetSelectpicker = true;
+    }
+    $("#select").on('click', function () {
+        if (pd() == 1) {
+            return false;
+        } else {
+            if (GetSelectpicker) {
+                $("#id_select").html('');
+                var $form = $("#form1");
+                $.ajax({
+                    url: "/Order/GetEmployee",
+                    data: $form.serialize(),
+                    type: "POST",
+                    cache: false,
+                    beforeSend: function () {
+                        $.weui.loading("正在获取服务员工");
+                    },
+                    complete: function () {
+                        $.weui.hideLoading();
+                    },
+                    success: function (data) {
+                        GetSelectpicker = false;
+                        if (data.State == 1) {
+                            for (var i = 0; i < data.Data.length; i++) {
+                                if (i >= 5) {
+                                    $("#id_select").append(" <option hidden data-content=\"<span class=\'label label-warning\'> " + data.Data[i].No + "</span >\" value=\"" + data.Data[i].Id + "\">" + data.Data[i].No + "</option>");
+                                } else {
+                                    $("#id_select").append(" <option data-content=\"<span class=\'label label-warning\'> " + data.Data[i].No + "</span >\" value=\"" + data.Data[i].Id + "\">" + data.Data[i].No + "</option>");
+                                }
+                            }
+
+                            $(".selectpicker").selectpicker('refresh');
+                        } else {
+                            $.my.dialog({
+                                content: r.Msg,
+                                buttons: [{
+                                    label: '确认',
+                                    type: 'default',
+                                    onClick: function () {
+                                        $("#select").removeAttr("disabled");
+                                    }
+                                }]
+                            });
+                            return false;
+                        }
+                    }
+                });
+            }
+        }
+    })
+
+    var productSameArea = 'SC001,SC002,0005';
+    //所有的单选框赋值
+    $("input[type='checkbox']").on("change", function () {
+        var ischeck = $(this).is(":checked");
+        if (ischeck) {
+            $(this).val(true);
+        } else {
+            $(this).val(false);
+        }
+
+    });
+    //xd-body显示隐藏控制
+    $(".xd-checktog").on("change", function () {
+
+        var ischeck = $(this).is(":checked");
+        if (ischeck) {
+            $(this).parents(".xd-box").find(".xd-body").show();
+        } else {
+            $(this).parents(".xd-box").find(".xd-body").hide();
+        }
+
+    });
+    //数量增减
+    $(".xd-jia").click(function () {
+        var t = this;
+        var msg = "";
+        var number = $(t).parent(".xd-numbox").find(".xd-num");
+        var oldnumber = parseInt(number.val());
+        number = parseInt(number.val()) + 1;
+        var max = parseInt($(t).parent(".xd-numbox").attr("data-max"));
+        var unitName = $(t).parents(".xd-xms").find(".xd-xm-title").html();
+        var unit = $(t).parents(".xd-numbox").find(".xd-unit").html();
+        if ($(t).parents(".xd-xms").hasClass("skuList")) {
+            //多个sku-数量增减
+            max = parseInt($(t).parents(".skuList").attr("data-max"));
+            var skumax = max;
+            var skunum = 0;
+            $(t).parents(".skuList").find(".skuNum").each(function () {
+                skunum += parseInt($(this).val());
+            });
+            if (max <= skunum ){
+                max = oldnumber;
+                // msg = "服务项目总数最多" + skumax + unit;
+            }
+        }
+        if ($(t).parents(".xd-xms").hasClass("skuAndUnit") && number > max) {
+            msg = unitName + "最大值" + max + unit;
+        }
+        if (msg != "") {
+            alert(msg);
+            return false;
+        }
+        if (max != undefined && !isNaN(max) && number > max)
+            number = max;
+        $(t).parent(".xd-numbox").find(".xd-num").val(number);
+        $(t).parent(".xd-numbox").find(".xd-num").attr("data-oldval", number);
+        plusAndMinus($(t).parent(".xd-numbox").find(".xd-num"));
+        Remove_select();
+    });
+    $(".xd-jian").click(function () {
+        var t = this;
+        var msg = "";
+        var number = $(t).parent(".xd-numbox").find(".xd-num");
+        var oldnumber = parseInt(number.val());
+        number = parseInt(number.val()) - 1;
+        var min = parseInt($(t).parent(".xd-numbox").attr("data-min"));
+        if ($(t).parents(".xd-xms").hasClass("skuList")) {
+            //多个sku-数量增减
+            min = 0;
+        }
+        if (msg != "") {
+            alert(msg);
+            return false;
+        }
+        if (min != undefined && !isNaN(min) && number < min)
+            number = min;
+        $(t).parent(".xd-numbox").find(".xd-num").val(number);
+        $(t).parent(".xd-numbox").find(".xd-num").attr("data-oldval", number);
+        plusAndMinus($(t).parent(".xd-numbox").find(".xd-num"));
+        Remove_select();
+    });
+    $(".xd-num").focus(function () {
+        $(this).attr("data-oldval", $(this).val());
+    });
+    //增值服务与单一sku销售属性-输入框（数字最大最小值）
+    $(".surBox .xd-num,.unitBox .xd-num").on("change", function () {
+        var msg = "";
+        var sum = parseInt($(this).val());
+        var min = parseInt($(this).parent(".xd-numbox").attr("data-min"));
+        var max = parseInt($(this).parent(".xd-numbox").attr("data-max"));
+        var unitName = $(this).parents(".xd-xm").find(".xd-xm-title").html();
+        var unit = $(this).parents(".xd-numbox").find(".xd-unit").html();
+        var oldnum = parseInt($(this).attr("data-oldval"));
+        if (isNaN(oldnum)) {
+            oldnum = 0;
+        }
+        $(this).val(sum);
+        if (sum < min) {
+            $(this).val(min);
+        }
+        if (sum > max) {
+            $(this).val(oldnum);
+        }
+        if (isNaN(sum)) {
+            $(this).val(min);
+        }
+        if ($(this).parents(".xd-xms").hasClass("skuAndUnit") && sum > max) {
+            msg = unitName + "最大值" + max + unit;
+        }
+        if (msg != "") {
+            alert(msg);
+            return false;
+        }
+        plusAndMinus(this);
+    });
+    //多个sku单一销售属性-输入框（数字最大最小值）
+    $(".skuNum").on("change", function () {
+        var msg = "";
+        $(this).val(parseInt($(this).val()));
+        var number = parseInt($(this).val());
+        var min =0;
+        var max = parseInt($(this).parents(".skuList").attr("data-max"));
+        var unit = $(this).parents(".xd-numbox").find(".xd-unit").html();
+        var skunum = 0;
+        var skumax = max;
+        var oldnum = parseInt($(this).attr("data-oldval"));
+        if (isNaN(oldnum)) {
+            oldnum = 0;
+        }
+        $(this).parents(".skuList").find(".skuNum").each(function () {
+            skunum += parseInt($(this).val());
+        });
+        if (max < skunum) {
+            max = max - (skunum - number);
+            if (max<0){
+                max = 0;
+            }
+            // msg = "服务项目总数最多" + skumax + unit;
+        }
+        if (number < min) {
+            $(this).val(min);
+        }
+        if (number > max) {
+            $(this).val(oldnum);
+        }
+        if (isNaN(number)) {
+            $(this).val(min);
+        }
+        if (msg != "") {
+            alert(msg);
+            return false;
+        }
+        plusAndMinus(this);
+    });
+    //各计算逻辑总合
+    function plusAndMinus(thing) {
+        if ($(thing).hasClass("surNum")) {
+            totalSur(thing);
+        }
+        if ($(thing).parents(".xd-xms").hasClass("skuAndUnit") || $(thing).parents(".xd-xm").hasClass("skuAndUnit")) {
+            getSkuPrice(thing);
+        }
+    }
+    //增值材料价格计算
+    function totalSur(thing) {
+        var num = parseFloat($(thing).val());
+        var price = parseFloat($(thing).parents(".xd-numbox").attr("data-price"));
+        var total = num * price;
+        $(thing).parents(".surBox").find(".surPrice").html("¥" + total);
+        $(thing).parents(".surBox").find(".gwcPrice").val(total);
+        orderTotalPrice();
+    }
+    //选择服务地址
+    $(".serviceAddr").on("click", function () {
+        var thisSerAddr = this;
+        var bindid = $(thisSerAddr).attr("data-idaddr");
+        var addrid = $("#" + bindid).val();
+        if (addrid == "" || addrid==undefined) {
+            addrid = 0;
+        }
+        var startAddr_areaid = $("#ArearId").val();
+        if (bindid =="Addrs1"){
+            //判断同区处理
+            var productCode = $("#ProductCode").val();
+            var sameAreaArray = productSameArea.split(",");
+            var isSameArea = false;//判断同区域
+            for (var i = 0; i < sameAreaArray.length; i++) {
+                if (productCode == sameAreaArray[i]) {
+                    isSameArea = true;
+                }
+            }
+            if (!isSameArea) {
+                startAddr_areaid = "";
+            }
+        }
+        if (bindid != "Addrs1") {
+            startAddr_areaid = "";
+        }
+        /*$.ajax({
+            url: '/Member/AddressList?addrid=' + addrid + "&areaid=" + startAddr_areaid,
+            type: 'get',
+            cache: false,
+            // async: false,
+            beforeSend: function () {
+                $.weui.loading("正在获取服务地址");
+            },
+            complete: function () {
+                $.weui.hideLoading();
+            },
+            success: function (r) {
+                $("#form1").hide();
+                $(".GoBack").attr("href", "javascript:void(0);");
+                $("#Subpage").html(r);
+                $("#Subpage").show();
+                $(".Sub").html("地址选择");
+                //$("#html_body").getNiceScroll().resize();
+                //选择地址
+                $("#Subpage").attr("data-thisSerAddr", "#" + $(thisSerAddr).attr("id"));
+                $("#Subpage").attr("data-idaddr", bindid);
+                $("#Subpage").attr("data-productSameAre", productSameArea);
+                $("#Subpage").attr("data-isSameArea", isSameArea);
+                $(".pick").on("click", function () { orderAddress(this, "#" + $(thisSerAddr).attr("id"), bindid, productSameArea, isSameArea); });
+                Remove_select();
+            }
+        });*/
+    })
+    //是否返回按钮事件
+    $(".GoBack").click(function () {
+        var subpage = $("#Subpage").attr("data-subpage");
+        if ($("#form1").is(":hidden")) {
+            $("#form1").show();
+            $("#Subpage").hide();
+            $("#Subpage").html("");
+            $(".Sub").html($("#ProductName").val());
+            $("#Subpage").attr("data-subpage", "");
+            //$("#html_body").getNiceScroll().resize();
+        } else {
+            window.location.href = "javascript:history.back(-1);";
+        }
+    });
+    //选择地址
+    function orderAddress(thisPick, thisSerAddr, bindid, productSameArea, isSameArea) {
+        if (isSameArea == "true" || isSameArea) { isSameArea = true; } else { isSameArea = false; }
+        var startAddr_areaid = $("#ArearId").val();
+        $(thisPick).parents(".address_list").find("li").removeClass("rad-addorder-st");
+        $(thisPick).parents("li").addClass("rad-addorder-st");
+        var addrid = $(thisPick).attr("data-addrid");
+        var mname = $(thisPick).attr("data-mname");
+        var mphone = $(thisPick).attr("data-mphone");
+        var addr = $(thisPick).attr("data-addr");
+        var area = $(thisPick).attr("data-area");
+        var cityid = $(thisPick).attr("data-cityid");
+        var areaid = $(thisPick).attr("data-areaid");
+        if (bindid == "Addrs1") {
+            if (!isSameArea) {
+                $("#Addrs1").val(addrid);
+                if ($(thisSerAddr).prop("tagName").toLowerCase() == "input") {
+                    $(thisSerAddr).val(addr);
+                } else {
+                    $(thisSerAddr).html(addr);
+                }
+            }
+            if (productSameArea != "" && isSameArea) {
+                if (startAddr_areaid == "2" || startAddr_areaid == "3") {
+                    if (areaid != "2" && areaid != "3") {
+                        $.my.dialog({
+                            content: "该产品只服务于同区或岛内搬家！",
+                            buttons: [{
+                                label: '确认',
+                                type: 'default',
+                                onClick: function () {
+                                }
+                            }]
+                        });
+                    } else {
+                        $("#Addrs1").val(addrid);
+                        if ($(thisSerAddr).prop("tagName").toLowerCase() == "input") {
+                            $(thisSerAddr).val(addr);
+                        } else {
+                            $(thisSerAddr).html(addr);
+                        }
+                    }
+                } else if (startAddr_areaid != areaid) {
+                    $.my.dialog({
+                        content: "该产品只服务于同区或岛内搬家！",
+                        buttons: [{
+                            label: '确认',
+                            type: 'default',
+                            onClick: function () {
+                            }
+                        }]
+                    });
+                } else {
+                    $("#Addrs1").val(addrid);
+                    if ($(thisSerAddr).prop("tagName").toLowerCase() == "input") {
+                        $(thisSerAddr).val(addr);
+                    } else {
+                        $(thisSerAddr).html(addr);
+                    }
+                }
+            }
+        }
+        if (bindid == "Addrs0") {
+            if ($("#Addrs0").val() != addrid) {
+                $("#Addrs1").val("");
+                if ($("#serviceAddr1").length > 0){
+                    if ($("#serviceAddr1").prop("tagName").toLowerCase() == "input") {
+                        $("#serviceAddr1").val("");
+                    } else {
+                        $("#serviceAddr1").html("请选择终点地址");
+                    }
+                }
+            }
+            $("#Addrs0").val(addrid);
+            if ($(thisSerAddr).prop("tagName").toLowerCase() == "input") {
+                $(thisSerAddr).val(addr);
+            } else {
+                $(thisSerAddr).html(addr);
+            }
+            if ($("#Addrs0").val() != "" && $("#StartTime").val() != "" &&($("#CityId").val() != cityid || $("#ArearId").val() != areaid)) {
+                setTimeout(function () {
+                    var isnum = true;
+                    $("#serviceProject").find(".xd-num").each(function () {
+                        if (isnum&&parseInt($(this).val()) > 0) {
+                            isnum= getSkuPrice(this);
+                        }
+                        if (!isnum && parseInt($(this).val()) > 0) {
+                            var min = parseInt($(this).parent(".xd-numbox").attr("data-min"));
+                            if ($(this).parents(".xd-xms").hasClass("skuList") || isNaN(min)) {
+                                //多个sku-
+                                min = 0;
+                            }
+                            $(this).parent(".xd-numbox").find(".xd-num").val(min);
+                            $(this).parent(".xd-numbox").find(".xd-num").attr("data-oldval", min);
+                            $(this).parents(".skuAndUnit").find(".gwcPrice").val(0);
+                            if ($(this).parents(".xd-xms").hasClass("skuList")) {
+                                $(this).parents(".skuAndUnit").find(".skuPrice").html("¥" + 0);
+                            }
+                            orderTotalPrice();
+                        }
+                    });
+                }, 0);
+            }
+            $("#CityId").val(cityid);
+            $("#ArearId").val(areaid);
+        }
+        $("#Subpage").hide();
+        $("#form1").show();
+        $(".Sub").html($("#ProductName").val());
+        //$("#html_body").getNiceScroll().resize();
+    }
+    //选择时间
+    $("#DateTimeFixed").click(function () {
+        var productId = $("#ProductId").val();
+        var arearId = $("#ArearId").val();
+        if (arearId=="") {
+            alert("请选择服务地址");
+            return false;
+        }
+        /*$.ajax({
+            url: '/Order/ServiceTime?pid=' + productId + "&areaid=" + arearId + "&presaleMin=" + "2",
+            type: 'get',
+            cache: false,
+            // async: false,
+            beforeSend: function () {
+                $.weui.loading("正在获取服务时间");
+            },
+            complete: function () {
+                $.weui.hideLoading();
+            },
+            success: function (r) {
+                $("#form1").hide();
+                $(".GoBack").attr("href", "javascript:void(0);");
+                $("#Subpage").html(r);
+                $("#Subpage").show();
+                $(".Sub").html("选择服务时间");
+                //$("#html_body").getNiceScroll().resize();
+            }
+        });*/
+    });
+    //优惠券，优惠价格
+    $(".xd-yhq-cb").on("change", function () {
+        var prePrice = parseFloat($(this).parents(".xd-yhqbox").attr("data-facevalue"));
+        prePrice += parseFloat($("#sysYh").val());
+        var thiscb =$(this).is(":checked");
+        $(".xd-yhq-cb").not(this).prop('checked', false);
+        $(".xd-yhq-cb").not(this).val(false);
+        if (thiscb) {
+            $(this).val(true);
+        } else {
+            $(this).val(false);
+            prePrice = 0;
+        }
+        $("#prePrice").html("享受优惠：￥" + prePrice);
+        $("#prePrice").attr("data-yhqprice", prePrice);
+        orderTotalPrice();
+    })
+    //获取sku组合的价格
+    function getSkuPrice(thisgwc) {
+        //重置处理//
+        var min = parseInt($(thisgwc).parent(".xd-numbox").attr("data-min"));
+        if ($(thisgwc).parents(".xd-xms").hasClass("skuList") || isNaN(min)) {
+            //多个sku-
+            min = 0;
+        }
+        $(thisgwc).parents(".skuAndUnit").find(".gwcPrice").val(0);
+        if ($(thisgwc).parents(".xd-xms").hasClass("skuList")) {
+            $(thisgwc).parents(".skuAndUnit").find(".skuPrice").html("¥" + 0);
+        }
+        orderTotalPrice();
+        //重置处理//
+
+        if ($("#StartTime").val() == "" || $("#StartTimeSpan").val() == "" || $("#EndTimeSpan").val() == "") {
+            $.my.dialog({
+                content: '请选择服务时间',
+                buttons: [{
+                    label: '确认',
+                    type: 'default',
+                    onClick: function () {
+                    }
+                }]
+            });
+            $(thisgwc).parent(".xd-numbox").find(".xd-num").val(min);
+            $(thisgwc).parent(".xd-numbox").find(".xd-num").attr("data-oldval", min);
+            return false;
+        }
+        if ($("#CityId").val() == "") {
+            $.my.dialog({
+                content: '请选择服务地址',
+                buttons: [{
+                    label: '确认',
+                    type: 'default',
+                    onClick: function () {
+                    }
+                }]
+            });
+            $(thisgwc).parent(".xd-numbox").find(".xd-num").val(min);
+            $(thisgwc).parent(".xd-numbox").find(".xd-num").attr("data-oldval", min);
+            return false;
+        }
+        //sku
+        var bl = true;
+        var skuValues = "";
+        var skuInputs = "";
+        var skuArray = new Array();
+        //sku
+        var skulength=$(thisgwc).parents(".skuAndUnit").find(".skuId").length;
+        for (var i = 0; i < skulength; i++) {
+            var skuId = $(thisgwc).parents(".skuAndUnit").find(".skuId").eq(i).val();
+            var skuVal = $(thisgwc).parents(".skuAndUnit").find(".skuValue").eq(i).val();
+            var skuObject = new Object();
+            skuObject.Id = skuId;
+            skuObject.Name = skuVal;
+            skuArray.push(skuObject);
+        }
+        //单位
+        var unitValues = "";
+        var unitInputs = "";
+        var unitArray = new Array();
+        var unitlength = $(thisgwc).parents(".skuAndUnit").find(".unitId").length;
+        for (var i = 0; i < unitlength; i++) {
+            var unitId = $(thisgwc).parents(".skuAndUnit").find(".unitId").eq(i).val();
+            var unitNum = $(thisgwc).parents(".skuAndUnit").find(".unitNumber").eq(i).val();
+            var unitName = $(thisgwc).parents(".skuAndUnit").find(".unitName").eq(i).val();
+            var unitObject = new Object();
+            unitObject.Id = unitId;
+            unitObject.Name = unitName;
+            unitObject.Number = unitNum;
+            unitArray.push(unitObject);
+        }
+        //获取价格
+        var proPrice = 0;
+        var skuDesObject = new Object();
+        skuDesObject.SKus = skuArray;
+        skuDesObject.Units = unitArray;
+        $.ajax({
+            url: '/Order/GetProPrice',
+            data: { ProductId: $("#ProductId").val(), CityId: $("#CityId").val(), ArearId: $("#ArearId").val(), StartTime: $("#StartTime").val(), StartTimeSpan: $("#StartTimeSpan").val(), EndTimeSpan: $("#EndTimeSpan").val(), SkuDes: skuDesObject,Method:0 },
+            type: 'post',
+            cache: false,
+            async: false,
+            success: function (r) {
+                if (r.State == 1) {
+                    $("#sysYh").val(r.Data.SYHQAmount);
+                    if (r.Data.SYHQAmount > 0) {
+                        proPrice = r.Data.Amount;
+                        $("#prePrice").html("享受优惠：￥" + r.Data.SYHQAmount);
+                        $("#prePrice").attr("data-yhqprice", r.Data.SYHQAmount);
+                    } else {
+                        proPrice = r.Data;
+                    }
+
+                } else {
+                    $.my.dialog({
+                        content: r.Msg,
+                        buttons: [{
+                            label: '确认',
+                            type: 'default',
+                            onClick: function () {
+                            }
+                        }]
+                    });
+                    bl = false;
+                }
+            }
+        });
+        if (!bl) {
+            $(thisgwc).parent(".xd-numbox").find(".xd-num").val(min);
+            $(thisgwc).parent(".xd-numbox").find(".xd-num").attr("data-oldval", min);
+            return false;
+        }
+        //服务为0，价格为0
+        if (parseInt($(thisgwc).parent(".xd-numbox").find(".xd-num").val()) <= 0) {
+            proPrice=0
+        }
+        //单个sku组合价
+        $(thisgwc).parents(".skuAndUnit").find(".gwcPrice").val(proPrice);
+        if ($(thisgwc).parents(".xd-xms").hasClass("skuList")) {
+            $(thisgwc).parents(".skuAndUnit").find(".skuPrice").html("¥" + proPrice);
+        }
+        orderTotalPrice();
+        return true;
+    }
+    //计算订单总价
+    function orderTotalPrice() {
+        //订单总价
+        var totalPrice = 0;
+        $(".gwcPrice").each(function () {
+            var price = parseFloat($(this).val());
+            if (isNaN(price)) { price = 0; }
+            totalPrice += price;
+        });
+        //减去优惠价
+        var prePrice = parseFloat($("#prePrice").attr("data-yhqprice"));
+        if (isNaN(prePrice)) { prePrice = 0; }
+        totalPrice = Math.round((totalPrice - prePrice)* 100) / 100;
+        if (totalPrice < 0) {
+            totalPrice = 0;
+        }
+        $("#gwcOrderTotalPrice").html("待付：¥" + totalPrice);
+    }
+    //添加订单 判断
+    function pd() {
+        if ($("#CityId").val() == "") {
+            $.my.dialog({
+                content: '请选择服务地址',
+                buttons: [{
+                    label: '确认',
+                    type: 'default',
+                    onClick: function () {
+                        $("#btnSave").removeAttr("disabled");
+                        $("#DisForm").remove();
+                    }
+                }]
+            });
+            return 1;
+        }
+        if ($("#StartTime").val() == "" || $("#StartTimeSpan").val() == "" || $("#EndTimeSpan").val() == "") {
+            $.my.dialog({
+                content: '请选择服务时间',
+                buttons: [{
+                    label: '确认',
+                    type: 'default',
+                    onClick: function () {
+                        $("#btnSave").removeAttr("disabled");
+                        $("#DisForm").remove();
+                    }
+                }]
+            });
+            return 1;
+        }
+
+        var msgForm = "";
+        //单sku
+        if ($(".xd-xms").eq(0).hasClass("skuAndUnit")) {
+            $(".xd-xm").each(function () {
+                var num = parseInt($(this).find(".xd-num").val());
+                var min = parseInt($(this).find(".xd-numbox").attr("data-min"));
+                var max = parseInt($(this).find(".xd-numbox").attr("data-max"));
+                var unitName = $(this).find(".xd-xm-title").html();
+                var unit = $(this).find(".xd-unit").html();
+                if (num < min) {
+                    msgForm = unitName + "最小值" + min + unit;
+                    return false;
+                }
+                if (num > max) {
+                    msgForm = unitName + "最大值" + max + unit;
+                    return 1;
+                }
+            });
+        }
+        //多sku
+        if ($(".xd-xm").eq(0).hasClass("skuAndUnit")) {
+            var num = 0;
+            var min = parseInt($(".xd-xms").eq(0).attr("data-min"));
+            var max = parseInt($(".xd-xms").eq(0).attr("data-max"));
+            var unit = $(".xd-xm").eq(0).find(".xd-unit").html();
+            $(".xd-xm").each(function () {
+                num += parseInt($(this).find(".xd-num").val());
+            });
+            // if (num < min) {
+            //     msgForm = "服务项目总数最小" + min + unit;
+            // }
+            // if (num > max) {
+            //     msgForm = "服务项目总数最大" + max + unit;
+            // }
+        }
+        if (msgForm != "") {
+            $.my.dialog({
+                content: msgForm,
+                buttons: [{
+                    label: '确认',
+                    type: 'default',
+                    onClick: function () {
+                        $("#btnSave").removeAttr("disabled");
+                        $("#DisForm").remove();
+                    }
+                }]
+            });
+            return 1;
+        }
+        return 2;
+    }
+    //表单提交
+    $("#btnSave").click(function (ev) {
+        $("#btnSave").attr("disabled", "disabled");
+        $("body").append('<div id="DisForm" style="width:100%;height:100%;position:fixed;z-index:100;top:0;left:0;"></div>');
+        if (pd() == 1) {
+            return false;
+        };
+        $('.bootstrap-select').removeClass('open')
+        var $form = $("#form1");
+        if ($("#id_select").length > 0) {
+            $("#ServiceNos").val($("#id_select").selectpicker('val'))
+        }
+        if ($("#ProductId").val() == '33') {
+
+        }
+        $.ajax({
+            url: "/Order/Add",
+            data: $form.serialize(),
+            type: "POST",
+            cache: false,
+            //async: false,
+            beforeSend: function () {
+                $("#btnSave").attr("disabled", "disabled");
+            },
+            success: function (r) {
+                if (r.State == 1) //成功
+                {
+
+                    location.href = "/Payment/Pay?billNo=" + r.Data + "&goBack=/Payment/OrderDetails?billNo=" + r.Data;
+                } else {
+                    $.my.dialog({
+                        content: r.Msg,
+                        buttons: [{
+                            label: '确认',
+                            type: 'default',
+                            onClick: function () {
+                                $("#btnSave").removeAttr("disabled");
+                                $("#DisForm").remove();
+                            }
+                        }]
+                    });
+                }
+            }
+        });
+        return false;
+    });
+</script>
+
+<div style="display:none">
+    <script src="https://s95.cnzz.com/z_stat.php?id=1260785617&amp;web_id=1260785617" language="JavaScript"></script><script src="https://c.cnzz.com/core.php?web_id=1260785617&amp;t=z" charset="utf-8" type="text/javascript"></script><a href="https://www.cnzz.com/stat/website.php?web_id=1260785617" target="_blank" title="站长统计">站长统计</a>
+</div>
+
+
+<script>
+
+    function GetQueryString(name) {
+        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");
+        var r = window.location.search.substr(1).match(reg);
+        if (r != null) return unescape(r[2]); return null;
+    }
+    if (GetQueryString('PayMethod') != null) {
+        var date = new Date();
+        date.setTime(date.getTime() + 60 * 60 * 1000);
+        $.cookie('PayMethod', GetQueryString('PayMethod'), {
+            expires: date
+        });
+    }
+    //else {
+    //      $.cookie('PayMethod', '', { expires: -1 }); // 删除 cookie
+    //}
+</script></body></html>

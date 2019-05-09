@@ -1,0 +1,24 @@
+<script src="https://res.wx.qq.com/open/js/jweixin-1.4.0.js"></script>
+<script>
+    wx.config({
+        debug: false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+        appId: 'wx0c38c50f78aa9042', // 必填，公众号的唯一标识
+        timestamp: '1552114023', // 必填，生成签名的时间戳
+        nonceStr: 'F5DEAEEAE1538FB6C45901D524EE2F98', // 必填，生成签名的随机串
+        signature: 'ad0c3ef98359c86f57016864ccb49b51a680181b',// 必填，签名，见附录1
+        jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']// 必填，需要使用的JS接口列表，所有JS接口列表见附录2
+    });
+    wx.ready(function () {
+        wx.onMenuShareAppMessage({
+            title: '日新洗衣',
+            desc: '日新—好管家，全品类家政服务提供商！',
+            link: 'http://www.rixin.com',
+            imgUrl: 'http://hy.xiaoyujia.com/Content/images/shard.jpg'
+        });
+        wx.onMenuShareTimeline({
+            title: '日新洗衣',
+            link: 'http://www.rixin.com',
+            imgUrl: 'http://hy.xiaoyujia.com/Content/images/shard.jpg'
+        });
+    })
+</script>

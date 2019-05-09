@@ -1,0 +1,25 @@
+<!--菜单栏开始-->
+<div class="fix_box"></div>
+
+<div class="cd_flash">
+    <div class="jiao"></div>
+    <div class="cd_box">
+        <ul>
+            <li class="">
+                <a href="/">
+                    首页
+                </a>
+            </li>
+            <li class="cd_box_dd">
+                <a href="/order">
+                    我的订单
+                </a>
+            </li>
+            <li class="cd_box_gr">
+                <a href="/home">
+                    个人中心
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
